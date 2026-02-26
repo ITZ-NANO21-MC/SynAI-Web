@@ -4,49 +4,38 @@
 
 @layer base {
   :root {
-    /* #178282 - Cyan-green profundo */
-    --background: 180 15% 96%;
-    --foreground: 180 50% 10%;
+    /* Fondo Oscuro: #0D0D0D */
+    --background: 0 0% 5%;
+    /* Texto Base: #FFFFFF */
+    --foreground: 0 0% 100%;
     
-    --card: 0 0% 100%;
-    --card-foreground: 180 50% 10%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 100%;
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 180 50% 10%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 100%;
     
-    --primary: 180 70% 30%;
-    --primary-foreground: 180 15% 96%;
+    /* Acento Neon: #9D4EDD (Violeta) */
+    --primary: 272 72% 58%;
+    --primary-foreground: 0 0% 100%;
     
-    --secondary: 180 20% 90%;
-    --secondary-foreground: 180 70% 30%;
+    --secondary: 272 20% 15%;
+    --secondary-foreground: 272 72% 80%;
     
-    --muted: 180 10% 90%;
-    --muted-foreground: 180 20% 40%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
     
-    /* #0DF280 - Verde brillante energético */
-    --accent: 150 90% 50%;
-    --accent-foreground: 180 50% 10%;
+    --accent: 272 72% 58%;
+    --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 180 20% 85%;
-    --input: 180 20% 85%;
-    --ring: 180 70% 30%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 272 72% 58%;
     
     --radius: 0.75rem;
-  }
-  .dark {
-    --background: 180 50% 5%;
-    --foreground: 180 10% 95%;
-    --card: 180 50% 7%;
-    --card-foreground: 180 10% 95%;
-    --primary: 180 70% 45%;
-    --primary-foreground: 180 15% 96%;
-    --accent: 150 90% 50%;
-    --accent-foreground: 180 50% 10%;
-    --border: 180 30% 20%;
-    --input: 180 30% 20%;
   }
 }
 

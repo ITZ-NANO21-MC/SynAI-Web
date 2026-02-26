@@ -1,56 +1,49 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, CheckCircle2, Star, Users, Rocket, Trophy, Zap } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Star, Users, Rocket, Trophy, Zap, BrainCircuit } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ESTADISTICAS, SERVICIOS } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 
-/**
- * Página principal de Synapse Studio
- */
 export default function HomePage() {
   const heroImage = PlaceHolderImages.find(img => img.id === 'hero-bg');
 
   return (
-    <div className="flex flex-col w-full">
-      {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-background">
+    <div className="flex flex-col w-full bg-background">
+      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
         <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
           <div className="z-10 space-y-8 max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-primary font-medium text-sm animate-fade-in">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-              </span>
-              Líderes en Innovación Digital
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary font-medium text-sm">
+              <BrainCircuit className="h-4 w-4" />
+              Especialistas en Inteligencia Artificial
             </div>
-            <h1 className="text-5xl md:text-7xl font-headline font-bold leading-tight tracking-tight text-primary">
-              Construimos el <span className="text-accent underline decoration-accent/30">Futuro</span> de tu Marca.
+            <h1 className="text-5xl md:text-7xl font-headline font-bold leading-tight tracking-tight">
+              Impulsa tu Negocio con <span className="text-primary text-glow">Inteligencia Real.</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
-              En Synapse Studio, fusionamos creatividad y tecnología para crear soluciones digitales que no solo se ven bien, sino que generan resultados reales para tu negocio.
+              En <span className="text-primary font-bold">SYNAI</span>, transformamos la complejidad tecnológica en soluciones de software personalizadas e IA de vanguardia para escalar tu impacto.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 font-bold">
-                <Link href="/contacto">Empieza Ahora <ArrowRight className="ml-2 h-5 w-5" /></Link>
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 font-bold shadow-[0_0_20px_rgba(157,78,221,0.3)]">
+                <Link href="/contacto">Iniciar Consultoría <ArrowRight className="ml-2 h-5 w-5" /></Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/5 px-8 font-bold">
-                <Link href="/portafolio">Ver Proyectos</Link>
+              <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 px-8 font-bold">
+                <Link href="/servicios">Nuestras Soluciones</Link>
               </Button>
             </div>
           </div>
           
           <div className="relative z-0 hidden lg:block">
-            <div className="absolute -top-20 -right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl opacity-50 animate-pulse"></div>
-            <div className="relative rounded-2xl overflow-hidden border-8 border-white shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
+            <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary/20 rounded-full blur-[100px] opacity-50"></div>
+            <div className="relative rounded-2xl overflow-hidden border-2 border-primary/30 shadow-[0_0_50px_rgba(157,78,221,0.2)]">
               <Image 
                 src={heroImage?.imageUrl || ''} 
-                alt="Synapse Hero" 
+                alt="SYNAI Technology" 
                 width={800} 
                 height={600}
-                className="object-cover"
-                data-ai-hint="modern technology studio"
+                className="object-cover opacity-90 grayscale-[0.5] hover:grayscale-0 transition-all duration-700"
+                data-ai-hint="futuristic AI laboratory"
                 priority
               />
             </div>
@@ -58,16 +51,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="py-16 bg-primary text-primary-foreground">
+      <section className="py-16 bg-card border-y border-primary/10">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {ESTADISTICAS.map((stat, idx) => (
               <div key={idx} className="text-center space-y-2">
-                <div className="text-4xl md:text-5xl font-headline font-bold text-accent">
+                <div className="text-4xl md:text-5xl font-headline font-bold text-primary">
                   {stat.valor}{stat.sufijo}
                 </div>
-                <div className="text-sm font-medium text-primary-foreground/60 uppercase tracking-widest">
+                <div className="text-xs font-medium text-muted-foreground uppercase tracking-widest">
                   {stat.etiqueta}
                 </div>
               </div>
@@ -76,28 +68,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services Highlight */}
-      <section className="py-24 bg-background">
+      <section className="py-24">
         <div className="container mx-auto px-4 md:px-6 text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-headline font-bold text-primary">Servicios Especializados</h2>
+          <h2 className="text-4xl md:text-5xl font-headline font-bold">Servicios de Élite</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Soluciones integrales diseñadas para cada etapa de tu crecimiento digital.
+            Combinamos ingeniería de software robusta con algoritmos de IA personalizados.
           </p>
         </div>
         
         <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-3 gap-8">
           {SERVICIOS.map((servicio) => (
-            <Card key={servicio.id} className="group hover:shadow-xl transition-all duration-300 border-border hover:border-accent">
+            <Card key={servicio.id} className="group hover:shadow-[0_0_30px_rgba(157,78,221,0.15)] transition-all duration-300 border-primary/10 hover:border-primary/40 bg-card/50">
               <CardContent className="p-8 space-y-6">
-                <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center group-hover:bg-accent transition-colors">
-                  <Rocket className="h-7 w-7 text-primary group-hover:text-accent-foreground" />
+                <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary transition-colors">
+                  <Rocket className="h-7 w-7 text-primary group-hover:text-primary-foreground" />
                 </div>
-                <h3 className="text-2xl font-headline font-bold text-primary">{servicio.titulo}</h3>
+                <h3 className="text-2xl font-headline font-bold text-foreground">{servicio.titulo}</h3>
                 <p className="text-muted-foreground">{servicio.descripcion}</p>
                 <div className="pt-4 flex items-center justify-between">
                   <span className="font-bold text-primary">{servicio.precio}</span>
-                  <Link href={`/servicios#${servicio.id}`} className="text-accent font-bold inline-flex items-center hover:underline">
-                    Saber más <ArrowRight className="ml-1 h-4 w-4" />
+                  <Link href={`/servicios#${servicio.id}`} className="text-primary font-bold inline-flex items-center hover:underline">
+                    Detalles <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
               </CardContent>
@@ -106,85 +97,79 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-24 bg-secondary/30">
+      <section className="py-24 bg-card/30">
         <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-12">
-            <h2 className="text-4xl md:text-5xl font-headline font-bold text-primary leading-tight">¿Por qué <span className="text-accent">Synapse Studio</span> es diferente?</h2>
+            <h2 className="text-4xl md:text-5xl font-headline font-bold leading-tight">¿Por qué <span className="text-primary">SYNAI</span> para tu software?</h2>
             
             <div className="space-y-8">
               <div className="flex gap-4">
-                <div className="mt-1"><CheckCircle2 className="h-6 w-6 text-accent" /></div>
+                <div className="mt-1"><CheckCircle2 className="h-6 w-6 text-primary" /></div>
                 <div>
-                  <h4 className="text-xl font-bold text-primary mb-2">Metodología Ágil</h4>
-                  <p className="text-muted-foreground">Iteramos rápido para entregarte valor real en el menor tiempo posible.</p>
+                  <h4 className="text-xl font-bold mb-2">IA con Propósito</h4>
+                  <p className="text-muted-foreground">No implementamos IA solo por moda, sino para resolver problemas críticos de negocio.</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="mt-1"><CheckCircle2 className="h-6 w-6 text-accent" /></div>
+                <div className="mt-1"><CheckCircle2 className="h-6 w-6 text-primary" /></div>
                 <div>
-                  <h4 className="text-xl font-bold text-primary mb-2">Diseño Centrado en el Usuario</h4>
-                  <p className="text-muted-foreground">No solo diseñamos interfaces, creamos experiencias que cautivan.</p>
+                  <h4 className="text-xl font-bold mb-2">Arquitectura Escalable</h4>
+                  <p className="text-muted-foreground">Construimos software que crece contigo, sin deuda técnica innecesaria.</p>
                 </div>
               </div>
               <div className="flex gap-4">
-                <div className="mt-1"><CheckCircle2 className="h-6 w-6 text-accent" /></div>
+                <div className="mt-1"><CheckCircle2 className="h-6 w-6 text-primary" /></div>
                 <div>
-                  <h4 className="text-xl font-bold text-primary mb-2">Soporte Continuo</h4>
-                  <p className="text-muted-foreground">Tu éxito es el nuestro. Te acompañamos incluso después del lanzamiento.</p>
+                  <h4 className="text-xl font-bold mb-2">Enfoque Consultivo</h4>
+                  <p className="text-muted-foreground">Somos tus socios tecnológicos, involucrados en tu éxito desde el día 1.</p>
                 </div>
               </div>
             </div>
-            
-            <Button asChild size="lg" className="bg-primary text-primary-foreground">
-              <Link href="/servicios">Explora todos nuestros servicios</Link>
-            </Button>
           </div>
           
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-4 pt-12">
-              <div className="bg-white p-6 rounded-2xl shadow-md border-l-4 border-accent">
-                <Users className="h-8 w-8 text-primary mb-4" />
-                <h5 className="font-bold text-lg">+50 Expertos</h5>
-                <p className="text-xs text-muted-foreground">Colaborando globalmente.</p>
+              <div className="bg-card p-6 rounded-2xl border border-primary/20 shadow-lg">
+                <BrainCircuit className="h-8 w-8 text-primary mb-4" />
+                <h5 className="font-bold text-lg">IA Expertos</h5>
+                <p className="text-xs text-muted-foreground">Deep Learning & NLP.</p>
               </div>
-              <div className="bg-white p-6 rounded-2xl shadow-md border-l-4 border-primary">
-                <Trophy className="h-8 w-8 text-accent mb-4" />
-                <h5 className="font-bold text-lg">98% Satisfacción</h5>
-                <p className="text-xs text-muted-foreground">Garantía de calidad.</p>
+              <div className="bg-card p-6 rounded-2xl border border-primary/20 shadow-lg">
+                <Trophy className="h-8 w-8 text-primary mb-4" />
+                <h5 className="font-bold text-lg">Top Quality</h5>
+                <p className="text-xs text-muted-foreground">QA riguroso.</p>
               </div>
             </div>
             <div className="space-y-4">
-              <div className="bg-white p-6 rounded-2xl shadow-md border-l-4 border-primary">
-                <Star className="h-8 w-8 text-accent mb-4" />
-                <h5 className="font-bold text-lg">Top 1% Agencia</h5>
-                <p className="text-xs text-muted-foreground">En el ranking de la industria.</p>
+              <div className="bg-card p-6 rounded-2xl border border-primary/20 shadow-lg">
+                <Star className="h-8 w-8 text-primary mb-4" />
+                <h5 className="font-bold text-lg">99% Éxito</h5>
+                <p className="text-xs text-muted-foreground">En entregas críticas.</p>
               </div>
-              <div className="bg-white p-6 rounded-2xl shadow-md border-l-4 border-accent">
+              <div className="bg-card p-6 rounded-2xl border border-primary/20 shadow-lg">
                 <Zap className="h-8 w-8 text-primary mb-4" />
-                <h5 className="font-bold text-lg">Entrega Rápida</h5>
-                <p className="text-xs text-muted-foreground">Maximizamos tu tiempo.</p>
+                <h5 className="font-bold text-lg">DevOps Agile</h5>
+                <p className="text-xs text-muted-foreground">CI/CD avanzado.</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Final */}
-      <section className="py-24 bg-background border-y">
-        <div className="container mx-auto px-4 md:px-6 bg-primary rounded-3xl p-12 md:p-20 text-center text-primary-foreground shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-accent/20 blur-3xl rounded-full translate-x-1/2 -translate-y-1/2"></div>
+      <section className="py-24">
+        <div className="container mx-auto px-4 md:px-6 bg-primary/10 rounded-3xl p-12 md:p-20 text-center relative overflow-hidden border border-primary/30">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 blur-[80px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
           <div className="relative z-10 max-w-3xl mx-auto space-y-8">
-            <h2 className="text-4xl md:text-6xl font-headline font-bold">¿Listo para escalar tu presencia digital?</h2>
-            <p className="text-xl text-primary-foreground/80">
-              No dejes pasar más tiempo. Agenda una consultoría gratuita y descubre el potencial real de tu proyecto.
+            <h2 className="text-4xl md:text-6xl font-headline font-bold">Lleva tu infraestructura al siguiente nivel</h2>
+            <p className="text-xl text-muted-foreground">
+              Agenda una llamada de descubrimiento técnica y hablemos de cómo la IA puede optimizar tu software actual.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-10 font-bold text-lg">
-                <Link href="/contacto">Solicitar Presupuesto</Link>
+              <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 px-10 font-bold text-lg shadow-[0_0_30px_rgba(157,78,221,0.4)]">
+                <Link href="/contacto">Solicitar Análisis IA</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-accent text-accent hover:bg-accent/10 px-10 font-bold text-lg">
-                <Link href="https://wa.me/34600000000">WhatsApp Directo</Link>
+              <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 px-10 font-bold text-lg">
+                <Link href="https://wa.me/34600000000">WhatsApp Técnico</Link>
               </Button>
             </div>
           </div>

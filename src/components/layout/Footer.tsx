@@ -1,78 +1,71 @@
 import Link from 'next/link';
 import { Zap, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 
-/**
- * Componente Footer con enlaces y redes sociales
- */
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-primary text-primary-foreground pt-16 pb-8 border-t border-primary/20">
+    <footer className="bg-card text-card-foreground pt-16 pb-8 border-t border-primary/20">
       <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
-        {/* Información de la Marca */}
         <div className="space-y-6">
           <Link href="/" className="flex items-center gap-2">
-            <Zap className="h-6 w-6 text-accent" />
-            <span className="font-headline text-2xl font-bold tracking-tighter">
-              Synapse Studio
+            <Zap className="h-6 w-6 text-primary" />
+            <span className="font-headline text-3xl font-bold tracking-tighter">
+              SYNAI
             </span>
           </Link>
-          <p className="text-primary-foreground/70 text-sm max-w-xs">
-            Transformando visiones digitales en experiencias excepcionales. Expertos en desarrollo, diseño y estrategia.
+          <p className="text-muted-foreground text-sm max-w-xs">
+            Consultoría experta en Inteligencia Artificial y desarrollo de software a medida. Impulsamos la innovación tecnológica de tu empresa.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="#" className="hover:text-accent transition-colors"><Facebook className="h-5 w-5" /></Link>
-            <Link href="#" className="hover:text-accent transition-colors"><Twitter className="h-5 w-5" /></Link>
-            <Link href="#" className="hover:text-accent transition-colors"><Instagram className="h-5 w-5" /></Link>
-            <Link href="#" className="hover:text-accent transition-colors"><Linkedin className="h-5 w-5" /></Link>
+            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Facebook className="h-5 w-5" /></Link>
+            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Twitter className="h-5 w-5" /></Link>
+            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Instagram className="h-5 w-5" /></Link>
+            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin className="h-5 w-5" /></Link>
           </div>
         </div>
 
-        {/* Enlaces Rápidos */}
         <div>
-          <h4 className="font-headline text-lg font-bold mb-6">Navegación</h4>
-          <ul className="space-y-4 text-sm text-primary-foreground/70">
-            <li><Link href="/" className="hover:text-accent transition-colors">Inicio</Link></li>
-            <li><Link href="/servicios" className="hover:text-accent transition-colors">Servicios</Link></li>
-            <li><Link href="/portafolio" className="hover:text-accent transition-colors">Portafolio</Link></li>
-            <li><Link href="/contacto" className="hover:text-accent transition-colors">Contacto</Link></li>
+          <h4 className="font-headline text-lg font-bold mb-6 text-primary">Navegación</h4>
+          <ul className="space-y-4 text-sm text-muted-foreground">
+            <li><Link href="/" className="hover:text-primary transition-colors">Inicio</Link></li>
+            <li><Link href="/servicios" className="hover:text-primary transition-colors">Servicios</Link></li>
+            <li><Link href="/portafolio" className="hover:text-primary transition-colors">Portafolio</Link></li>
+            <li><Link href="/contacto" className="hover:text-primary transition-colors">Contacto</Link></li>
           </ul>
         </div>
 
-        {/* Servicios Populares */}
         <div>
-          <h4 className="font-headline text-lg font-bold mb-6">Servicios</h4>
-          <ul className="space-y-4 text-sm text-primary-foreground/70">
-            <li>Desarrollo Web Next.js</li>
-            <li>Identidad de Marca</li>
-            <li>Marketing de Contenidos</li>
-            <li>Apps Móviles Híbridas</li>
+          <h4 className="font-headline text-lg font-bold mb-6 text-primary">Especialidades</h4>
+          <ul className="space-y-4 text-sm text-muted-foreground">
+            <li>Soluciones de IA Generativa</li>
+            <li>Machine Learning aplicado</li>
+            <li>Software Escalable</li>
+            <li>Automatización de Procesos</li>
           </ul>
         </div>
 
-        {/* Contacto Directo */}
         <div>
-          <h4 className="font-headline text-lg font-bold mb-6">Contacto</h4>
-          <ul className="space-y-4 text-sm text-primary-foreground/70">
+          <h4 className="font-headline text-lg font-bold mb-6 text-primary">Contacto</h4>
+          <ul className="space-y-4 text-sm text-muted-foreground">
             <li className="flex items-start gap-3">
-              <MapPin className="h-5 w-5 text-accent shrink-0" />
-              <span>Av. de la Innovación 123, Ciudad Tecnológica</span>
+              <MapPin className="h-5 w-5 text-primary shrink-0" />
+              <span>Sede Tecnológica, Distrio de Innovación</span>
             </li>
             <li className="flex items-center gap-3">
-              <Phone className="h-5 w-5 text-accent shrink-0" />
-              <span>+34 900 123 456</span>
+              <Phone className="h-5 w-5 text-primary shrink-0" />
+              <span>+34 900 SYNAI IA</span>
             </li>
             <li className="flex items-center gap-3">
-              <Mail className="h-5 w-5 text-accent shrink-0" />
-              <span>hola@synapsestudio.com</span>
+              <Mail className="h-5 w-5 text-primary shrink-0" />
+              <span>info@synai.tech</span>
             </li>
           </ul>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-6 mt-16 pt-8 border-t border-primary-foreground/10 text-center text-xs text-primary-foreground/50">
-        <p>&copy; {currentYear} Synapse Studio. Todos los derechos reservados.</p>
+      <div className="container mx-auto px-4 md:px-6 mt-16 pt-8 border-t border-primary/10 text-center text-xs text-muted-foreground">
+        <p>&copy; {currentYear} SYNAI. Consultoría en Inteligencia Artificial. Todos los derechos reservados.</p>
       </div>
     </footer>
   );

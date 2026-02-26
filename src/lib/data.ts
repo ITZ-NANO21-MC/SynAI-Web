@@ -1,5 +1,5 @@
 /**
- * Datos estáticos para Synapse Studio
+ * Datos estáticos para SYNAI
  */
 
 export interface Servicio {
@@ -24,30 +24,30 @@ export interface Proyecto {
 
 export const SERVICIOS: Servicio[] = [
   {
-    id: 'web-dev',
-    titulo: 'Desarrollo Web',
-    descripcion: 'Sitios web de alto rendimiento, escalables y optimizados para SEO que impulsan resultados.',
-    precio: 'Desde $1,200',
-    categoria: 'Tecnología',
-    icono: 'Code',
+    id: 'ai-consulting',
+    titulo: 'Consultoría en IA',
+    descripcion: 'Diseñamos e implementamos estrategias de IA generativa y modelos predictivos para optimizar tu negocio.',
+    precio: 'Desde $1,500',
+    categoria: 'Inteligencia Artificial',
+    icono: 'BrainCircuit',
     imagen: 'service-web'
   },
   {
-    id: 'branding',
-    titulo: 'Branding & Identidad',
-    descripcion: 'Creamos marcas memorables con una identidad visual coherente y poderosa.',
-    precio: 'Desde $800',
-    categoria: 'Diseño',
-    icono: 'Palette',
+    id: 'custom-software',
+    titulo: 'Software a Medida',
+    descripcion: 'Desarrollo de aplicaciones robustas y escalables utilizando el stack tecnológico más moderno.',
+    precio: 'Desde $2,500',
+    categoria: 'Desarrollo',
+    icono: 'Code',
     imagen: 'service-branding'
   },
   {
-    id: 'marketing',
-    titulo: 'Marketing Digital',
-    descripcion: 'Estrategias basadas en datos para aumentar tu visibilidad y conversiones.',
-    precio: 'Desde $500/mes',
-    categoria: 'Estrategia',
-    icono: 'TrendingUp',
+    id: 'automation',
+    titulo: 'Automatización Inteligente',
+    descripcion: 'Eliminamos tareas repetitivas integrando herramientas de IA en tus flujos de trabajo actuales.',
+    precio: 'Desde $1,000/mes',
+    categoria: 'Eficiencia',
+    icono: 'Zap',
     imagen: 'service-marketing'
   }
 ];
@@ -55,36 +55,36 @@ export const SERVICIOS: Servicio[] = [
 export const PORTAFOLIO: Proyecto[] = [
   {
     id: '1',
-    titulo: 'EcoStore Global',
-    cliente: 'EcoStore Inc.',
-    categoria: 'Web',
-    descripcion: 'Plataforma de comercio electrónico sostenible con integración de pagos avanzada.',
+    titulo: 'NeuralPredict Corp',
+    cliente: 'Logistics Global',
+    categoria: 'App',
+    descripcion: 'Sistema de predicción de demanda basado en Machine Learning para optimización de inventarios.',
     imagen: 'project-1',
     destacado: true
   },
   {
     id: '2',
-    titulo: 'FinTrack App',
-    cliente: 'Finanz Group',
-    categoria: 'App',
-    descripcion: 'Aplicación móvil intuitiva para la gestión de finanzas personales y criptomonedas.',
+    titulo: 'SmartDev Portal',
+    cliente: 'Tech Solutions',
+    categoria: 'Web',
+    descripcion: 'Plataforma corporativa escalable con integración de agentes de IA para soporte automatizado.',
     imagen: 'project-2',
     destacado: true
   },
   {
     id: '3',
-    titulo: 'NeoBrand Campaign',
-    cliente: 'Neo Fashion',
-    categoria: 'Marketing',
-    descripcion: 'Campaña integral de marketing digital que aumentó las ventas en un 40%.',
+    titulo: 'Cognitive Branding',
+    cliente: 'Fashion Retail',
+    categoria: 'Branding',
+    descripcion: 'Identidad visual generada y validada por algoritmos de análisis de sentimiento del consumidor.',
     imagen: 'project-3',
     destacado: false
   }
 ];
 
 export const ESTADISTICAS = [
-  { valor: 150, etiqueta: 'Proyectos Completados', sufijo: '+' },
-  { valor: 50, etiqueta: 'Clientes Felices', sufijo: '+' },
-  { valor: 12, etiqueta: 'Premios Ganados', sufijo: '' },
-  { valor: 98, etiqueta: 'Tasa de Retención', sufijo: '%' }
+  { valor: 100, etiqueta: 'Modelos IA Desplegados', sufijo: '+' },
+  { valor: 40, etiqueta: 'Empresas Transformadas', sufijo: '+' },
+  { valor: 5, etiqueta: 'Países con Operación', sufijo: '' },
+  { valor: 99.9, etiqueta: 'Uptime Soluciones', sufijo: '%' }
 ];

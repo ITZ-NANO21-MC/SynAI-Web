@@ -6,8 +6,8 @@ import WhatsAppButton from '@/components/shared/WhatsAppButton';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Synapse Studio | Agencia Creativa & Tecnología',
-  description: 'Impulsamos tu visión digital con diseño vanguardista, desarrollo robusto y estrategias de marketing inteligentes.',
+  title: 'SYNAI | Consultoría en IA & Desarrollo de Software',
+  description: 'Consultoría líder en Inteligencia Artificial y desarrollo de software personalizado para empresas innovadoras.',
 };
 
 export default function RootLayout({
