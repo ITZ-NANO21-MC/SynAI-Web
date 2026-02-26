@@ -50,3 +50,7 @@
     @apply font-headline tracking-tight;
   }
 }
+
+.text-glow {
+  text-shadow: 0 0 15px hsla(272, 72%, 58%, 0.5);
+}
