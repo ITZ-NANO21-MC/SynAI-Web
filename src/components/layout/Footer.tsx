@@ -11,11 +11,11 @@ export default function Footer() {
           <Link href="/" className="flex items-center gap-2">
             <Zap className="h-6 w-6 text-primary" />
             <span className="font-headline text-3xl font-bold tracking-tighter">
-              SYNAI
+              SynAI
             </span>
           </Link>
-          <p className="text-muted-foreground text-sm max-w-xs">
-            Consultoría experta en Inteligencia Artificial y desarrollo de software a medida. Impulsamos la innovación tecnológica de tu empresa.
+          <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
+            Sinergia e Inteligencia. Empresa emergente de consultoría en IA y desarrollo de software personalizado.
           </p>
           <div className="flex items-center gap-4">
             <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Facebook className="h-5 w-5" /></Link>
@@ -26,46 +26,46 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="font-headline text-lg font-bold mb-6 text-primary">Navegación</h4>
+          <h4 className="font-headline text-lg font-bold mb-6 text-primary">Mapa del Sitio</h4>
           <ul className="space-y-4 text-sm text-muted-foreground">
             <li><Link href="/" className="hover:text-primary transition-colors">Inicio</Link></li>
-            <li><Link href="/servicios" className="hover:text-primary transition-colors">Servicios</Link></li>
+            <li><Link href="/servicios" className="hover:text-primary transition-colors">Servicios Principales</Link></li>
             <li><Link href="/portafolio" className="hover:text-primary transition-colors">Portafolio</Link></li>
             <li><Link href="/contacto" className="hover:text-primary transition-colors">Contacto</Link></li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-headline text-lg font-bold mb-6 text-primary">Especialidades</h4>
+          <h4 className="font-headline text-lg font-bold mb-6 text-primary">Soluciones</h4>
           <ul className="space-y-4 text-sm text-muted-foreground">
-            <li>Soluciones de IA Generativa</li>
-            <li>Machine Learning aplicado</li>
-            <li>Software Escalable</li>
-            <li>Automatización de Procesos</li>
+            <li>Agrotech Inteligente</li>
+            <li>Salud Digital & Telemedicina</li>
+            <li>Turismo & Chatbots</li>
+            <li>Software SaaS Escalable</li>
           </ul>
         </div>
 
         <div>
-          <h4 className="font-headline text-lg font-bold mb-6 text-primary">Contacto</h4>
+          <h4 className="font-headline text-lg font-bold mb-6 text-primary">SynAI Falcón</h4>
           <ul className="space-y-4 text-sm text-muted-foreground">
             <li className="flex items-start gap-3">
               <MapPin className="h-5 w-5 text-primary shrink-0" />
-              <span>Sede Tecnológica, Distrio de Innovación</span>
+              <span>Falcón, Venezuela</span>
             </li>
             <li className="flex items-center gap-3">
               <Phone className="h-5 w-5 text-primary shrink-0" />
-              <span>+34 900 SYNAI IA</span>
+              <span>+58 412 SYNAI IA</span>
             </li>
             <li className="flex items-center gap-3">
               <Mail className="h-5 w-5 text-primary shrink-0" />
-              <span>info@synai.tech</span>
+              <span>hola@synai.tech</span>
             </li>
           </ul>
         </div>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 mt-16 pt-8 border-t border-primary/10 text-center text-xs text-muted-foreground">
-        <p>&copy; {currentYear} SYNAI. Consultoría en Inteligencia Artificial. Todos los derechos reservados.</p>
+        <p>&copy; {currentYear} SynAI. Innovación desde Falcón para el mundo. Todos los derechos reservados.</p>
       </div>
     </footer>
   );

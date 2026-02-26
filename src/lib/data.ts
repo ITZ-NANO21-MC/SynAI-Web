@@ -1,11 +1,12 @@
 /**
- * Datos estáticos para SYNAI
+ * Datos estáticos para SynAI
  */
 
 export interface Servicio {
   id: string;
   titulo: string;
   descripcion: string;
+  detalles: string[];
   precio: string;
   categoria: string;
   icono: string;
@@ -26,27 +27,42 @@ export const SERVICIOS: Servicio[] = [
   {
     id: 'ai-consulting',
     titulo: 'Consultoría en IA',
-    descripcion: 'Diseñamos e implementamos estrategias de IA generativa y modelos predictivos para optimizar tu negocio.',
-    precio: 'Desde $1,500',
-    categoria: 'Inteligencia Artificial',
+    descripcion: 'Especialistas en diagnosticar y diseñar estrategias de implementación de IA para optimizar procesos empresariales.',
+    detalles: [
+      'Diagnóstico de oportunidades de automatización',
+      'Diseño de estrategias de implementación de IA',
+      'Capacitación en herramientas de IA para equipos'
+    ],
+    precio: 'Consultar',
+    categoria: 'Consultoría',
     icono: 'BrainCircuit',
     imagen: 'service-web'
   },
   {
     id: 'custom-software',
-    titulo: 'Software a Medida',
-    descripcion: 'Desarrollo de aplicaciones robustas y escalables utilizando el stack tecnológico más moderno.',
-    precio: 'Desde $2,500',
+    titulo: 'Desarrollo de Software Personalizado',
+    descripcion: 'Construimos software robusto con IA integrada, diseñado para escalar y conectar tus sistemas.',
+    detalles: [
+      'Aplicaciones web/móviles con integración de IA',
+      'Soluciones SaaS escalables',
+      'APIs personalizadas para conectividad'
+    ],
+    precio: 'Consultar',
     categoria: 'Desarrollo',
     icono: 'Code',
     imagen: 'service-branding'
   },
   {
-    id: 'automation',
-    titulo: 'Automatización Inteligente',
-    descripcion: 'Eliminamos tareas repetitivas integrando herramientas de IA en tus flujos de trabajo actuales.',
-    precio: 'Desde $1,000/mes',
-    categoria: 'Eficiencia',
+    id: 'specialized-products',
+    titulo: 'Productos Especializados por Nicho',
+    descripcion: 'Soluciones tecnológicas verticales diseñadas para sectores críticos como agricultura, turismo y salud.',
+    detalles: [
+      'Agrotech: Monitoreo inteligente de cultivos',
+      'Turismo: Chatbots multidioma y recomendación',
+      'Salud Digital: Análisis de imágenes médicas'
+    ],
+    precio: 'Consultar',
+    categoria: 'Nichos',
     icono: 'Zap',
     imagen: 'service-marketing'
   }
@@ -85,6 +101,6 @@ export const PORTAFOLIO: Proyecto[] = [
 export const ESTADISTICAS = [
   { valor: 100, etiqueta: 'Modelos IA Desplegados', sufijo: '+' },
   { valor: 40, etiqueta: 'Empresas Transformadas', sufijo: '+' },
-  { valor: 5, etiqueta: 'Países con Operación', sufijo: '' },
+  { valor: 5, etiqueta: 'Sectores Impactados', sufijo: '' },
   { valor: 99.9, etiqueta: 'Uptime Soluciones', sufijo: '%' }
 ];
