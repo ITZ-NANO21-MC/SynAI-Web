@@ -19,7 +19,7 @@ export default function HomePage() {
               Falcón, Venezuela
             </div>
             <h1 className="text-5xl md:text-7xl font-headline font-bold leading-tight tracking-tight">
-              Sinergia e Inteligencia con <span className="text-primary text-glow">SynAI</span>
+              Sinergia e Inteligencia con <span className="text-primary text-glow">SYNAI</span>
             </h1>
             <p className="text-xl text-muted-foreground leading-relaxed">
               Transformamos negocios con <span className="text-primary font-bold">consultoría especializada</span> en IA y desarrollo de software personalizado. Creamos soluciones integradas e inteligentes.
@@ -39,7 +39,7 @@ export default function HomePage() {
             <div className="relative rounded-2xl overflow-hidden border-2 border-primary/30 shadow-[0_0_50px_rgba(157,78,221,0.2)]">
               <Image 
                 src={heroImage?.imageUrl || ''} 
-                alt="SynAI Technology" 
+                alt="SYNAI Technology" 
                 width={800} 
                 height={600}
                 className="object-cover opacity-90 grayscale-[0.5] hover:grayscale-0 transition-all duration-700"
@@ -56,7 +56,7 @@ export default function HomePage() {
         <div className="container mx-auto px-4 md:px-6 max-w-4xl text-center space-y-8">
           <h2 className="text-3xl md:text-5xl font-headline font-bold text-primary">¿QUÉ ES SYNAI?</h2>
           <p className="text-xl md:text-2xl leading-relaxed text-foreground">
-            SynAI es una empresa emergente de consultoría especializada en Inteligencia Artificial y desarrollo de software personalizado, con base en <span className="text-primary font-bold">Falcón, Venezuela</span>.
+            SYNAI es una empresa emergente de consultoría especializada en Inteligencia Artificial y desarrollo de software personalizado, con base en <span className="text-primary font-bold">Falcón, Venezuela</span>.
           </p>
           <div className="p-6 rounded-2xl bg-primary/5 border border-primary/20 italic text-muted-foreground text-lg">
             "El nombre fusiona 'Syn' (de sinergia/sistema) + 'AI' (Inteligencia Artificial), reflejando nuestro enfoque en crear soluciones tecnológicas integradas e inteligentes."
@@ -112,7 +112,7 @@ export default function HomePage() {
       <section className="py-24 bg-card/30">
         <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-12">
-            <h2 className="text-4xl md:text-5xl font-headline font-bold leading-tight">¿Por qué <span className="text-primary">SynAI</span>?</h2>
+            <h2 className="text-4xl md:text-5xl font-headline font-bold leading-tight">¿Por qué <span className="text-primary">SYNAI</span>?</h2>
             
             <div className="space-y-8">
               <div className="flex gap-4">
@@ -181,7 +181,7 @@ export default function HomePage() {
                 <Link href="/contacto">Solicitar Análisis IA</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10 px-10 font-bold text-lg">
-                <Link href="https://wa.me/58412000000">WhatsApp Falcón</Link>
+                <Link href="https://wa.me/584246684134">WhatsApp Falcón</Link>
               </Button>
             </div>
           </div>

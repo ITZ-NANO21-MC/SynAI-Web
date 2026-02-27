@@ -25,7 +25,7 @@ export default function ContactoPage() {
       setIsSubmitting(false);
       toast({
         title: "¡Consulta Recibida!",
-        description: "Un arquitecto de soluciones de SynAI Falcón se pondrá en contacto contigo pronto.",
+        description: "Un arquitecto de soluciones de SYNAI Falcón se pondrá en contacto contigo pronto.",
       });
       (e.target as HTMLFormElement).reset();
     }, 1500);
@@ -72,7 +72,7 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <h4 className="font-bold">Consultoría Estratégica</h4>
-                  <p className="text-muted-foreground">hola@synai.tech</p>
+                  <p className="text-muted-foreground">sistemaia11@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-primary/10">
@@ -81,7 +81,7 @@ export default function ContactoPage() {
                 </div>
                 <div>
                   <h4 className="font-bold">WhatsApp Venezuela</h4>
-                  <p className="text-muted-foreground">+58 412 SYNAI IA</p>
+                  <p className="text-muted-foreground">+58 424 668 4134</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 p-4 rounded-xl bg-card border border-primary/10">

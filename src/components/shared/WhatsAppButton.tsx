@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/button';
  * Botón flotante para contacto rápido vía WhatsApp
  */
 export default function WhatsAppButton() {
-  const phoneNumber = "34600000000"; // Reemplazar con número real
-  const message = "Hola Synapse Studio! Me gustaría solicitar información sobre sus servicios.";
+  const phoneNumber = "584246684134";
+  const message = "Hola SYNAI! Me gustaría solicitar información sobre sus servicios de IA y desarrollo.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (

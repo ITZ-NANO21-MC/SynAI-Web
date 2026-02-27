@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Zap, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { Zap, Facebook, Youtube, Instagram, Github, Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -11,17 +11,17 @@ export default function Footer() {
           <Link href="/" className="flex items-center gap-2">
             <Zap className="h-6 w-6 text-primary" />
             <span className="font-headline text-3xl font-bold tracking-tighter">
-              SynAI
+              SYNAI
             </span>
           </Link>
           <p className="text-muted-foreground text-sm max-w-xs leading-relaxed">
-            Sinergia e Inteligencia. Empresa emergente de consultoría en IA y desarrollo de software personalizado.
+            Sinergia e Inteligencia. Empresa emergente de consultoría en IA y desarrollo de software personalizado desde Falcón, Venezuela.
           </p>
           <div className="flex items-center gap-4">
-            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Facebook className="h-5 w-5" /></Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Twitter className="h-5 w-5" /></Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Instagram className="h-5 w-5" /></Link>
-            <Link href="#" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin className="h-5 w-5" /></Link>
+            <Link href="https://www.facebook.com/profile.php?id=61574043867042" target="_blank" className="text-muted-foreground hover:text-primary transition-colors"><Facebook className="h-5 w-5" /></Link>
+            <Link href="https://www.youtube.com/@SYNAI-k2p" target="_blank" className="text-muted-foreground hover:text-primary transition-colors"><Youtube className="h-5 w-5" /></Link>
+            <Link href="https://www.instagram.com/synai.ve?igsh=ZGUzMzM3NWJiOQ==" target="_blank" className="text-muted-foreground hover:text-primary transition-colors"><Instagram className="h-5 w-5" /></Link>
+            <Link href="https://github.com/ITZ-NANO21-MC" target="_blank" className="text-muted-foreground hover:text-primary transition-colors"><Github className="h-5 w-5" /></Link>
           </div>
         </div>
 
@@ -46,7 +46,7 @@ export default function Footer() {
         </div>
 
         <div>
-          <h4 className="font-headline text-lg font-bold mb-6 text-primary">SynAI Falcón</h4>
+          <h4 className="font-headline text-lg font-bold mb-6 text-primary">SYNAI Falcón</h4>
           <ul className="space-y-4 text-sm text-muted-foreground">
             <li className="flex items-start gap-3">
               <MapPin className="h-5 w-5 text-primary shrink-0" />
@@ -54,18 +54,18 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-3">
               <Phone className="h-5 w-5 text-primary shrink-0" />
-              <span>+58 412 SYNAI IA</span>
+              <span>+58 424 668 4134</span>
             </li>
             <li className="flex items-center gap-3">
               <Mail className="h-5 w-5 text-primary shrink-0" />
-              <span>hola@synai.tech</span>
+              <span>sistemaia11@gmail.com</span>
             </li>
           </ul>
         </div>
       </div>
 
       <div className="container mx-auto px-4 md:px-6 mt-16 pt-8 border-t border-primary/10 text-center text-xs text-muted-foreground">
-        <p>&copy; {currentYear} SynAI. Innovación desde Falcón para el mundo. Todos los derechos reservados.</p>
+        <p>&copy; {currentYear} SYNAI. Innovación desde Falcón para el mundo. Todos los derechos reservados.</p>
       </div>
     </footer>
   );
