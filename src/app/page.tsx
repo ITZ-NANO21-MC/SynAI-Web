@@ -98,9 +98,9 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-2xl font-headline font-bold text-foreground">{servicio.titulo}</h3>
                 <p className="text-muted-foreground">{servicio.descripcion}</p>
-                <div className="pt-4 flex items-center justify-between">
+                <div className="pt-4 flex items-center justify-between gap-4">
                   <span className="font-bold text-primary uppercase text-sm tracking-tighter">{servicio.precio}</span>
-                  <Link href={`/servicios#${servicio.id}`} className="text-primary font-bold inline-flex items-center hover:underline">
+                  <Link href={`/servicios#${servicio.id}`} className="text-primary font-bold inline-flex items-center hover:underline shrink-0">
                     Detalles <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </div>
