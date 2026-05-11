@@ -4,36 +4,37 @@
 
 @layer base {
   :root {
-    /* Fondo Oscuro: #0D0D0D */
-    --background: 0 0% 5%;
-    /* Texto Base: #FFFFFF */
+    /* Fondo Azul Profundo Elegante: #0F0F1B */
+    --background: 240 29% 8%;
+    /* Texto Blanco Puro */
     --foreground: 0 0% 100%;
     
-    --card: 0 0% 8%;
+    --card: 240 29% 10%;
     --card-foreground: 0 0% 100%;
     
-    --popover: 0 0% 8%;
+    --popover: 240 29% 10%;
     --popover-foreground: 0 0% 100%;
     
-    /* Acento Neon: #9D4EDD (Violeta) */
-    --primary: 272 72% 58%;
+    /* Púrpura SYNAI: #8E44AD */
+    --primary: 282 44% 47%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 272 20% 15%;
-    --secondary-foreground: 272 72% 80%;
+    --secondary: 240 29% 15%;
+    --secondary-foreground: 282 44% 80%;
     
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 70%;
+    --muted: 240 20% 15%;
+    --muted-foreground: 240 10% 70%;
     
-    --accent: 272 72% 58%;
-    --accent-foreground: 0 0% 100%;
+    /* Acento Cian Neón: #00F2FF */
+    --accent: 183 100% 50%;
+    --accent-foreground: 240 29% 8%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 272 72% 58%;
+    --border: 240 20% 20%;
+    --input: 240 20% 20%;
+    --ring: 282 44% 47%;
     
     --radius: 0.75rem;
   }
@@ -52,5 +53,17 @@
 }
 
 .text-glow {
-  text-shadow: 0 0 15px hsla(272, 72%, 58%, 0.5);
+  text-shadow: 0 0 15px hsla(282, 44%, 47%, 0.6);
+}
+
+.text-glow-accent {
+  text-shadow: 0 0 15px hsla(183, 100%, 50%, 0.6);
+}
+
+.shadow-neon-primary {
+  box-shadow: 0 0 25px hsla(282, 44%, 47%, 0.25);
+}
+
+.shadow-neon-accent {
+  box-shadow: 0 0 25px hsla(183, 100%, 50%, 0.25);
 }
