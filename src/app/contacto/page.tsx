@@ -143,7 +143,7 @@ export default function ContactoPage() {
                 <label className="text-sm font-bold">Mensaje</label>
                 <Textarea placeholder="Explica cómo podemos ayudarte..." className="min-h-[150px] bg-background/50 border-primary/10" required />
               </div>
-              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-[0_0_20px_rgba(157,78,221,0.3)]" disabled={isSubmitting}>
+              <Button type="submit" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-neon-primary" disabled={isSubmitting}>
                 {isSubmitting ? "Procesando..." : "Enviar Solicitud"} <Send className="ml-2 h-4 w-4" />
               </Button>
             </form>
@@ -191,7 +191,7 @@ export default function ContactoPage() {
               </Button>
             </div>
 
-            <div className="bg-card rounded-2xl p-6 shadow-2xl border border-primary/20 min-h-[300px] flex flex-col justify-center relative overflow-hidden">
+            <div className="bg-card rounded-2xl p-6 shadow-2xl border border-primary/20 min-h-[350px] flex flex-col justify-center relative overflow-hidden">
               <div className="absolute top-0 right-0 p-4 opacity-5">
                 <Search className="h-32 w-32 text-primary" />
               </div>
@@ -200,15 +200,28 @@ export default function ContactoPage() {
                   <div className="flex items-center gap-2 text-accent font-bold">
                     <CheckCircle className="h-5 w-5" /> Optimización Completada
                   </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-muted-foreground uppercase mb-2 tracking-widest">Vista Previa Google (Título)</h4>
-                    <p className="p-3 bg-primary/10 rounded font-medium border border-primary/20 text-primary">{seoResult.metaTitle}</p>
-                    <p className="text-[10px] text-muted-foreground mt-1">{seoResult.metaTitle.length} caracteres (Ideal: &lt;60)</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-muted-foreground uppercase mb-2 tracking-widest">Vista Previa Google (Descripción)</h4>
-                    <p className="p-3 bg-primary/10 rounded text-sm leading-relaxed border border-primary/20">{seoResult.metaDescription}</p>
-                    <p className="text-[10px] text-muted-foreground mt-1">{seoResult.metaDescription.length} caracteres (Ideal: &lt;160)</p>
+                  <div className="space-y-4">
+                    <div className="bg-background/40 p-4 rounded-xl border border-white/5">
+                      <h4 className="text-[10px] font-bold text-muted-foreground uppercase mb-2 tracking-[0.2em]">Vista Previa Google (Título)</h4>
+                      <p className="text-xl font-medium text-primary leading-tight hover:underline cursor-pointer">{seoResult.metaTitle}</p>
+                      <div className="flex justify-between items-center mt-2">
+                        <p className="text-[10px] text-muted-foreground">{seoResult.metaTitle.length} caracteres</p>
+                        <p className={seoResult.metaTitle.length < 60 ? "text-[10px] text-accent font-bold" : "text-[10px] text-destructive"}>
+                          {seoResult.metaTitle.length < 60 ? "Ideal (<60)" : "Demasiado largo"}
+                        </p>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-background/40 p-4 rounded-xl border border-white/5">
+                      <h4 className="text-[10px] font-bold text-muted-foreground uppercase mb-2 tracking-[0.2em]">Vista Previa Google (Descripción)</h4>
+                      <p className="text-sm leading-relaxed text-foreground/80">{seoResult.metaDescription}</p>
+                      <div className="flex justify-between items-center mt-2">
+                        <p className="text-[10px] text-muted-foreground">{seoResult.metaDescription.length} caracteres</p>
+                        <p className={seoResult.metaDescription.length < 160 ? "text-[10px] text-accent font-bold" : "text-[10px] text-destructive"}>
+                          {seoResult.metaDescription.length < 160 ? "Ideal (<160)" : "Demasiado largo"}
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
               ) : (
