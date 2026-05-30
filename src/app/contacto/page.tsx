@@ -2,7 +2,7 @@
 "use client"
 
 import * as React from 'react';
-import { Mail, Phone, MapPin, Send, Wand2, CheckCircle, BrainCircuit, Search, Zap } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Wand2, CheckCircle, BrainCircuit, Search, Zap, Lightbulb } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -17,6 +17,13 @@ export default function ContactoPage() {
   const [seoContent, setSeoContent] = React.useState('');
   const [seoResult, setSeoResult] = React.useState<GenerateSeoMetadataOutput | null>(null);
   const [isGeneratingSeo, setIsGeneratingSeo] = React.useState(false);
+
+  const loadExample = () => {
+    setSeoContent("Ofrecemos consultoría avanzada en inteligencia artificial para el sector turístico en el estado Falcón, implementando chatbots inteligentes que hablan 5 idiomas para hoteles y posadas.");
+    toast({
+      description: "Ejemplo cargado. ¡Haz clic en Generar Metadatos!",
+    });
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -153,24 +160,26 @@ export default function ContactoPage() {
               </div>
               <h2 className="text-3xl md:text-4xl font-headline font-bold">Optimizador SEO SynAI</h2>
               <div className="space-y-4 text-muted-foreground">
-                <p>Nuestra IA analiza tu propuesta de valor para generar:</p>
-                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
-                  <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> Meta Títulos optimizados</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> Meta Descripciones CTR</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> Integración de Keywords</li>
-                  <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> Estándares de Google</li>
-                </ul>
+                <p>Nuestra IA analiza tu propuesta de valor para generar títulos y descripciones optimizadas para Google.</p>
+                <div className="flex flex-col gap-2">
+                  <button 
+                    onClick={loadExample}
+                    className="flex items-center gap-2 text-xs text-accent hover:underline w-fit transition-all"
+                  >
+                    <Lightbulb className="h-3 w-3" /> ¿No sabes qué escribir? Cargar ejemplo
+                  </button>
+                  <Textarea 
+                    value={seoContent}
+                    onChange={(e) => setSeoContent(e.target.value)}
+                    placeholder="Ejemplo: Desarrollo de sistemas de riego inteligente con sensores IoT para cultivos de melón en la península de Paraguaná..."
+                    className="bg-background border-primary/10 min-h-[120px]"
+                  />
+                </div>
               </div>
-              <Textarea 
-                value={seoContent}
-                onChange={(e) => setSeoContent(e.target.value)}
-                placeholder="Escribe aquí de qué trata tu proyecto o servicio..."
-                className="bg-background border-primary/10 min-h-[100px]"
-              />
               <Button 
                 onClick={handleGenerateSeo} 
                 disabled={isGeneratingSeo || !seoContent}
-                className="bg-primary text-primary-foreground font-bold px-8"
+                className="bg-primary text-primary-foreground font-bold px-8 shadow-neon-primary"
               >
                 {isGeneratingSeo ? "Procesando con IA..." : "Generar Metadatos SEO"} <Wand2 className="ml-2 h-4 w-4" />
               </Button>
