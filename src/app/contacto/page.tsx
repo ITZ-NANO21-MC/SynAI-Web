@@ -1,7 +1,8 @@
+
 "use client"
 
 import * as React from 'react';
-import { Mail, Phone, MapPin, Send, Wand2, CheckCircle, BrainCircuit } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Wand2, CheckCircle, BrainCircuit, Search, Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -124,7 +125,7 @@ export default function ContactoPage() {
               </div>
               <div className="space-y-2">
                 <label className="text-sm font-bold">Tipo de Solución</label>
-                <select className="flex h-10 w-full rounded-md border border-primary/10 bg-background/50 px-3 py-2 text-sm focus:ring-2 focus:ring-primary">
+                <select className="flex h-10 w-full rounded-md border border-primary/10 bg-background/50 px-3 py-2 text-sm focus:ring-2 focus:ring-primary focus:outline-none">
                   <option>Consultoría IA</option>
                   <option>Software a Medida</option>
                   <option>Producto (Agro/Salud/Turismo)</option>
@@ -144,50 +145,61 @@ export default function ContactoPage() {
       </section>
 
       <section className="container mx-auto px-4 md:px-6 py-24 border-t border-primary/10 mt-20">
-        <div className="bg-primary/5 rounded-3xl p-8 md:p-12 border border-primary/10">
+        <div className="bg-primary/5 rounded-3xl p-8 md:p-12 border border-primary/20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary font-bold text-xs uppercase">
-                <Wand2 className="h-3 w-3" /> IA Experimental
+                <Zap className="h-3 w-3" /> Herramienta Inteligente
               </div>
               <h2 className="text-3xl md:text-4xl font-headline font-bold">Optimizador SEO SynAI</h2>
-              <p className="text-muted-foreground">
-                Prueba nuestra herramienta de IA para generar metadatos optimizados al instante.
-              </p>
+              <div className="space-y-4 text-muted-foreground">
+                <p>Nuestra IA analiza tu propuesta de valor para generar:</p>
+                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-sm">
+                  <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> Meta Títulos optimizados</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> Meta Descripciones CTR</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> Integración de Keywords</li>
+                  <li className="flex items-center gap-2"><CheckCircle className="h-4 w-4 text-accent" /> Estándares de Google</li>
+                </ul>
+              </div>
               <Textarea 
                 value={seoContent}
                 onChange={(e) => setSeoContent(e.target.value)}
-                placeholder="Describe tu servicio o producto..."
-                className="bg-background border-primary/10"
+                placeholder="Escribe aquí de qué trata tu proyecto o servicio..."
+                className="bg-background border-primary/10 min-h-[100px]"
               />
               <Button 
                 onClick={handleGenerateSeo} 
                 disabled={isGeneratingSeo || !seoContent}
-                className="bg-primary text-primary-foreground"
+                className="bg-primary text-primary-foreground font-bold px-8"
               >
-                {isGeneratingSeo ? "Procesando..." : "Generar con SynAI IA"}
+                {isGeneratingSeo ? "Procesando con IA..." : "Generar Metadatos SEO"} <Wand2 className="ml-2 h-4 w-4" />
               </Button>
             </div>
 
-            <div className="bg-card rounded-2xl p-6 shadow-sm border border-primary/10 min-h-[300px] flex flex-col justify-center">
+            <div className="bg-card rounded-2xl p-6 shadow-2xl border border-primary/20 min-h-[300px] flex flex-col justify-center relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-4 opacity-5">
+                <Search className="h-32 w-32 text-primary" />
+              </div>
               {seoResult ? (
-                <div className="space-y-6 animate-fade-in">
-                  <div className="flex items-center gap-2 text-primary font-bold">
-                    <CheckCircle className="h-5 w-5" /> Análisis Completado
+                <div className="space-y-6 animate-in fade-in slide-in-from-bottom-4 duration-500 relative z-10">
+                  <div className="flex items-center gap-2 text-accent font-bold">
+                    <CheckCircle className="h-5 w-5" /> Optimización Completada
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-muted-foreground uppercase mb-2">Meta Título</h4>
-                    <p className="p-3 bg-primary/10 rounded font-medium border border-primary/20">{seoResult.metaTitle}</p>
+                    <h4 className="text-xs font-bold text-muted-foreground uppercase mb-2 tracking-widest">Vista Previa Google (Título)</h4>
+                    <p className="p-3 bg-primary/10 rounded font-medium border border-primary/20 text-primary">{seoResult.metaTitle}</p>
+                    <p className="text-[10px] text-muted-foreground mt-1">{seoResult.metaTitle.length} caracteres (Ideal: &lt;60)</p>
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-muted-foreground uppercase mb-2">Meta Descripción</h4>
+                    <h4 className="text-xs font-bold text-muted-foreground uppercase mb-2 tracking-widest">Vista Previa Google (Descripción)</h4>
                     <p className="p-3 bg-primary/10 rounded text-sm leading-relaxed border border-primary/20">{seoResult.metaDescription}</p>
+                    <p className="text-[10px] text-muted-foreground mt-1">{seoResult.metaDescription.length} caracteres (Ideal: &lt;160)</p>
                   </div>
                 </div>
               ) : (
-                <div className="text-center text-muted-foreground space-y-2">
-                  <BrainCircuit className="h-10 w-10 mx-auto opacity-20 text-primary" />
-                  <p>Esperando datos para análisis...</p>
+                <div className="text-center text-muted-foreground space-y-4">
+                  <BrainCircuit className="h-12 w-12 mx-auto opacity-20 text-primary" />
+                  <p className="max-w-[250px] mx-auto text-sm">Introduce una descripción a la izquierda para ver la magia de la IA aplicada al SEO.</p>
                 </div>
               )}
             </div>
