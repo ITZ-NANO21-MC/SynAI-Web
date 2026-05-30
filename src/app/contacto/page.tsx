@@ -2,7 +2,7 @@
 "use client"
 
 import * as React from 'react';
-import { Mail, Phone, MapPin, Send, Wand2, CheckCircle, BrainCircuit, Search, Zap, Lightbulb } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Wand2, CheckCircle, BrainCircuit, Search, Zap, Lightbulb, Target, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -156,11 +156,17 @@ export default function ContactoPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary font-bold text-xs uppercase">
-                <Zap className="h-3 w-3" /> Herramienta Inteligente
+                <Target className="h-3 w-3" /> Herramienta para Emprendedores
               </div>
               <h2 className="text-3xl md:text-4xl font-headline font-bold">Optimizador SEO SynAI</h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>Nuestra IA analiza tu propuesta de valor para generar títulos y descripciones optimizadas para Google.</p>
+                <div className="flex items-start gap-4 py-2 border-l-2 border-primary/30 pl-4 bg-primary/5 rounded-r-lg">
+                  <Users className="h-5 w-5 text-accent mt-1 shrink-0" />
+                  <p className="text-xs">
+                    Diseñado para <strong>PYMES y emprendedores</strong> de Falcón que buscan escalar digitalmente sin necesidad de ser expertos en marketing.
+                  </p>
+                </div>
                 <div className="flex flex-col gap-2">
                   <button 
                     onClick={loadExample}
