@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 
 /**
- * Página de Servicios de SynAI
+ * Página de Servicios de SYNAI
  */
 export default function ServiciosPage() {
   return (
@@ -77,22 +77,18 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      {/* Enfoque en Nichos */}
+      {/* Especialización de Vanguardia */}
       <section className="py-24 bg-primary/5">
         <div className="container mx-auto px-4 md:px-6">
           <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary text-center mb-16">Especialización de Vanguardia</h2>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-card p-8 rounded-2xl border border-primary/20 hover:border-primary transition-all">
-              <h3 className="text-xl font-bold mb-4 text-primary">Agrotech</h3>
-              <p className="text-muted-foreground">Monitoreo inteligente de cultivos y optimización de riego para la agricultura moderna en Venezuela y el mundo.</p>
+              <h3 className="text-xl font-bold mb-4 text-primary">Salud Digital y Telemedicina</h3>
+              <p className="text-muted-foreground">Análisis de imágenes médicas y telemedicina asistida por IA para mejorar el diagnóstico y la atención al paciente.</p>
             </div>
             <div className="bg-card p-8 rounded-2xl border border-primary/20 hover:border-primary transition-all">
-              <h3 className="text-xl font-bold mb-4 text-primary">Turismo</h3>
-              <p className="text-muted-foreground">Chatbots multidioma y sistemas de recomendación para potenciar destinos turísticos con tecnología de punta.</p>
-            </div>
-            <div className="bg-card p-8 rounded-2xl border border-primary/20 hover:border-primary transition-all">
-              <h3 className="text-xl font-bold mb-4 text-primary">Salud Digital</h3>
-              <p className="text-muted-foreground">Análisis de imágenes médicas y telemedicina asistida por IA para mejorar el diagnóstico y la atención.</p>
+              <h3 className="text-xl font-bold mb-4 text-primary">Automatización de Procesos Empresariales</h3>
+              <p className="text-muted-foreground">Chatbots transaccionales (WhatsApp, web), flujos de trabajo automatizados, integración de sistemas (CRM, inventarios, facturación).</p>
             </div>
           </div>
         </div>

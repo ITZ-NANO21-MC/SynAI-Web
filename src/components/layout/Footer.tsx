@@ -38,9 +38,9 @@ export default function Footer() {
         <div>
           <h4 className="font-headline text-lg font-bold mb-6 text-primary">Soluciones</h4>
           <ul className="space-y-4 text-sm text-muted-foreground">
-            <li>Agrotech Inteligente</li>
+            <li>Automatización Empresarial</li>
             <li>Salud Digital & Telemedicina</li>
-            <li>Turismo & Chatbots</li>
+            <li>Chatbots Transaccionales</li>
             <li>Software SaaS Escalable</li>
           </ul>
         </div>
