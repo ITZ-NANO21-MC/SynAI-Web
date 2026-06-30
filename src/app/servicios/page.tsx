@@ -14,21 +14,21 @@ export default function ServiciosPage() {
       {/* Header de Página */}
       <section className="bg-primary py-20 text-primary-foreground">
         <div className="container mx-auto px-4 md:px-6 text-center space-y-6">
-          <h1 className="text-4xl md:text-6xl font-headline font-bold">Servicios Principales</h1>
+          <h1 className="text-4xl md:text-6xl font-headline font-bold">Nuestras Soluciones</h1>
           <p className="text-xl text-primary-foreground/70 max-w-3xl mx-auto">
-            Desde Falcón, Venezuela, creamos soluciones tecnológicas integradas e inteligentes para el mercado global.
+            Desde soporte técnico local en Falcón hasta consultoría avanzada en IA para el mercado global.
           </p>
         </div>
       </section>
 
       {/* Grid de Servicios y Detalles */}
       <section className="py-24 container mx-auto px-4 md:px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
           {SERVICIOS.map((servicio) => {
             const imgData = PlaceHolderImages.find(p => p.id === servicio.imagen);
             return (
               <Card key={servicio.id} id={servicio.id} className="flex flex-col h-full border-border hover:border-accent transition-colors shadow-sm overflow-hidden group bg-card">
-                <div className="relative h-48 w-full">
+                <div className="relative h-64 w-full">
                   <Image 
                     src={imgData?.imageUrl || ''} 
                     alt={servicio.titulo} 
@@ -43,24 +43,32 @@ export default function ServiciosPage() {
                 <CardHeader className="space-y-1">
                   <CardTitle className="text-2xl font-headline font-bold text-primary">{servicio.titulo}</CardTitle>
                 </CardHeader>
-                <CardContent className="flex-1 space-y-4">
-                  <p className="text-muted-foreground">{servicio.descripcion}</p>
-                  <ul className="space-y-2 text-sm">
-                    {servicio.detalles.map((detalle, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <Check className="h-4 w-4 text-primary mt-1 shrink-0" /> 
-                        <span>{detalle}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="pt-4 border-t border-primary/10">
-                    <span className="text-3xl font-bold text-primary">{servicio.precio}</span>
-                    <span className="text-muted-foreground text-sm block">Presupuesto adaptado a tu proyecto</span>
+                <CardContent className="flex-1 space-y-6">
+                  <div className="space-y-2">
+                    <p className="font-bold text-accent italic">
+                      {servicio.id === 'technical-support' ? 'Llámanos si necesitas:' : 'Llámanos si buscas:'}
+                    </p>
+                    <ul className="space-y-3">
+                      {servicio.detalles.map((detalle, i) => (
+                        <li key={i} className="flex items-start gap-3">
+                          <Check className="h-5 w-5 text-accent mt-0.5 shrink-0" /> 
+                          <span className="text-muted-foreground">{detalle}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="pt-6 border-t border-primary/10 space-y-2">
+                    <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest">Contáctanos</p>
+                    <div className="flex flex-col">
+                      <span className="text-2xl font-bold text-primary">(+58) 0424-6684134</span>
+                      <span className="text-sm text-muted-foreground">Atención inmediata en Falcón</span>
+                    </div>
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-[0_0_15px_rgba(157,78,221,0.2)]">
-                    <a href="/contacto">Solicitar Diagnóstico <ArrowRight className="ml-2 h-4 w-4" /></a>
+                  <Button asChild className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-neon-primary py-6">
+                    <a href="https://wa.me/584246684134" target="_blank">Agendar Servicio <ArrowRight className="ml-2 h-5 w-5" /></a>
                   </Button>
                 </CardFooter>
               </Card>
@@ -72,7 +80,7 @@ export default function ServiciosPage() {
       {/* Enfoque en Nichos */}
       <section className="py-24 bg-primary/5">
         <div className="container mx-auto px-4 md:px-6">
-          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary text-center mb-16">Especialización por Nicho</h2>
+          <h2 className="text-3xl md:text-4xl font-headline font-bold text-primary text-center mb-16">Especialización de Vanguardia</h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-card p-8 rounded-2xl border border-primary/20 hover:border-primary transition-all">
               <h3 className="text-xl font-bold mb-4 text-primary">Agrotech</h3>

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { ArrowRight, CheckCircle2, Star, Rocket, Trophy, Zap, BrainCircuit, MapPin } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Star, Rocket, Trophy, Zap, BrainCircuit, MapPin, Laptop } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ESTADISTICAS, SERVICIOS } from '@/lib/data';
@@ -85,22 +85,32 @@ export default function HomePage() {
 
       <section className="py-24">
         <div className="container mx-auto px-4 md:px-6 text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-5xl font-headline font-bold">Servicios Principales</h2>
+          <h2 className="text-4xl md:text-5xl font-headline font-bold">Nuestros Servicios</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Soluciones robustas diseñadas para la era de la inteligencia artificial.
+            Soluciones robustas para el mantenimiento de tus equipos y el desarrollo de tu visión digital.
           </p>
         </div>
         
-        <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-3 gap-8">
+        <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-8">
           {SERVICIOS.map((servicio) => (
             <Card key={servicio.id} className="group hover:shadow-neon-primary transition-all duration-300 border-primary/10 hover:border-primary/40 bg-card/50 backdrop-blur-sm">
               <CardContent className="p-8 space-y-6">
-                <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary transition-colors">
-                  <Rocket className="h-7 w-7 text-primary group-hover:text-primary-foreground" />
+                <div className="flex justify-between items-start">
+                  <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary transition-colors">
+                    {servicio.icono === 'Laptop' ? (
+                      <Laptop className="h-7 w-7 text-primary group-hover:text-primary-foreground" />
+                    ) : (
+                      <BrainCircuit className="h-7 w-7 text-primary group-hover:text-primary-foreground" />
+                    )}
+                  </div>
                 </div>
                 <h3 className="text-2xl font-headline font-bold text-foreground">{servicio.titulo}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{servicio.descripcion}</p>
-                <div className="pt-4 flex items-center justify-end border-t border-white/5">
+                <div className="pt-4 flex items-center justify-between border-t border-white/5">
+                  <div className="flex flex-col">
+                    <span className="text-xs text-muted-foreground uppercase">Contacto Directo</span>
+                    <span className="text-accent font-bold text-sm">(+58) 0424-6684134</span>
+                  </div>
                   <Link href={`/servicios#${servicio.id}`} className="text-accent font-bold inline-flex items-center hover:underline shrink-0 text-sm">
                     Detalles <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
@@ -127,8 +137,8 @@ export default function HomePage() {
               <div className="flex gap-4">
                 <div className="mt-1"><CheckCircle2 className="h-6 w-6 text-accent" /></div>
                 <div>
-                  <h4 className="text-xl font-bold mb-2">Enfoque por Nicho</h4>
-                  <p className="text-muted-foreground">Especialización profunda en Agrotech, Turismo y Salud Digital.</p>
+                  <h4 className="text-xl font-bold mb-2">Soporte Confiable</h4>
+                  <p className="text-muted-foreground">Especialistas en hardware y software para mantener tu infraestructura al 100%.</p>
                 </div>
               </div>
               <div className="flex gap-4">

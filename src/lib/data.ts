@@ -1,5 +1,5 @@
 /**
- * Datos estáticos para SynAI
+ * Datos estáticos para SYNAI
  */
 
 export interface Servicio {
@@ -25,46 +25,35 @@ export interface Proyecto {
 
 export const SERVICIOS: Servicio[] = [
   {
-    id: 'ai-consulting',
-    titulo: 'Consultoría en IA',
-    descripcion: 'Especialistas en diagnosticar y diseñar estrategias de implementación de IA para optimizar procesos empresariales.',
+    id: 'technical-support',
+    titulo: 'Servicio Técnico en Computadores',
+    descripcion: 'Llámanos si necesitas un equipo en óptimas condiciones para tu productividad diaria.',
     detalles: [
-      'Diagnóstico de oportunidades de automatización',
-      'Diseño de estrategias de implementación de IA',
-      'Capacitación en herramientas de IA para equipos'
+      'Mantenimiento preventivo y correctivo',
+      'Limpieza física profunda',
+      'Formateo y optimización de sistema',
+      'Instalación de programas esenciales',
+      'Respaldos de información segura'
     ],
-    precio: 'Consultar',
-    categoria: 'Consultoría',
-    icono: 'BrainCircuit',
+    precio: 'Desde Falcón',
+    categoria: 'Soporte',
+    icono: 'Laptop',
     imagen: 'service-web'
   },
   {
-    id: 'custom-software',
-    titulo: 'Desarrollo de Software Personalizado',
-    descripcion: 'Construimos software robusto con IA integrada, diseñado para escalar y conectar tus sistemas.',
+    id: 'ai-software-consulting',
+    titulo: 'IA & Desarrollo a Medida',
+    descripcion: 'Llámanos si buscas llevar tu empresa al siguiente nivel con tecnología inteligente.',
     detalles: [
-      'Aplicaciones web/móviles con integración de IA',
-      'Soluciones SaaS escalables',
-      'APIs personalizadas para conectividad'
+      'Diagnóstico de Automatización Gratuito',
+      'Aplicaciones Web/Móviles con IA',
+      'Chatbots Inteligentes (NLU)',
+      'Optimización de Procesos con IA'
     ],
-    precio: 'Consultar',
-    categoria: 'Desarrollo',
-    icono: 'Code',
+    precio: 'Consultoría Pro',
+    categoria: 'Innovación',
+    icono: 'BrainCircuit',
     imagen: 'service-branding'
-  },
-  {
-    id: 'specialized-products',
-    titulo: 'Productos Especializados por Nicho',
-    descripcion: 'Soluciones tecnológicas verticales diseñadas para sectores críticos como agricultura, turismo y salud.',
-    detalles: [
-      'Agrotech: Monitoreo inteligente de cultivos',
-      'Turismo: Chatbots multidioma y recomendación',
-      'Salud Digital: Análisis de imágenes médicas'
-    ],
-    precio: 'Consultar',
-    categoria: 'Nichos',
-    icono: 'Zap',
-    imagen: 'service-marketing'
   }
 ];
 
