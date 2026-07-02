@@ -59,7 +59,7 @@ export default function HomePage() {
           <p className="text-xl md:text-2xl leading-relaxed text-foreground/90">
             SYNAI es una empresa emergente de consultoría especializada en Inteligencia Artificial y desarrollo de software personalizado, con base en <span className="text-primary font-bold">Falcón, Venezuela</span>.
           </p>
-          <div className="p-8 rounded-2xl bg-primary/5 border border-primary/20 italic text-muted-foreground text-lg relative">
+          <div className="p-8 rounded-2xl bg-primary/5 border border-primary/20 italic text-muted-foreground text-lg relative text-left">
             <div className="absolute top-0 left-0 w-1 h-full bg-primary rounded-l-2xl"></div>
             "El nombre fusiona 'Syn' (de sinergia/sistema) + 'AI' (Inteligencia Artificial), reflejando nuestro enfoque en crear soluciones tecnológicas integradas e inteligentes."
           </div>
@@ -68,7 +68,7 @@ export default function HomePage() {
 
       <section className="py-16 bg-card border-b border-white/5">
         <div className="container mx-auto px-4 md:px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {ESTADISTICAS.map((stat, idx) => (
               <div key={idx} className="text-center space-y-2">
                 <div className="text-4xl md:text-5xl font-headline font-bold text-primary">
@@ -109,7 +109,7 @@ export default function HomePage() {
                 <div className="pt-4 flex items-center justify-between border-t border-white/5">
                   <div className="flex flex-col">
                     <span className="text-xs text-muted-foreground uppercase">Contacto Directo</span>
-                    <span className="text-accent font-bold text-sm">(+58) 0424-6684134</span>
+                    <span className="text-accent font-bold text-sm">{servicio.precio}</span>
                   </div>
                   <Link href={`/servicios#${servicio.id}`} className="text-accent font-bold inline-flex items-center hover:underline shrink-0 text-sm">
                     Detalles <ArrowRight className="ml-1 h-4 w-4" />

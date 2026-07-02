@@ -29,20 +29,20 @@ export const SERVICIOS: Servicio[] = [
     titulo: 'Servicio Técnico en Computadores',
     descripcion: 'Llámanos si necesitas un equipo en óptimas condiciones para tu productividad diaria.',
     detalles: [
-      'Mantenimiento preventivo y correctivo',
-      'Limpieza física profunda',
-      'Formateo y optimización de sistema',
-      'Instalación de programas esenciales',
-      'Respaldos de información segura'
+      'Mantenimiento',
+      'Limpieza',
+      'Formateo',
+      'Instalación de programas',
+      'Respaldos'
     ],
-    precio: 'Desde Falcón',
+    precio: '(+58) 0424-6684134, SYNAI',
     categoria: 'Soporte',
     icono: 'Laptop',
     imagen: 'service-web'
   },
   {
     id: 'ai-software-consulting',
-    titulo: 'IA & Desarrollo a Medida',
+    titulo: 'Consultoría IA & Desarrollo a Medida',
     descripcion: 'Llámanos si buscas llevar tu empresa al siguiente nivel con tecnología inteligente.',
     detalles: [
       'Diagnóstico de Automatización Gratuito',
@@ -50,7 +50,7 @@ export const SERVICIOS: Servicio[] = [
       'Chatbots Inteligentes (NLU)',
       'Optimización de Procesos con IA'
     ],
-    precio: 'Consultoría Pro',
+    precio: '(+58) 0424-6684134',
     categoria: 'Innovación',
     icono: 'BrainCircuit',
     imagen: 'service-branding'
@@ -88,8 +88,7 @@ export const PORTAFOLIO: Proyecto[] = [
 ];
 
 export const ESTADISTICAS = [
-  { valor: 100, etiqueta: 'Modelos IA Desplegados', sufijo: '+' },
-  { valor: 40, etiqueta: 'Empresas Transformadas', sufijo: '+' },
-  { valor: 5, etiqueta: 'Sectores Impactados', sufijo: '' },
-  { valor: 99.9, etiqueta: 'Uptime Soluciones', sufijo: '%' }
+  { valor: '06', etiqueta: 'Modelos IA Desplegados', sufijo: '+' },
+  { valor: '12', etiqueta: 'SOFTWARES DESARROLLADOS', sufijo: '+' },
+  { valor: '5', etiqueta: 'SOLUCIONES', sufijo: '' }
 ];
