@@ -90,5 +90,5 @@ export const PORTAFOLIO: Proyecto[] = [
 export const ESTADISTICAS = [
   { valor: '06', etiqueta: 'Modelos IA Desplegados', sufijo: '+' },
   { valor: '12', etiqueta: 'SOFTWARES DESARROLLADOS', sufijo: '+' },
-  { valor: '5', etiqueta: 'SOLUCIONES', sufijo: '' }
+  { valor: '5', etiqueta: 'SOLUCIONES', sufijo: '+' }
 ];
