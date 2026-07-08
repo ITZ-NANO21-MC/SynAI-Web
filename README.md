@@ -1,14 +1,21 @@
-# Synapse Studio - Agencia Digital
+# SYNAI - Agencia Digital
 
-Este proyecto es una aplicación web moderna construida con Next.js 15, TypeScript, Tailwind CSS y Framer Motion para Synapse Studio.
+Este proyecto es una aplicación web moderna construida con Next.js 15, TypeScript, Tailwind CSS y Framer Motion para SYNAI.
 
 ## Características
 
-- **Diseño Vanguardista**: Interfaz profesional con los colores de marca (#178282 y #0DF280).
-- **IA SEO Assistant**: Herramienta integrada para generar metadatos optimizados.
-- **Portafolio Dinámico**: Grid filtrable por categorías.
-- **Formularios de Contacto**: Integración preparada para EmailJS.
+- **Diseño de Vanguardia**: Interfaz profesional con colores profundos y acentos neón (#0F0F1B, #8E44AD, #00F2FF).
+- **Servicios Duales**: Soporte técnico local en Falcón y Consultoría avanzada en IA.
 - **Totalmente Responsive**: Optimizado para móviles, tablets y escritorio.
+
+## Uso de Imágenes Personalizadas
+
+Para reemplazar las imágenes del sitio por las tuyas:
+
+1. Localiza la carpeta `public` en la raíz del proyecto.
+2. Sube tus archivos con los siguientes nombres:
+   - Para el Servicio Técnico: `servicio-tecnico.jpg`
+3. El sistema cargará automáticamente estas imágenes en lugar de los placeholders.
 
 ## Instalación
 
@@ -17,34 +24,10 @@ Este proyecto es una aplicación web moderna construida con Next.js 15, TypeScri
    ```bash
    npm install
    ```
-3. Configurar variables de entorno (Crear archivo `.env.local`):
-   ```env
-   # EmailJS
-   NEXT_PUBLIC_EMAILJS_SERVICE_ID=your_service_id
-   NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=your_template_id
-   NEXT_PUBLIC_EMAILJS_PUBLIC_KEY=your_public_key
-
-   # Geoapify
-   NEXT_PUBLIC_GEOAPIFY_API_KEY=your_api_key
-
-   # GenAI (Gemini)
-   GOOGLE_GENAI_API_KEY=your_gemini_key
-   ```
-4. Ejecutar el servidor de desarrollo:
+3. Ejecutar el servidor de desarrollo:
    ```bash
    npm run dev
    ```
 
-## Estructura del Proyecto
-
-- `src/app`: Rutas y layouts principales.
-- `src/components`: Componentes reutilizables divididos por layouts, secciones y UI.
-- `src/lib`: Datos estáticos y utilidades.
-- `src/ai`: Lógica de inteligencia artificial para el asistente SEO.
-
-## Despliegue
-
-El proyecto está optimizado para ser desplegado en Vercel o Firebase App Hosting.
-
 ---
-© 2025 Synapse Studio. Desarrollado con ❤️ y tecnología de punta.
+© 2025 SYNAI. Desarrollado con tecnología de punta desde Falcón, Venezuela.
