@@ -53,7 +53,7 @@ export const SERVICIOS: Servicio[] = [
     precio: '(+58) 0424-6684134',
     categoria: 'Innovación',
     icono: 'BrainCircuit',
-    imagen: 'service-branding'
+    imagen: 'consultoria-ia'
   }
 ];
 

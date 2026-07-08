@@ -13,6 +13,12 @@
       "imageHint": "computer repair service"
     },
     {
+      "id": "consultoria-ia",
+      "description": "Consultoría avanzada en Inteligencia Artificial",
+      "imageUrl": "/consultoria-ia.jpg",
+      "imageHint": "artificial intelligence consulting"
+    },
+    {
       "id": "service-web",
       "description": "Desarrollo web profesional",
       "imageUrl": "https://images.unsplash.com/photo-1489438497675-d1a8d6e0632e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXNpZ24lMjBjb2Rpbmd8ZW58MHx8fHwxNzcyMDYwNzE5fDA&ixlib=rb-4.1.0&q=80&w=1080",
