@@ -38,7 +38,7 @@ export const SERVICIOS: Servicio[] = [
     precio: '(+58) 0424-6684134, SYNAI',
     categoria: 'Soporte',
     icono: 'Laptop',
-    imagen: 'service-web'
+    imagen: 'servicio-tecnico'
   },
   {
     id: 'ai-software-consulting',
