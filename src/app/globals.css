@@ -4,39 +4,40 @@
 
 @layer base {
   :root {
-    /* Fondo Azul Profundo Elegante: #0F0F1B */
-    --background: 240 29% 8%;
-    /* Texto Blanco Puro */
-    --foreground: 0 0% 100%;
+    /* Fondo Blanco Puro: #FFFFFF */
+    --background: 0 0% 100%;
+    /* Texto Negro Absoluto: #000000 */
+    --foreground: 0 0% 0%;
     
-    --card: 240 29% 10%;
-    --card-foreground: 0 0% 100%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 0%;
     
-    --popover: 240 29% 10%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
     
-    /* Púrpura SYNAI: #8E44AD */
-    --primary: 282 44% 47%;
+    /* Negro Absoluto (Cuerpo): #000000 */
+    --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
     
-    --secondary: 240 29% 15%;
-    --secondary-foreground: 282 44% 80%;
+    /* Gris Neutro Corporativo: #8E8E93 */
+    --secondary: 240 2% 57%;
+    --secondary-foreground: 0 0% 100%;
     
-    --muted: 240 20% 15%;
-    --muted-foreground: 240 10% 70%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
     
-    /* Acento Cian Neón: #00F2FF */
+    /* Cian Tecnológico: #00F2FF */
     --accent: 183 100% 50%;
-    --accent-foreground: 240 29% 8%;
+    --accent-foreground: 0 0% 0%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 240 20% 20%;
-    --input: 240 20% 20%;
-    --ring: 282 44% 47%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 183 100% 50%;
     
-    --radius: 0.75rem;
+    --radius: 0.5rem;
   }
 }
 
@@ -48,22 +49,23 @@
     @apply bg-background text-foreground font-body;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-headline tracking-tight;
+    @apply font-headline tracking-tight uppercase;
   }
 }
 
-.text-glow {
-  text-shadow: 0 0 15px hsla(282, 44%, 47%, 0.6);
+.text-glow-cyan {
+  text-shadow: 0 0 15px hsla(183, 100%, 50%, 0.4);
 }
 
-.text-glow-accent {
-  text-shadow: 0 0 15px hsla(183, 100%, 50%, 0.6);
+.shadow-soft {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
 }
 
-.shadow-neon-primary {
-  box-shadow: 0 0 25px hsla(282, 44%, 47%, 0.25);
+.border-gradient-cyan {
+  border-image: linear-gradient(to right, #00F2FF, #8E8E93) 1;
 }
 
-.shadow-neon-accent {
-  box-shadow: 0 0 25px hsla(183, 100%, 50%, 0.25);
+.btn-futuristic {
+  @apply relative overflow-hidden transition-all duration-300;
+  clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0% 30%);
 }
