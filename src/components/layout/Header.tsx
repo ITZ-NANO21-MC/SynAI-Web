@@ -2,8 +2,9 @@
 
 import * as React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, Zap } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -34,8 +35,14 @@ export default function Header() {
     )}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="bg-primary p-2 rounded-lg group-hover:scale-110 group-hover:shadow-neon-primary transition-all">
-            <Zap className="h-6 w-6 text-primary-foreground" />
+          <div className="relative w-10 h-10 group-hover:scale-110 transition-transform">
+            <Image 
+              src="/logo.png" 
+              alt="SYNAI Logo" 
+              fill
+              className="object-contain"
+              priority
+            />
           </div>
           <span className="font-headline text-3xl font-bold tracking-tighter text-primary">
             SYNAI
@@ -72,7 +79,13 @@ export default function Header() {
             <SheetContent side="right" className="bg-background border-l border-white/10">
               <div className="flex flex-col gap-6 mt-10">
                 <div className="flex items-center gap-2 mb-4">
-                  <Zap className="h-8 w-8 text-primary" />
+                  <Image 
+                    src="/logo.png" 
+                    alt="SYNAI Logo" 
+                    width={40} 
+                    height={40} 
+                    className="object-contain"
+                  />
                   <span className="font-headline text-3xl font-bold text-primary">SYNAI</span>
                 </div>
                 {NAV_LINKS.map((link) => (

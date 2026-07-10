@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { Zap, Facebook, Youtube, Instagram, Github, Mail, Phone, MapPin } from 'lucide-react';
+import Image from 'next/image';
+import { Facebook, Youtube, Instagram, Github, Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,7 +10,13 @@ export default function Footer() {
       <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
         <div className="space-y-6">
           <Link href="/" className="flex items-center gap-2">
-            <Zap className="h-6 w-6 text-primary" />
+            <Image 
+              src="/logo.png" 
+              alt="SYNAI Logo" 
+              width={32} 
+              height={32} 
+              className="object-contain"
+            />
             <span className="font-headline text-3xl font-bold tracking-tighter">
               SYNAI
             </span>

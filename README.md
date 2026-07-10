@@ -10,13 +10,17 @@ Este proyecto es una aplicación web moderna construida con Next.js 15, TypeScri
 
 ## Uso de Imágenes Personalizadas
 
-Para reemplazar las imágenes del sitio por las tuyas:
+Para reemplazar las imágenes del sitio por las tuyas, sube tus archivos a la carpeta `public` con estos nombres exactos:
 
-1. Localiza la carpeta `public` en la raíz del proyecto.
-2. Sube tus archivos con los siguientes nombres exactos:
+1. **Logo e Icono**:
+   - Logo principal (navbar/footer): `logo.png`
+   - Icono de pestaña (favicon): `favicon.ico`
+
+2. **Servicios**:
    - Para el Servicio Técnico: `servicio-tecnico.jpg`
    - Para la Consultoría IA: `consultoria-ia.jpg`
-3. El sistema cargará automáticamente estas imágenes en lugar de los placeholders.
+
+El sistema cargará automáticamente estos archivos en lugar de los placeholders.
 
 ## Instalación
 
