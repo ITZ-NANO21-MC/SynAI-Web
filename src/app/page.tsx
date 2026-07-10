@@ -1,19 +1,19 @@
 import Link from 'next/link';
-import Image from 'next/image';
 import { ArrowRight, CheckCircle2, Star, Rocket, Trophy, Zap, BrainCircuit, MapPin, Laptop } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ESTADISTICAS, SERVICIOS } from '@/lib/data';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function HomePage() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-bg');
-
   return (
     <div className="flex flex-col w-full bg-background">
-      <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-        <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-12 items-center">
-          <div className="z-10 space-y-8 max-w-2xl">
+      <section className="relative min-h-[80vh] flex items-center pt-20 overflow-hidden">
+        {/* Elementos decorativos de fondo */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] opacity-50 pointer-events-none"></div>
+        <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-accent/10 rounded-full blur-[100px] opacity-30 pointer-events-none"></div>
+
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent font-medium text-sm">
               <MapPin className="h-4 w-4" />
               Falcón, Venezuela
@@ -21,32 +21,16 @@ export default function HomePage() {
             <h1 className="text-5xl md:text-7xl font-headline font-bold leading-tight tracking-tight">
               Sinergia e Inteligencia con <span className="text-primary text-glow">SYNAI</span>
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
-              Transformamos negocios con <span className="text-accent font-bold">consultoría especializada</span> en IA y desarrollo de software personalizado. Creamos soluciones integradas e inteligentes.
+            <p className="text-xl text-muted-foreground leading-relaxed max-w-2xl">
+              Transformamos negocios con <span className="text-accent font-bold">consultoría especializada</span> en IA y desarrollo de software personalizado desde el occidente venezolano.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 font-bold shadow-neon-primary">
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-10 font-bold shadow-neon-primary text-lg">
                 <Link href="/contacto">Iniciar Consultoría <ArrowRight className="ml-2 h-5 w-5" /></Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-accent text-accent hover:bg-accent/10 px-8 font-bold">
+              <Button asChild size="lg" variant="outline" className="border-accent text-accent hover:bg-accent/10 px-10 font-bold text-lg">
                 <Link href="/servicios">Nuestras Soluciones</Link>
               </Button>
-            </div>
-          </div>
-          
-          <div className="relative z-0 hidden lg:block">
-            <div className="absolute -top-20 -right-20 w-96 h-96 bg-primary/10 rounded-full blur-[100px] opacity-40"></div>
-            <div className="absolute -bottom-10 -left-10 w-72 h-72 bg-accent/10 rounded-full blur-[100px] opacity-30"></div>
-            <div className="relative rounded-2xl overflow-hidden border-2 border-primary/20 shadow-neon-primary bg-card">
-              <Image 
-                src={heroImage?.imageUrl || ''} 
-                alt="SYNAI Technology" 
-                width={800} 
-                height={600}
-                className="object-cover opacity-80 mix-blend-screen hover:opacity-100 transition-all duration-700"
-                data-ai-hint="futuristic AI laboratory"
-                priority
-              />
             </div>
           </div>
         </div>

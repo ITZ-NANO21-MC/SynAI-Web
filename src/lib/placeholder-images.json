@@ -1,12 +1,6 @@
 {
   "placeholderImages": [
     {
-      "id": "hero-bg",
-      "description": "Fondo futurista de estudio creativo",
-      "imageUrl": "https://images.unsplash.com/photo-1763365894901-675a14ca8888?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxjcmVhdGl2ZSUyMHN0dWRpbyUyMHRlY2hub2xvZ3l8ZW58MHx8fHwxNzcyMDYwNzE5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "imageHint": "creative studio technology"
-    },
-    {
       "id": "servicio-tecnico",
       "description": "Servicio técnico especializado en computadores",
       "imageUrl": "/servicio-tecnico.jpg",
