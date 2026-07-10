@@ -61,7 +61,7 @@ export default function ServiciosPage() {
                   <div className="pt-6 border-t border-primary/10 space-y-2">
                     <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest">Contáctanos</p>
                     <div className="flex flex-col">
-                      <span className="text-2xl font-bold text-primary">(+58) 0424-6684134</span>
+                      <span className="text-2xl font-bold text-primary">{servicio.id === 'technical-support' ? '(+58) 0424-6684134, SYNAI' : '(+58) 0424-6684134'}</span>
                       <span className="text-sm text-muted-foreground">Atención inmediata en Falcón</span>
                     </div>
                   </div>

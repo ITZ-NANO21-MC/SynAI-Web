@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ArrowRight, CheckCircle2, Star, Rocket, Trophy, Zap, BrainCircuit, MapPin, Laptop } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Star, Trophy, Zap, BrainCircuit, MapPin, Laptop } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ESTADISTICAS, SERVICIOS } from '@/lib/data';
