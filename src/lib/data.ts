@@ -35,7 +35,7 @@ export const SERVICIOS: Servicio[] = [
       'Instalación de programas',
       'Respaldos'
     ],
-    precio: '(+58) 0424-6684134, SYNAI',
+    precio: '(+58) 0424-6684134',
     categoria: 'Soporte',
     icono: 'Laptop',
     imagen: 'servicio-tecnico'
