@@ -127,7 +127,7 @@ export default function HomePage() {
               <Button asChild size="lg" className="bg-accent text-black hover:bg-white hover:text-black px-12 h-14 font-bold text-lg rounded-none transition-all">
                 <Link href="/contacto">SOLICITAR ANÁLISIS</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="border-2 border-white text-white hover:bg-accent hover:text-black hover:border-accent px-12 h-14 font-bold text-lg rounded-none transition-all">
+              <Button asChild size="lg" variant="outline" className="border-2 border-white text-black hover:bg-accent hover:text-black hover:border-accent px-12 h-14 font-bold text-lg rounded-none transition-all">
                 <Link href="https://wa.me/584246684134">WHATSAPP DIRECTO</Link>
               </Button>
             </div>
