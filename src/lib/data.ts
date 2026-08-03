@@ -19,6 +19,10 @@ export interface Proyecto {
   cliente: string;
   categoria: 'Web' | 'App';
   descripcion: string;
+  resumen: string;
+  caracteristicas: string[];
+  tecnologias: string[];
+  arquitectura: string;
   imagen: string;
   destacado: boolean;
 }
@@ -59,11 +63,22 @@ export const SERVICIOS: Servicio[] = [
 
 export const PORTAFOLIO: Proyecto[] = [
   {
-    id: '4',
-    titulo: 'Inventario Móvil Flask',
-    cliente: 'Tienda de Telefonía',
+    id: 'inventario-flask-01',
+    titulo: 'Sistema de Inventario Flask',
+    cliente: 'Tienda de Telefonía Móvil',
     categoria: 'Web',
-    descripcion: 'Sistema automatizado de gestión de repuestos con alertas de stock, respaldos diarios y auditoría de seguridad.',
+    descripcion: 'Gestión automatizada de repuestos con alertas de stock y respaldos diarios.',
+    resumen: 'Una aplicación web robusta diseñada para optimizar la cadena de suministro de repuestos y accesorios de telefonía móvil. El sistema automatiza tareas críticas como la vigilancia de niveles de stock y la generación de informes periódicos.',
+    caracteristicas: [
+      'CRUD completo de productos y modelos',
+      'Alertas automáticas por correo (Stock Bajo)',
+      'Informes automáticos matutinos y vespertinos',
+      'Respaldo diario de base de datos vía email',
+      'Actualización masiva de precios por tasa de cambio',
+      'Exportación a Excel y auditoría de seguridad'
+    ],
+    tecnologias: ['Python', 'Flask', 'SQLAlchemy', 'APScheduler', 'SQLite', 'Pytest'],
+    arquitectura: 'MVC + Capa de Servicios (Navegador → Rutas → Controladores → Servicios → Modelos → DB)',
     imagen: 'inventario-flask',
     destacado: true
   }
