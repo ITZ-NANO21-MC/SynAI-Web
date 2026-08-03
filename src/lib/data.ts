@@ -73,6 +73,39 @@ export const SERVICIOS: Servicio[] = [
 
 export const PORTAFOLIO: Proyecto[] = [
   {
+    id: 'techanalitica-web',
+    titulo: 'TechAnalítica',
+    cliente: 'Análisis y Guías de Compra',
+    categoria: 'Web',
+    descripcion: 'Plataforma de análisis tecnológico con comparativas de hardware, guías de productividad e integración de mapas.',
+    resumen: 'TechAnalítica es un ecosistema digital para el análisis profundo de tecnología. Integra herramientas de IA para comparativas, geolocalización avanzada y automatización de newsletters.',
+    caracteristicas: [
+      'Análisis de AI PCs (Local vs Nube)',
+      'Guías de productividad para Tablets',
+      'Catálogo de accesorios con filtros dinámicos',
+      'Integración de mapas con MapLibre/Geoapify',
+      'Automatización de Newsletter con Mailchimp',
+      'Formularios seguros con EmailJS'
+    ],
+    tecnologias: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Genkit', 'MapLibre', 'EmailJS'],
+    arquitecturaTitulo: 'Next.js App Router + Multi-API',
+    arquitectura: 'Frontend (Next.js) → Genkit (IA) → MapLibre (Mapas) → EmailJS/Mailchimp (Comunicaciones)',
+    tareas: [
+      {
+        titulo: 'Geolocalización',
+        descripcion: 'Renderizado dinámico de mapas y búsqueda de puntos de interés.',
+        icono: 'Zap'
+      },
+      {
+        titulo: 'AI Hardware Analysis',
+        descripcion: 'Procesamiento de especificaciones técnicas mediante Genkit.',
+        icono: 'BrainCircuit'
+      }
+    ],
+    imagen: 'techanalitica-web',
+    destacado: true
+  },
+  {
     id: 'tb-detector-ai',
     titulo: 'TB-Detector-AI',
     cliente: 'Salud Digital / Diagnóstico IA',

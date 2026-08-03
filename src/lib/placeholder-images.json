@@ -1,6 +1,12 @@
 {
   "placeholderImages": [
     {
+      "id": "techanalitica-web",
+      "description": "TechAnalítica - Plataforma de Análisis Tecnológico",
+      "imageUrl": "/techanalitica-web.jpg?v=1.1",
+      "imageHint": "technology analysis website"
+    },
+    {
       "id": "servicio-tecnico",
       "description": "Servicio técnico especializado en computadores",
       "imageUrl": "/servicio-tecnico.jpg?v=1.1",
