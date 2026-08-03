@@ -6,7 +6,7 @@ import { PORTAFOLIO, type Proyecto } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ExternalLink, Search, CheckCircle2, Database, Code2, Layers, Clock } from 'lucide-react';
+import { ExternalLink, CheckCircle2, Database, Code2, Layers, Clock, Zap, BrainCircuit } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -15,6 +15,13 @@ import {
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
+
+const IconMap = {
+  Clock,
+  Database,
+  Zap,
+  BrainCircuit,
+};
 
 export default function PortafolioPage() {
   const [filtro, setFiltro] = React.useState<string>('Todos');
@@ -67,14 +74,14 @@ export default function PortafolioPage() {
 
       {/* Grid de Proyectos */}
       <section className="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-12">
           {proyectosFiltrados.map((proyecto) => (
             <Card 
               key={proyecto.id} 
               className="group cursor-pointer border-none shadow-soft hover:shadow-2xl transition-all duration-500 rounded-none bg-white overflow-hidden"
               onClick={() => setProyectoSeleccionado(proyecto)}
             >
-              <CardContent className="p-0 relative h-72 w-full overflow-hidden">
+              <CardContent className="p-0 relative h-80 w-full overflow-hidden">
                 <Image 
                   src={getImagenUrl(proyecto.imagen)} 
                   alt={proyecto.titulo} 
@@ -148,32 +155,32 @@ export default function PortafolioPage() {
                         </div>
                       </section>
 
-                      <section className="space-y-6">
-                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-gray-100 pb-2">Automatización y Tareas</h4>
-                        <div className="space-y-4">
-                          <div className="flex items-center gap-4 p-4 bg-gray-50 border-l-4 border-accent">
-                            <Clock className="h-5 w-5 text-black" />
-                            <div>
-                              <p className="text-xs font-black uppercase tracking-widest">Alertas de Stock</p>
-                              <p className="text-sm text-secondary">Envío automático cada mañana a las 8:00 AM.</p>
-                            </div>
+                      {proyectoSeleccionado.tareas && proyectoSeleccionado.tareas.length > 0 && (
+                        <section className="space-y-6">
+                          <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-gray-100 pb-2">Automatización y Tareas</h4>
+                          <div className="space-y-4">
+                            {proyectoSeleccionado.tareas.map((tarea, i) => {
+                              const Icon = IconMap[tarea.icono];
+                              return (
+                                <div key={i} className="flex items-center gap-4 p-4 bg-gray-50 border-l-4 border-accent">
+                                  <Icon className="h-5 w-5 text-black" />
+                                  <div>
+                                    <p className="text-xs font-black uppercase tracking-widest">{tarea.titulo}</p>
+                                    <p className="text-sm text-secondary">{tarea.descripcion}</p>
+                                  </div>
+                                </div>
+                              );
+                            })}
                           </div>
-                          <div className="flex items-center gap-4 p-4 bg-gray-50 border-l-4 border-black">
-                            <Database className="h-5 w-5 text-black" />
-                            <div>
-                              <p className="text-xs font-black uppercase tracking-widest">Backup diario</p>
-                              <p className="text-sm text-secondary">Respaldo ZIP automático de la base de datos a las 9:00 PM.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </section>
+                        </section>
+                      )}
 
                       <section className="space-y-4">
                         <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-gray-100 pb-2">Arquitectura & Estructura</h4>
                         <div className="bg-black p-8 space-y-4">
                           <div className="flex items-center gap-3">
                             <Layers className="h-5 w-5 text-accent" />
-                            <span className="font-headline font-bold text-white uppercase tracking-widest text-xs">MVC + Capa de Servicios</span>
+                            <span className="font-headline font-bold text-white uppercase tracking-widest text-xs">{proyectoSeleccionado.arquitecturaTitulo}</span>
                           </div>
                           <p className="text-xs font-mono text-gray-400 leading-relaxed bg-white/5 p-4 border border-white/10">
                             {proyectoSeleccionado.arquitectura}
@@ -202,7 +209,7 @@ export default function PortafolioPage() {
                       <div className="pt-10 border-t border-gray-100 space-y-4">
                         <div className="flex items-center gap-2">
                           <Code2 className="h-4 w-4 text-accent" />
-                          <span className="text-[9px] font-black text-secondary uppercase tracking-widest">180 Pruebas Unitarias</span>
+                          <span className="text-[9px] font-black text-secondary uppercase tracking-widest">Pruebas Unitarias Integradas</span>
                         </div>
                       </div>
                     </div>

@@ -2,6 +2,14 @@
  * Datos estáticos para SYNAI
  */
 
+import { Clock, Database, Zap, BrainCircuit, LucideIcon } from 'lucide-react';
+
+export interface TareaAutomatizada {
+  titulo: string;
+  descripcion: string;
+  icono: 'Clock' | 'Database' | 'Zap' | 'BrainCircuit';
+}
+
 export interface Servicio {
   id: string;
   titulo: string;
@@ -22,7 +30,9 @@ export interface Proyecto {
   resumen: string;
   caracteristicas: string[];
   tecnologias: string[];
+  arquitecturaTitulo: string;
   arquitectura: string;
+  tareas: TareaAutomatizada[];
   imagen: string;
   destacado: boolean;
 }
@@ -68,19 +78,30 @@ export const PORTAFOLIO: Proyecto[] = [
     cliente: 'Tienda de Telefonía Móvil',
     categoria: 'Web',
     descripcion: 'Gestión automatizada de repuestos con alertas de stock y respaldos diarios.',
-    resumen: 'Aplicación web robusta diseñada para gestionar inventario de repuestos y accesorios de telefonía móvil. El sistema optimiza la cadena de suministro mediante la automatización de tareas críticas como la vigilancia de niveles de stock, generación de informes periódicos y respaldos de seguridad.',
+    resumen: 'Aplicación web robusta diseñada para gestionar inventario de repuestos y accesorios de telefonía móvil. El sistema optimiza la cadena de suministro mediante la automatización de tareas críticas.',
     caracteristicas: [
-      'CRUD completo de productos y modelos compatibles',
-      'Alertas automáticas por correo ante stock bajo (8:00 AM)',
-      'Informes automáticos matutinos y vespertinos',
-      'Respaldo diario de base de datos vía email (ZIP)',
-      'Actualización masiva de precios por tasa de cambio',
-      'Exportación a Excel y auditoría de seguridad completa',
+      'CRUD completo de productos y modelos',
+      'Alertas automáticas por correo',
+      'Actualización masiva de precios por tasa',
+      'Exportación a Excel y auditoría',
       'Autenticación robusta con Flask-Login',
       'Cabeceras de seguridad (Flask-Talisman)'
     ],
-    tecnologias: ['Python', 'Flask', 'SQLAlchemy', 'APScheduler', 'SQLite', 'Flask-Migrate', 'Pytest'],
-    arquitectura: 'MVC + Capa de Servicios: Navegador → Rutas → Controladores → Servicios (Email/Backup) → Modelos → SQLite',
+    tecnologias: ['Python', 'Flask', 'SQLAlchemy', 'APScheduler', 'SQLite'],
+    arquitecturaTitulo: 'MVC + Capa de Servicios',
+    arquitectura: 'Navegador → Rutas → Controladores → Servicios (Email/Backup) → Modelos → SQLite',
+    tareas: [
+      {
+        titulo: 'Alertas de Stock',
+        descripcion: 'Envío automático cada mañana a las 8:00 AM.',
+        icono: 'Clock'
+      },
+      {
+        titulo: 'Backup diario',
+        descripcion: 'Respaldo ZIP automático de la base de datos a las 9:00 PM.',
+        icono: 'Database'
+      }
+    ],
     imagen: 'inventario-flask',
     destacado: true
   },
@@ -90,17 +111,30 @@ export const PORTAFOLIO: Proyecto[] = [
     cliente: 'Software Open Source',
     categoria: 'App',
     descripcion: 'Editor de código modular con integración avanzada de IA y arquitectura estilo VS Code.',
-    resumen: 'NanoEditor v4.0 es un editor de código moderno, ligero y extensible con interfaz estilo VS Code. Cuenta con integración avanzada de IA para chat en tiempo real, contexto de proyecto y múltiples modelos. Su arquitectura modular robusta está diseñada para ser rápida, segura y fácil de mantener, comunicándose mediante un Event Bus para reducir el acoplamiento.',
+    resumen: 'NanoEditor v4.0 es un editor de código moderno, ligero y extensible. Su arquitectura modular robusta está diseñada para ser rápida y segura, comunicándose mediante un Event Bus.',
     caracteristicas: [
-      'Interfaz estilo VS Code con multi-tab y temas dinámicos',
-      'IA con streaming en tiempo real y contexto de proyecto automático',
-      'Soporte multi-modelo (Gemini, OpenAI, Anthropic, DeepSeek)',
-      'Terminal interactivo con soporte completo para scripts',
-      'Syntax Highlighting asíncrono y autocompletado inteligente',
-      '60+ pruebas unitarias y arquitectura desacoplada'
+      'Interfaz estilo VS Code multi-tab',
+      'IA con streaming en tiempo real',
+      'Contexto de proyecto automático',
+      'Soporte multi-modelo (Gemini, OpenAI)',
+      'Terminal interactivo integrado',
+      '60+ pruebas unitarias'
     ],
-    tecnologias: ['Python', 'LiteLLM', 'Gemini AI', 'Pytest', 'Tkinter', 'CustomTkinter'],
-    arquitectura: 'Modular (Desacoplada): Main → UI (Sidebar/Menu/Status) → Core (Editor/Tabs) → AI (Assistant/Agent/Client) → Navigation → Terminal',
+    tecnologias: ['Python', 'LiteLLM', 'Gemini AI', 'Pytest', 'Tkinter'],
+    arquitecturaTitulo: 'Arquitectura Modular (Desacoplada)',
+    arquitectura: 'Main → UI (Sidebar/Menu) → Core (Editor/Tabs) → AI (Assistant/Agent) → Event Bus',
+    tareas: [
+      {
+        titulo: 'Streaming de IA',
+        descripcion: 'Procesamiento de respuestas palabra por palabra en tiempo real.',
+        icono: 'Zap'
+      },
+      {
+        titulo: 'Contexto Dinámico',
+        descripcion: 'Análisis automático de archivos para alimentar la IA.',
+        icono: 'BrainCircuit'
+      }
+    ],
     imagen: 'nano-editor',
     destacado: true
   }
