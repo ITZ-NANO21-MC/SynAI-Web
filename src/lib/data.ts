@@ -139,6 +139,39 @@ export const PORTAFOLIO: Proyecto[] = [
     destacado: true
   },
   {
+    id: 'techfix-solutions',
+    titulo: 'TechFix Solutions',
+    cliente: 'Servicios Técnicos Profesionales',
+    categoria: 'Web',
+    descripcion: 'Landing page moderna y profesional construida para servicios de reparación tecnológica.',
+    resumen: 'Sitio web de alto rendimiento diseñado para convertir visitantes en clientes. Incluye gestión de temas claro/oscuro, optimización SEO y formularios de contacto validados.',
+    caracteristicas: [
+      'Desarrollado con Next.js 15 y App Router',
+      'Estilos con Tailwind CSS y Shadcn/UI',
+      'Soporte nativo para modo oscuro/claro',
+      'Formularios validados con React Hook Form',
+      'Optimización de imágenes y carga rápida',
+      'Integración fluida con Google AdSense'
+    ],
+    tecnologias: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Shadcn/UI', 'Sonner'],
+    arquitecturaTitulo: 'Next.js App Router (Full Stack)',
+    arquitectura: 'Cliente (Next.js) → Componentes Shadcn → Server Actions → Optimización Vercel',
+    tareas: [
+      {
+        titulo: 'Optimización SEO',
+        descripcion: 'Configuración dinámica de metadatos para mejor visibilidad.',
+        icono: 'Zap'
+      },
+      {
+        titulo: 'Gestión de Temas',
+        descripcion: 'Implementación de next-themes para persistencia de preferencia visual.',
+        icono: 'Clock'
+      }
+    ],
+    imagen: 'techfix-web',
+    destacado: true
+  },
+  {
     id: 'nano-editor-v4',
     titulo: 'NanoEditor v4.0',
     cliente: 'Software Open Source',
@@ -230,7 +263,7 @@ export const PORTAFOLIO: Proyecto[] = [
       },
       {
         titulo: 'Predicción IA',
-        descripcion: 'Clasificación en tiempo real con cálculo de probabilidad de spam.',
+        descripcion: 'Clasificación en tiempo real con el cálculo de probabilidad de spam.',
         icono: 'BrainCircuit'
       }
     ],

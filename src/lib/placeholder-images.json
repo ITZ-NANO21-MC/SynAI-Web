@@ -19,6 +19,12 @@
       "imageHint": "inventory management software"
     },
     {
+      "id": "techfix-web",
+      "description": "TechFix Solutions Landing Page",
+      "imageUrl": "/techfix-web.jpg?v=1.1",
+      "imageHint": "repair service landing page"
+    },
+    {
       "id": "nano-editor",
       "description": "NanoEditor v4.0 Modular Edition",
       "imageUrl": "/nano-editor.jpg?v=1.1",
