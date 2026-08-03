@@ -17,8 +17,8 @@ export default function HomePage() {
               <MapPin className="h-3.5 w-3.5 text-accent" />
               Falcón, Venezuela
             </div>
-            <h1 className="text-6xl md:text-8xl font-headline font-bold leading-none tracking-tighter text-black">
-              SYNAI <span className="text-accent text-glow-cyan">SYSTEM</span>
+            <h1 className="text-6xl md:text-9xl font-headline font-bold leading-none tracking-tighter text-black">
+              SYNAI<span className="text-accent text-glow-cyan">.</span>
             </h1>
             <p className="text-xl md:text-2xl text-secondary font-medium leading-relaxed max-w-2xl">
               Arquitectura de software e Inteligencia Artificial con enfoque <span className="text-black font-bold underline decoration-accent decoration-4 underline-offset-8">minimalista y eficiente</span>.

@@ -9,7 +9,7 @@ export default function Footer() {
     <footer className="bg-white text-black pt-24 pb-12 border-t border-gray-100">
       <div className="container mx-auto px-4 md:px-6 grid grid-cols-1 md:grid-cols-4 gap-16">
         <div className="space-y-8">
-          <Link href="/" className="flex items-center gap-3">
+          <Link href="/" className="flex items-center gap-3 group">
             <Image 
               src="/logo.png" 
               alt="SYNAI" 
@@ -72,7 +72,7 @@ export default function Footer() {
       </div>
 
       <div className="container mx-auto px-4 md:px-6 mt-24 pt-12 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
-        <p className="text-[10px] font-bold text-secondary tracking-[0.4em] uppercase">&copy; {currentYear} SYNAI SYSTEM. ALL RIGHTS RESERVED.</p>
+        <p className="text-[10px] font-bold text-secondary tracking-[0.4em] uppercase">&copy; {currentYear} SYNAI. ALL RIGHTS RESERVED.</p>
         <div className="flex gap-4">
           <div className="w-8 h-1 bg-accent"></div>
           <div className="w-8 h-1 bg-secondary"></div>
