@@ -6,13 +6,12 @@ import { PORTAFOLIO, type Proyecto } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ExternalLink, Search, CheckCircle2, Cpu, Database, Code2, Layers } from 'lucide-react';
+import { ExternalLink, Search, CheckCircle2, Database, Code2, Layers, Clock } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Badge } from "@/components/ui/badge";
@@ -99,113 +98,125 @@ export default function PortafolioPage() {
             </Card>
           ))}
         </div>
-        
-        {proyectosFiltrados.length === 0 && (
-          <div className="text-center py-32 space-y-6">
-            <Search className="h-16 w-16 text-gray-200 mx-auto" />
-            <h3 className="text-3xl font-headline font-black text-black uppercase">Sin resultados</h3>
-            <p className="text-secondary font-medium">No hay proyectos en esta categoría por el momento.</p>
-            <Button onClick={() => setFiltro('Todos')} className="bg-black text-white rounded-none">VER TODO EL PORTAFOLIO</Button>
-          </div>
-        )}
       </section>
 
       {/* Modal de Detalles del Proyecto */}
       <Dialog open={!!proyectoSeleccionado} onOpenChange={(open) => !open && setProyectoSeleccionado(null)}>
-        <DialogContent className="max-w-4xl p-0 border-none rounded-none overflow-hidden bg-white">
+        <DialogContent className="max-w-4xl p-0 border-none rounded-none overflow-hidden bg-white h-[90vh] flex flex-col">
           {proyectoSeleccionado && (
-            <div className="flex flex-col h-full max-h-[90vh]">
-              <div className="relative h-64 md:h-80 w-full shrink-0">
+            <>
+              {/* Cabecera Fija del Modal */}
+              <div className="relative h-48 md:h-64 w-full shrink-0">
                 <Image 
                   src={getImagenUrl(proyectoSeleccionado.imagen)} 
                   alt={proyectoSeleccionado.titulo}
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
-                <div className="absolute bottom-8 left-8 right-8">
-                  <Badge className="bg-accent text-black font-black text-[10px] uppercase tracking-widest mb-4 rounded-none">
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                <div className="absolute bottom-6 left-8 right-8">
+                  <Badge className="bg-accent text-black font-black text-[10px] uppercase tracking-widest mb-3 rounded-none">
                     {proyectoSeleccionado.categoria}
                   </Badge>
-                  <DialogTitle className="text-4xl md:text-6xl font-headline font-black text-white uppercase tracking-tighter leading-none">
+                  <DialogTitle className="text-3xl md:text-5xl font-headline font-black text-white uppercase tracking-tighter leading-none">
                     {proyectoSeleccionado.titulo}
                   </DialogTitle>
                 </div>
               </div>
 
-              <ScrollArea className="flex-1 p-8 md:p-12 overflow-y-auto">
-                <div className="grid md:grid-cols-3 gap-12">
-                  <div className="md:col-span-2 space-y-10">
-                    <section className="space-y-4">
-                      <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-gray-100 pb-2">Propósito del Proyecto</h4>
-                      <p className="text-lg font-medium text-black leading-relaxed">
-                        {proyectoSeleccionado.resumen}
-                      </p>
-                    </section>
-
-                    <section className="space-y-6">
-                      <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-gray-100 pb-2">Características Clave</h4>
-                      <div className="grid sm:grid-cols-2 gap-4">
-                        {proyectoSeleccionado.caracteristicas.map((item, i) => (
-                          <div key={i} className="flex items-start gap-3 group">
-                            <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                            <span className="text-sm font-bold text-black leading-snug group-hover:text-accent transition-colors">{item}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </section>
-
-                    <section className="space-y-4">
-                      <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-gray-100 pb-2">Arquitectura & Estructura</h4>
-                      <div className="bg-gray-50 p-6 border-l-4 border-black space-y-4">
-                        <div className="flex items-center gap-3">
-                          <Layers className="h-5 w-5 text-black" />
-                          <span className="font-headline font-bold text-black uppercase tracking-widest text-xs">MVC + Capa de Servicios</span>
-                        </div>
-                        <p className="text-sm font-mono text-secondary leading-relaxed bg-white p-4 border border-gray-100">
-                          {proyectoSeleccionado.arquitectura}
+              {/* Área con Scroll */}
+              <ScrollArea className="flex-1 w-full bg-white">
+                <div className="p-8 md:p-12">
+                  <div className="grid md:grid-cols-3 gap-12">
+                    <div className="md:col-span-2 space-y-12">
+                      <section className="space-y-4">
+                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-gray-100 pb-2">Propósito del Proyecto</h4>
+                        <p className="text-lg font-medium text-black leading-relaxed">
+                          {proyectoSeleccionado.resumen}
                         </p>
-                      </div>
-                    </section>
-                  </div>
+                      </section>
 
-                  <div className="space-y-10">
-                    <section className="space-y-4">
-                      <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em]">Cliente</h4>
-                      <p className="font-headline font-black text-xl text-black uppercase tracking-tighter">{proyectoSeleccionado.cliente}</p>
-                    </section>
+                      <section className="space-y-6">
+                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-gray-100 pb-2">Características Clave</h4>
+                        <div className="grid sm:grid-cols-2 gap-4">
+                          {proyectoSeleccionado.caracteristicas.map((item, i) => (
+                            <div key={i} className="flex items-start gap-3 group">
+                              <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                              <span className="text-sm font-bold text-black leading-snug group-hover:text-accent transition-colors">{item}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </section>
 
-                    <section className="space-y-6">
-                      <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em]">Stack Tecnológico</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {proyectoSeleccionado.tecnologias.map((tech, i) => (
-                          <Badge key={i} variant="outline" className="border-black text-black font-bold text-[10px] uppercase rounded-none px-3 py-1">
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </section>
+                      <section className="space-y-6">
+                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-gray-100 pb-2">Automatización y Tareas</h4>
+                        <div className="space-y-4">
+                          <div className="flex items-center gap-4 p-4 bg-gray-50 border-l-4 border-accent">
+                            <Clock className="h-5 w-5 text-black" />
+                            <div>
+                              <p className="text-xs font-black uppercase tracking-widest">Alertas de Stock</p>
+                              <p className="text-sm text-secondary">Envío automático cada mañana a las 8:00 AM.</p>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-4 p-4 bg-gray-50 border-l-4 border-black">
+                            <Database className="h-5 w-5 text-black" />
+                            <div>
+                              <p className="text-xs font-black uppercase tracking-widest">Backup diario</p>
+                              <p className="text-sm text-secondary">Respaldo ZIP automático de la base de datos a las 9:00 PM.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </section>
 
-                    <div className="pt-10 border-t border-gray-100 space-y-4">
-                      <div className="flex items-center gap-2">
-                        <Database className="h-4 w-4 text-accent" />
-                        <span className="text-[9px] font-black text-secondary uppercase tracking-widest">Respaldo Automatizado</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Code2 className="h-4 w-4 text-accent" />
-                        <span className="text-[9px] font-black text-secondary uppercase tracking-widest">180 Pruebas Unitarias</span>
+                      <section className="space-y-4">
+                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-gray-100 pb-2">Arquitectura & Estructura</h4>
+                        <div className="bg-black p-8 space-y-4">
+                          <div className="flex items-center gap-3">
+                            <Layers className="h-5 w-5 text-accent" />
+                            <span className="font-headline font-bold text-white uppercase tracking-widest text-xs">MVC + Capa de Servicios</span>
+                          </div>
+                          <p className="text-xs font-mono text-gray-400 leading-relaxed bg-white/5 p-4 border border-white/10">
+                            {proyectoSeleccionado.arquitectura}
+                          </p>
+                        </div>
+                      </section>
+                    </div>
+
+                    <div className="space-y-10">
+                      <section className="space-y-4">
+                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em]">Cliente</h4>
+                        <p className="font-headline font-black text-xl text-black uppercase tracking-tighter">{proyectoSeleccionado.cliente}</p>
+                      </section>
+
+                      <section className="space-y-6">
+                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em]">Stack Tecnológico</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {proyectoSeleccionado.tecnologias.map((tech, i) => (
+                            <Badge key={i} variant="outline" className="border-black text-black font-bold text-[10px] uppercase rounded-none px-3 py-1">
+                              {tech}
+                            </Badge>
+                          ))}
+                        </div>
+                      </section>
+
+                      <div className="pt-10 border-t border-gray-100 space-y-4">
+                        <div className="flex items-center gap-2">
+                          <Code2 className="h-4 w-4 text-accent" />
+                          <span className="text-[9px] font-black text-secondary uppercase tracking-widest">180 Pruebas Unitarias</span>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </ScrollArea>
               
-              <div className="p-8 bg-gray-50 border-t border-gray-100 flex justify-end">
+              {/* Footer Fijo del Modal */}
+              <div className="p-6 bg-gray-50 border-t border-gray-100 flex justify-end shrink-0">
                 <Button onClick={() => setProyectoSeleccionado(null)} className="bg-black text-white font-bold rounded-none px-10 h-12 hover:bg-accent hover:text-black transition-all">
-                  CERRAR DETALLES
+                  CERRAR
                 </Button>
               </div>
-            </div>
+            </>
           )}
         </DialogContent>
       </Dialog>
