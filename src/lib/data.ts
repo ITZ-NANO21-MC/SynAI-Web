@@ -68,17 +68,19 @@ export const PORTAFOLIO: Proyecto[] = [
     cliente: 'Tienda de Telefonía Móvil',
     categoria: 'Web',
     descripcion: 'Gestión automatizada de repuestos con alertas de stock y respaldos diarios.',
-    resumen: 'Una aplicación web robusta diseñada para optimizar la cadena de suministro de repuestos y accesorios de telefonía móvil. El sistema automatiza tareas críticas como la vigilancia de niveles de stock y la generación de informes periódicos.',
+    resumen: 'Aplicación web robusta diseñada para gestionar inventario de repuestos y accesorios de telefonía móvil. El sistema optimiza la cadena de suministro mediante la automatización de tareas críticas como la vigilancia de niveles de stock, generación de informes periódicos y respaldos de seguridad.',
     caracteristicas: [
-      'CRUD completo de productos y modelos',
-      'Alertas automáticas por correo (Stock Bajo)',
+      'CRUD completo de productos y modelos compatibles',
+      'Alertas automáticas por correo ante stock bajo (8:00 AM)',
       'Informes automáticos matutinos y vespertinos',
-      'Respaldo diario de base de datos vía email',
+      'Respaldo diario de base de datos vía email (ZIP)',
       'Actualización masiva de precios por tasa de cambio',
-      'Exportación a Excel y auditoría de seguridad'
+      'Exportación a Excel y auditoría de seguridad completa',
+      'Autenticación robusta con Flask-Login',
+      'Cabeceras de seguridad (Flask-Talisman)'
     ],
-    tecnologias: ['Python', 'Flask', 'SQLAlchemy', 'APScheduler', 'SQLite', 'Pytest'],
-    arquitectura: 'MVC + Capa de Servicios (Navegador → Rutas → Controladores → Servicios → Modelos → DB)',
+    tecnologias: ['Python', 'Flask', 'SQLAlchemy', 'APScheduler', 'SQLite', 'Flask-Migrate', 'Pytest'],
+    arquitectura: 'MVC + Capa de Servicios: Navegador → Rutas → Controladores → Servicios (Email/Backup) → Modelos → SQLite',
     imagen: 'inventario-flask',
     destacado: true
   }
