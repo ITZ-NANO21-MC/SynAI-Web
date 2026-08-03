@@ -209,13 +209,6 @@ export default function PortafolioPage() {
                   </div>
                 </div>
               </ScrollArea>
-              
-              {/* Footer Fijo del Modal */}
-              <div className="p-6 bg-gray-50 border-t border-gray-100 flex justify-end shrink-0">
-                <Button onClick={() => setProyectoSeleccionado(null)} className="bg-black text-white font-bold rounded-none px-10 h-12 hover:bg-accent hover:text-black transition-all">
-                  CERRAR
-                </Button>
-              </div>
             </>
           )}
         </DialogContent>
