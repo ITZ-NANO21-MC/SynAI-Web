@@ -59,15 +59,6 @@ export const SERVICIOS: Servicio[] = [
 
 export const PORTAFOLIO: Proyecto[] = [
   {
-    id: '1',
-    titulo: 'NeuralPredict Corp',
-    cliente: 'Logistics Global',
-    categoria: 'App',
-    descripcion: 'Sistema de predicción de demanda basado en Machine Learning para optimización de inventarios.',
-    imagen: 'project-1',
-    destacado: true
-  },
-  {
     id: '4',
     titulo: 'Inventario Móvil Flask',
     cliente: 'Tienda de Telefonía',
@@ -75,24 +66,6 @@ export const PORTAFOLIO: Proyecto[] = [
     descripcion: 'Sistema automatizado de gestión de repuestos con alertas de stock, respaldos diarios y auditoría de seguridad.',
     imagen: 'inventario-flask',
     destacado: true
-  },
-  {
-    id: '2',
-    titulo: 'SmartDev Portal',
-    cliente: 'Tech Solutions',
-    categoria: 'Web',
-    descripcion: 'Plataforma corporativa escalable con integración de agentes de IA para soporte automatizado.',
-    imagen: 'project-2',
-    destacado: true
-  },
-  {
-    id: '3',
-    titulo: 'Cognitive Web',
-    cliente: 'Fashion Retail',
-    categoria: 'Web',
-    descripcion: 'Interfaz de usuario inteligente optimizada para la conversión mediante análisis de datos.',
-    imagen: 'project-3',
-    destacado: false
   }
 ];
 
