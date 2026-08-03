@@ -73,6 +73,39 @@ export const SERVICIOS: Servicio[] = [
 
 export const PORTAFOLIO: Proyecto[] = [
   {
+    id: 'tb-detector-ai',
+    titulo: 'TB-Detector-AI',
+    cliente: 'Salud Digital / Diagnóstico IA',
+    categoria: 'ML',
+    descripcion: 'Sistema de apoyo al diagnóstico de tuberculosis mediante análisis automático de radiografías de tórax con IA.',
+    resumen: 'Herramienta avanzada de IA que funciona como una "segunda opinión" médica, reduciendo tiempos de diagnóstico de semanas a horas en regiones con escasez de especialistas.',
+    caracteristicas: [
+      'Clasificación binaria con precisión del 99%',
+      'Mapas de calor Grad-CAM++ para explicabilidad',
+      'Detección de patrones cavitarios y miliares',
+      'Transfer Learning con DenseNet-121',
+      'Especificidad del 100% (sin falsos positivos)',
+      'Validación automática de calidad de imagen'
+    ],
+    tecnologias: ['Python', 'TensorFlow', 'Keras', 'OpenCV', 'NumPy'],
+    arquitecturaTitulo: 'DenseNet-121 + Cabecera Personalizada',
+    arquitectura: 'Entrada (512x512) → Backbone (DenseNet-121) → Global Average Pooling → Capas Densas con Dropout → Salida (Sigmoid)',
+    tareas: [
+      {
+        titulo: 'Análisis Grad-CAM++',
+        descripcion: 'Visualización de las regiones pulmonares afectadas mediante mapas de calor.',
+        icono: 'BrainCircuit'
+      },
+      {
+        titulo: 'Diagnóstico Asistido',
+        descripcion: 'Generación de reportes de probabilidad diagnóstica en segundos.',
+        icono: 'Zap'
+      }
+    ],
+    imagen: 'tb-detector',
+    destacado: true
+  },
+  {
     id: 'inventario-flask-01',
     titulo: 'Sistema de Inventario Flask',
     cliente: 'Tienda de Telefonía Móvil',
@@ -121,8 +154,8 @@ export const PORTAFOLIO: Proyecto[] = [
       '60+ pruebas unitarias'
     ],
     tecnologias: ['Python', 'LiteLLM', 'Gemini AI', 'Pytest', 'Tkinter'],
-    arquitecturaTitulo: 'Arquitectura Modular (Desacoplada)',
-    arquitectura: 'Main → UI (Sidebar/Menu) → Core (Editor/Tabs) → AI (Assistant/Agent/Client) → Navigation → Terminal',
+    arquitecturaTitulo: 'Modular (Desacoplada)',
+    arquitectura: 'Main → UI (Sidebar/Menu/Status) → Core (Editor/Tabs) → AI (Assistant/Agent/Client) → Navigation → Terminal',
     tareas: [
       {
         titulo: 'Streaming de IA',
@@ -130,8 +163,8 @@ export const PORTAFOLIO: Proyecto[] = [
         icono: 'Zap'
       },
       {
-        titulo: 'Contexto Dinámico',
-        descripcion: 'Análisis automático de archivos para alimentar la IA.',
+        titulo: 'Análisis de Contexto',
+        descripcion: 'Sincronización automática de archivos para alimentar la IA.',
         icono: 'BrainCircuit'
       }
     ],
@@ -155,7 +188,7 @@ export const PORTAFOLIO: Proyecto[] = [
     ],
     tecnologias: ['Python', 'Scikit-learn', 'RapidFuzz', 'Green-API', 'Pytest'],
     arquitecturaTitulo: 'IA Híbrida + Pipeline de PLN',
-    arquitectura: 'Usuario WhatsApp → Green-API → Handler → Motor IA (TF-IDF/Cosine) → Fuzzy Recovery → Respuesta',
+    arquitectura: 'WhatsApp → Green-API → Handler → Motor IA (TF-IDF/Cosine) → Fuzzy Recovery → Respuesta',
     tareas: [
       {
         titulo: 'Clasificación de IA',
@@ -174,7 +207,7 @@ export const PORTAFOLIO: Proyecto[] = [
   {
     id: 'sms-spam-lstm',
     titulo: 'Clasificador SMS Spam (LSTM)',
-    cliente: 'Desafío freeCodeCamp',
+    cliente: 'IA / Deep Learning',
     categoria: 'ML',
     descripcion: 'Modelo de aprendizaje profundo con redes LSTM bidireccionales para detección de spam con 98% de precisión.',
     resumen: 'Modelo de aprendizaje profundo desarrollado para clasificar mensajes SMS como spam o ham. Utiliza arquitecturas recurrentes avanzadas para comprender el contexto semántico de los mensajes.',
@@ -188,7 +221,7 @@ export const PORTAFOLIO: Proyecto[] = [
     ],
     tecnologias: ['Python', 'TensorFlow', 'Keras', 'Pandas', 'Numpy', 'Scikit-learn'],
     arquitecturaTitulo: 'Red Neuronal Recurrente (RNN)',
-    arquitectura: 'Entrada → Embedding → LSTM Bidireccional → Dropout → LSTM Bidireccional → Dropout → Capa Densa → Salida (Sigmoid)',
+    arquitectura: 'Entrada → Embedding → LSTM Bidireccional → Dropout → Capa Densa → Salida (Sigmoid)',
     tareas: [
       {
         titulo: 'Preprocesamiento',
