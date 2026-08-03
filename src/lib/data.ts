@@ -68,6 +68,15 @@ export const PORTAFOLIO: Proyecto[] = [
     destacado: true
   },
   {
+    id: '4',
+    titulo: 'Inventario Móvil Flask',
+    cliente: 'Tienda de Telefonía',
+    categoria: 'Web',
+    descripcion: 'Sistema automatizado de gestión de repuestos con alertas de stock, respaldos diarios y auditoría de seguridad.',
+    imagen: 'inventario-flask',
+    destacado: true
+  },
+  {
     id: '2',
     titulo: 'SmartDev Portal',
     cliente: 'Tech Solutions',
