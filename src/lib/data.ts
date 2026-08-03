@@ -17,7 +17,7 @@ export interface Proyecto {
   id: string;
   titulo: string;
   cliente: string;
-  categoria: 'Web' | 'App' | 'Marketing' | 'Branding';
+  categoria: 'Web' | 'App';
   descripcion: string;
   imagen: string;
   destacado: boolean;
@@ -78,10 +78,10 @@ export const PORTAFOLIO: Proyecto[] = [
   },
   {
     id: '3',
-    titulo: 'Cognitive Branding',
+    titulo: 'Cognitive Web',
     cliente: 'Fashion Retail',
-    categoria: 'Branding',
-    descripcion: 'Identidad visual generada y validada por algoritmos de análisis de sentimiento del consumidor.',
+    categoria: 'Web',
+    descripcion: 'Interfaz de usuario inteligente optimizada para la conversión mediante análisis de datos.',
     imagen: 'project-3',
     destacado: false
   }

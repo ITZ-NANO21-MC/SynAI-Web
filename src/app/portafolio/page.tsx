@@ -14,7 +14,7 @@ import { ExternalLink, Search } from 'lucide-react';
 export default function PortafolioPage() {
   const [filtro, setFiltro] = React.useState<string>('Todos');
   
-  const categorias = ['Todos', 'Web', 'App', 'Marketing', 'Branding'];
+  const categorias = ['Todos', 'Web', 'App'];
   
   const proyectosFiltrados = filtro === 'Todos' 
     ? PORTAFOLIO 
