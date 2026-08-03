@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Facebook, Youtube, Instagram, Github, Mail, Phone, MapPin } from 'lucide-react';
@@ -11,7 +12,7 @@ export default function Footer() {
         <div className="space-y-8">
           <Link href="/" className="flex items-center gap-3 group">
             <Image 
-              src="/logo.png" 
+              src="/logo.png?v=1.1" 
               alt="SYNAI" 
               width={32} 
               height={32} 

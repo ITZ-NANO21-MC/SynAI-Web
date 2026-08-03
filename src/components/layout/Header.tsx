@@ -1,10 +1,11 @@
+
 "use client"
 
 import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
@@ -37,7 +38,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-8 h-8 transition-transform group-hover:rotate-90">
             <Image 
-              src="/logo.png" 
+              src="/logo.png?v=1.1" 
               alt="SYNAI Logo" 
               fill
               className="object-contain"
@@ -79,7 +80,7 @@ export default function Header() {
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between mb-20">
                   <div className="flex items-center gap-2">
-                    <Image src="/logo.png" alt="SYNAI" width={32} height={32} />
+                    <Image src="/logo.png?v=1.1" alt="SYNAI" width={32} height={32} />
                     <span className="font-headline text-2xl font-black tracking-tighter uppercase">SYNAI</span>
                   </div>
                 </div>

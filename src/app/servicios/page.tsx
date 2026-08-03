@@ -1,7 +1,8 @@
+
 import Image from 'next/image';
 import { SERVICIOS } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Check, ArrowRight, Zap } from 'lucide-react';
+import { Zap } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 
@@ -33,10 +34,10 @@ export default function ServiciosPage() {
                     src={imgData?.imageUrl || ''} 
                     alt={servicio.titulo} 
                     fill 
-                    className="object-cover group-hover:scale-110 transition-transform duration-1000 grayscale hover:grayscale-0 opacity-80 hover:opacity-100"
+                    className="object-cover group-hover:scale-110 transition-transform duration-1000 opacity-90 hover:opacity-100"
                     data-ai-hint={imgData?.imageHint}
                   />
-                  <div className="absolute top-0 left-0 w-full h-full bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                  <div className="absolute top-0 left-0 w-full h-full bg-black/5 group-hover:bg-transparent transition-colors"></div>
                   <div className="absolute top-8 left-8 bg-black text-accent px-4 py-1.5 font-bold text-[10px] uppercase tracking-[0.2em]">
                     {servicio.categoria}
                   </div>

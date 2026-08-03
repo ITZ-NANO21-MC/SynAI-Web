@@ -1,3 +1,4 @@
+
 import type {Metadata} from 'next';
 import './globals.css';
 import Header from '@/components/layout/Header';
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   title: 'SYNAI | Consultoría en IA & Desarrollo de Software',
   description: 'Consultoría líder en Inteligencia Artificial y desarrollo de software personalizado para empresas innovadoras.',
   icons: {
-    icon: '/favicon.ico',
+    icon: '/favicon.ico?v=1.1',
   },
 };
 
