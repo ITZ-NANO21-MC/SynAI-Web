@@ -137,6 +137,39 @@ export const PORTAFOLIO: Proyecto[] = [
     ],
     imagen: 'nano-editor',
     destacado: true
+  },
+  {
+    id: 'chatbot-ml-01',
+    titulo: 'Chatbot WhatsApp ML',
+    cliente: 'Automatización Inteligente',
+    categoria: 'App',
+    descripcion: 'Chatbot inteligente para WhatsApp con motor de Machine Learning para procesamiento de lenguaje natural.',
+    resumen: 'Sistema de IA híbrido que utiliza TF-IDF y similitud de coseno para clasificar intenciones, con una red de seguridad de fuzzy matching para manejar errores tipográficos.',
+    caracteristicas: [
+      'Motor de IA con scikit-learn (TF-IDF)',
+      'Fuzzy matching para errores tipográficos',
+      'Base de conocimiento externa (JSON)',
+      'Integración estable con Green-API',
+      'Logging completo para monitorización',
+      '85% de cobertura de pruebas unitarias'
+    ],
+    tecnologias: ['Python', 'Scikit-learn', 'RapidFuzz', 'Green-API', 'Pytest'],
+    arquitecturaTitulo: 'IA Híbrida + Pipeline de PLN',
+    arquitectura: 'Usuario → WhatsApp → Green-API → Handler → Motor IA (TF-IDF/Cosine) → Fuzzy Recovery → Respuesta',
+    tareas: [
+      {
+        titulo: 'Clasificación de IA',
+        descripcion: 'Análisis de intenciones con umbrales de confianza configurables.',
+        icono: 'BrainCircuit'
+      },
+      {
+        titulo: 'Respuesta Humanizada',
+        descripcion: 'Selección aleatoria de variaciones para evitar respuestas robóticas.',
+        icono: 'Zap'
+      }
+    ],
+    imagen: 'chatbot-ml',
+    destacado: true
   }
 ];
 
