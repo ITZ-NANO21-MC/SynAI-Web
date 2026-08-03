@@ -27,7 +27,7 @@ export default function PortafolioPage() {
   const [filtro, setFiltro] = React.useState<string>('Todos');
   const [proyectoSeleccionado, setProyectoSeleccionado] = React.useState<Proyecto | null>(null);
   
-  const categorias = ['Todos', 'Web', 'App'];
+  const categorias = ['Todos', 'Web', 'App', 'ML'];
   
   const proyectosFiltrados = filtro === 'Todos' 
     ? PORTAFOLIO 
@@ -39,6 +39,11 @@ export default function PortafolioPage() {
       return `${img.imageUrl}${img.imageUrl.includes('?') ? '&' : '?'}v=1.1`;
     }
     return img?.imageUrl || '';
+  };
+
+  const getCategoriaLabel = (cat: string) => {
+    if (cat === 'ML') return 'IA / ML';
+    return cat;
   };
 
   return (
@@ -66,7 +71,7 @@ export default function PortafolioPage() {
                 : "border-black text-black hover:bg-black hover:text-white"
               }`}
             >
-              {cat}
+              {getCategoriaLabel(cat)}
             </Button>
           ))}
         </div>
@@ -95,7 +100,7 @@ export default function PortafolioPage() {
                   </Button>
                 </div>
                 <div className="absolute bottom-6 left-6 bg-black text-accent px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em]">
-                  {proyecto.categoria}
+                  {getCategoriaLabel(proyecto.categoria)}
                 </div>
               </CardContent>
               <div className="p-8 border-t border-gray-100 group-hover:bg-gray-50 transition-colors">
@@ -123,7 +128,7 @@ export default function PortafolioPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
                 <div className="absolute bottom-6 left-8 right-8">
                   <Badge className="bg-accent text-black font-black text-[10px] uppercase tracking-widest mb-3 rounded-none">
-                    {proyectoSeleccionado.categoria}
+                    {getCategoriaLabel(proyectoSeleccionado.categoria)}
                   </Badge>
                   <DialogTitle className="text-3xl md:text-5xl font-headline font-black text-white uppercase tracking-tighter leading-none">
                     {proyectoSeleccionado.titulo}

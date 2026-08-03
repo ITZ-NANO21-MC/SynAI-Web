@@ -25,7 +25,7 @@ export interface Proyecto {
   id: string;
   titulo: string;
   cliente: string;
-  categoria: 'Web' | 'App';
+  categoria: 'Web' | 'App' | 'ML';
   descripcion: string;
   resumen: string;
   caracteristicas: string[];
@@ -122,7 +122,7 @@ export const PORTAFOLIO: Proyecto[] = [
     ],
     tecnologias: ['Python', 'LiteLLM', 'Gemini AI', 'Pytest', 'Tkinter'],
     arquitecturaTitulo: 'Arquitectura Modular (Desacoplada)',
-    arquitectura: 'Main → UI (Sidebar/Menu) → Core (Editor/Tabs) → AI (Assistant/Agent) → Event Bus',
+    arquitectura: 'Main → UI (Sidebar/Menu) → Core (Editor/Tabs) → AI (Assistant/Agent/Client) → Navigation → Terminal',
     tareas: [
       {
         titulo: 'Streaming de IA',
@@ -155,7 +155,7 @@ export const PORTAFOLIO: Proyecto[] = [
     ],
     tecnologias: ['Python', 'Scikit-learn', 'RapidFuzz', 'Green-API', 'Pytest'],
     arquitecturaTitulo: 'IA Híbrida + Pipeline de PLN',
-    arquitectura: 'Usuario → WhatsApp → Green-API → Handler → Motor IA (TF-IDF/Cosine) → Fuzzy Recovery → Respuesta',
+    arquitectura: 'Usuario WhatsApp → Green-API → Handler → Motor IA (TF-IDF/Cosine) → Fuzzy Recovery → Respuesta',
     tareas: [
       {
         titulo: 'Clasificación de IA',
@@ -169,6 +169,39 @@ export const PORTAFOLIO: Proyecto[] = [
       }
     ],
     imagen: 'chatbot-ml',
+    destacado: true
+  },
+  {
+    id: 'sms-spam-lstm',
+    titulo: 'Clasificador SMS Spam (LSTM)',
+    cliente: 'Desafío freeCodeCamp',
+    categoria: 'ML',
+    descripcion: 'Modelo de aprendizaje profundo con redes LSTM bidireccionales para detección de spam con 98% de precisión.',
+    resumen: 'Modelo de aprendizaje profundo desarrollado para clasificar mensajes SMS como spam o ham. Utiliza arquitecturas recurrentes avanzadas para comprender el contexto semántico de los mensajes.',
+    caracteristicas: [
+      'Capas LSTM Bidireccionales para contexto dual',
+      'Capa de Embedding para representación densa',
+      'Regularización con capas Dropout',
+      'Optimización con Adam y Early Stopping',
+      'Precisión del 98% en validación',
+      'Preprocesamiento automático de texto'
+    ],
+    tecnologias: ['Python', 'TensorFlow', 'Keras', 'Pandas', 'Numpy', 'Scikit-learn'],
+    arquitecturaTitulo: 'Red Neuronal Recurrente (RNN)',
+    arquitectura: 'Entrada → Embedding → LSTM Bidireccional → Dropout → LSTM Bidireccional → Dropout → Capa Densa → Salida (Sigmoid)',
+    tareas: [
+      {
+        titulo: 'Preprocesamiento',
+        descripcion: 'Tokenización y padding automático de secuencias de texto.',
+        icono: 'Database'
+      },
+      {
+        titulo: 'Predicción IA',
+        descripcion: 'Clasificación en tiempo real con cálculo de probabilidad de spam.',
+        icono: 'BrainCircuit'
+      }
+    ],
+    imagen: 'sms-classifier',
     destacado: true
   }
 ];
