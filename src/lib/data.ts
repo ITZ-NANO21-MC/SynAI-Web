@@ -83,6 +83,26 @@ export const PORTAFOLIO: Proyecto[] = [
     arquitectura: 'MVC + Capa de Servicios: Navegador → Rutas → Controladores → Servicios (Email/Backup) → Modelos → SQLite',
     imagen: 'inventario-flask',
     destacado: true
+  },
+  {
+    id: 'nano-editor-v4',
+    titulo: 'NanoEditor v4.0',
+    cliente: 'Software Open Source',
+    categoria: 'App',
+    descripcion: 'Editor de código modular con integración avanzada de IA y arquitectura estilo VS Code.',
+    resumen: 'NanoEditor v4.0 es un editor de código moderno, ligero y extensible con interfaz estilo VS Code. Cuenta con integración avanzada de IA para chat en tiempo real, contexto de proyecto y múltiples modelos. Su arquitectura modular robusta está diseñada para ser rápida, segura y fácil de mantener, comunicándose mediante un Event Bus para reducir el acoplamiento.',
+    caracteristicas: [
+      'Interfaz estilo VS Code con multi-tab y temas dinámicos',
+      'IA con streaming en tiempo real y contexto de proyecto automático',
+      'Soporte multi-modelo (Gemini, OpenAI, Anthropic, DeepSeek)',
+      'Terminal interactivo con soporte completo para scripts',
+      'Syntax Highlighting asíncrono y autocompletado inteligente',
+      '60+ pruebas unitarias y arquitectura desacoplada'
+    ],
+    tecnologias: ['Python', 'LiteLLM', 'Gemini AI', 'Pytest', 'Tkinter', 'CustomTkinter'],
+    arquitectura: 'Modular (Desacoplada): Main → UI (Sidebar/Menu/Status) → Core (Editor/Tabs) → AI (Assistant/Agent/Client) → Navigation → Terminal',
+    imagen: 'nano-editor',
+    destacado: true
   }
 ];
 

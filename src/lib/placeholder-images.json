@@ -19,6 +19,12 @@
       "imageHint": "inventory management software"
     },
     {
+      "id": "nano-editor",
+      "description": "NanoEditor v4.0 Modular Edition",
+      "imageUrl": "/nano-editor.jpg?v=1.1",
+      "imageHint": "code editor software"
+    },
+    {
       "id": "service-web",
       "description": "Desarrollo web profesional",
       "imageUrl": "https://images.unsplash.com/photo-1489438497675-d1a8d6e0632e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx3ZWIlMjBkZXNpZ24lMjBjb2Rpbmd8ZW58MHx8fHwxNzcyMDYwNzE5fDA&ixlib=rb-4.1.0&q=80&w=1080",
