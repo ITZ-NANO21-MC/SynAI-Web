@@ -9,11 +9,39 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
 import emailjs from '@emailjs/browser';
+import maplibregl from 'maplibre-gl';
 
 export default function ContactoPage() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const formRef = React.useRef<HTMLFormElement>(null);
+  const mapContainer = React.useRef<HTMLDivElement>(null);
+  const map = React.useRef<maplibregl.Map | null>(null);
+
+  // Configuración de Geoapify
+  const GEOAPIFY_API_KEY = "1e565ab74abb41d69d9e03ce4d723161";
+
+  React.useEffect(() => {
+    if (map.current || !mapContainer.current) return;
+
+    map.current = new maplibregl.Map({
+      container: mapContainer.current,
+      style: `https://maps.geoapify.com/v1/styles/osm-carto/style.json?apiKey=${GEOAPIFY_API_KEY}`,
+      center: [-69.6734, 11.4116], // Coordenadas de Coro, Falcón
+      zoom: 13,
+      attributionControl: false
+    });
+
+    // Marcador personalizado con color cian de SYNAI
+    new maplibregl.Marker({ color: "#00F2FF" })
+      .setLngLat([-69.6734, 11.4116])
+      .addTo(map.current);
+
+    return () => {
+      map.current?.remove();
+      map.current = null;
+    };
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -68,7 +96,7 @@ export default function ContactoPage() {
         </p>
       </section>
 
-      <section className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-20 items-start max-w-6xl">
+      <section className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-20 items-start max-w-6xl mb-20">
         <div className="space-y-16">
           <div className="space-y-10">
             <h2 className="text-2xl font-headline font-black tracking-[0.3em] text-black uppercase border-l-4 border-accent pl-6">CANALES</h2>
@@ -174,6 +202,22 @@ export default function ContactoPage() {
             </form>
           </CardContent>
         </Card>
+      </section>
+
+      {/* Sección del Mapa */}
+      <section className="container mx-auto px-4 md:px-6 max-w-6xl">
+        <div className="space-y-8">
+          <h2 className="text-2xl font-headline font-black tracking-[0.3em] text-black uppercase border-l-4 border-accent pl-6">UBICACIÓN ESTRATÉGICA</h2>
+          <div className="relative h-[450px] w-full border-2 border-black overflow-hidden bg-gray-100 group">
+            <div ref={mapContainer} className="absolute inset-0 grayscale hover:grayscale-0 transition-all duration-700" />
+            <div className="absolute top-6 left-6 z-10 bg-black text-white p-6 rounded-none shadow-2xl max-w-xs space-y-2 pointer-events-none">
+              <p className="font-headline font-black text-accent text-xl">FALCÓN, VZLA</p>
+              <p className="text-[10px] uppercase tracking-widest font-bold text-gray-400 leading-relaxed">
+                Operamos desde el núcleo industrial y tecnológico del occidente venezolano para el mundo.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
   );
