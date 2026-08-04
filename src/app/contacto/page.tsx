@@ -7,23 +7,43 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
 import { useToast } from '@/hooks/use-toast';
+import emailjs from '@emailjs/browser';
 
 export default function ContactoPage() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
+  const formRef = React.useRef<HTMLFormElement>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formRef.current) return;
+
     setIsSubmitting(true);
-    
-    setTimeout(() => {
-      setIsSubmitting(false);
+
+    try {
+      await emailjs.sendForm(
+        'service_3t33mbv', // EmailJS Service ID
+        'template_0hj810h', // EmailJS Template ID
+        formRef.current,
+        'BGoE2TRMNSeEjfLR-' // EmailJS Public Key
+      );
+
       toast({
-        title: "SOLICITUD PROCESADA",
-        description: "Nuestro equipo técnico analizará su caso en Falcón.",
+        title: "SOLICITUD ENVIADA",
+        description: "Hemos recibido su mensaje. El equipo de SYNAI Falcón le contactará pronto.",
       });
-      (e.target as HTMLFormElement).reset();
-    }, 1500);
+      
+      formRef.current.reset();
+    } catch (error) {
+      console.error('EmailJS Error:', error);
+      toast({
+        variant: "destructive",
+        title: "ERROR DE ENVÍO",
+        description: "Hubo un problema al procesar su solicitud. Intente nuevamente o use WhatsApp.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -87,32 +107,55 @@ export default function ContactoPage() {
             <CardDescription className="text-secondary font-bold text-xs uppercase tracking-widest">Describa su requerimiento para evaluación inmediata.</CardDescription>
           </CardHeader>
           <CardContent className="p-10 pt-0">
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-8">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary">Nombre</label>
-                  <Input placeholder="ENTIDAD / PERSONA" required className="rounded-none border-gray-200 h-12 focus:border-black focus:ring-0" />
+                  <Input 
+                    name="from_name" 
+                    placeholder="ENTIDAD / PERSONA" 
+                    required 
+                    className="rounded-none border-gray-200 h-12 focus:border-black focus:ring-0" 
+                  />
                 </div>
                 <div className="space-y-2">
                   <label className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary">Email</label>
-                  <Input type="email" placeholder="CORREO@CORREO.COM" required className="rounded-none border-gray-200 h-12 focus:border-black focus:ring-0" />
+                  <Input 
+                    name="from_email" 
+                    type="email" 
+                    placeholder="CORREO@CORREO.COM" 
+                    required 
+                    className="rounded-none border-gray-200 h-12 focus:border-black focus:ring-0" 
+                  />
                 </div>
               </div>
               <div className="space-y-2">
                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary">Especialidad</label>
-                <select className="flex h-12 w-full border border-gray-200 bg-white px-3 py-2 text-sm font-bold uppercase focus:border-black focus:outline-none">
-                  <option>CONSULTORÍA IA</option>
-                  <option>SOPORTE TÉCNICO</option>
-                  <option>AUTOMATIZACIÓN</option>
-                  <option>SOFTWARE A MEDIDA</option>
+                <select 
+                  name="specialty" 
+                  className="flex h-12 w-full border border-gray-200 bg-white px-3 py-2 text-sm font-bold uppercase focus:border-black focus:outline-none"
+                >
+                  <option value="IA">CONSULTORÍA IA</option>
+                  <option value="SOPORTE">SOPORTE TÉCNICO</option>
+                  <option value="AUTOMATIZACION">AUTOMATIZACIÓN</option>
+                  <option value="SOFTWARE">SOFTWARE A MEDIDA</option>
                 </select>
               </div>
               <div className="space-y-2">
                 <label className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary">Descripción</label>
-                <Textarea placeholder="DETALLES DEL PROYECTO..." className="min-h-[150px] rounded-none border-gray-200 focus:border-black focus:ring-0" required />
+                <Textarea 
+                  name="message" 
+                  placeholder="DETALLES DEL PROYECTO..." 
+                  className="min-h-[150px] rounded-none border-gray-200 focus:border-black focus:ring-0" 
+                  required 
+                />
               </div>
-              <Button type="submit" className="w-full h-16 bg-black hover:bg-accent hover:text-black text-white font-bold text-lg rounded-none transition-all" disabled={isSubmitting}>
-                {isSubmitting ? "PROCESANDO..." : "ENVIAR SOLICITUD"} <Send className="ml-2 h-5 w-5" />
+              <Button 
+                type="submit" 
+                className="w-full h-16 bg-black hover:bg-accent hover:text-black text-white font-bold text-lg rounded-none transition-all" 
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "ENVIANDO..." : "ENVIAR SOLICITUD"} <Send className="ml-2 h-5 w-5" />
               </Button>
             </form>
           </CardContent>
