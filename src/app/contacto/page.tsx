@@ -23,11 +23,14 @@ export default function ContactoPage() {
   React.useEffect(() => {
     if (map.current || !mapContainer.current) return;
 
+    // Coordenadas actualizadas: [Longitud, Latitud]
+    const coords: [number, number] = [-69.69238708900974, 11.404853870141157];
+
     map.current = new maplibregl.Map({
       container: mapContainer.current,
       style: `https://maps.geoapify.com/v1/styles/osm-carto/style.json?apiKey=${GEOAPIFY_API_KEY}`,
-      center: [-69.6734, 11.4116], // Coordenadas de Coro, Falcón
-      zoom: 13,
+      center: coords,
+      zoom: 15,
       attributionControl: false
     });
 
@@ -39,7 +42,7 @@ export default function ContactoPage() {
 
     // Marcador personalizado con color cian de SYNAI
     new maplibregl.Marker({ color: "#00F2FF" })
-      .setLngLat([-69.6734, 11.4116])
+      .setLngLat(coords)
       .addTo(map.current);
 
     return () => {
