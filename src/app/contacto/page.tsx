@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from 'react';
@@ -31,6 +30,12 @@ export default function ContactoPage() {
       zoom: 13,
       attributionControl: false
     });
+
+    // Añadir controles de navegación (Zoom y Rotación)
+    map.current.addControl(new maplibregl.NavigationControl({
+      showCompass: true,
+      showZoom: true
+    }), 'top-right');
 
     // Marcador personalizado con color cian de SYNAI
     new maplibregl.Marker({ color: "#00F2FF" })
