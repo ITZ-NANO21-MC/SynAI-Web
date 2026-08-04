@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from 'react';
@@ -21,6 +22,16 @@ export default function ContactoPage() {
     setIsSubmitting(true);
 
     try {
+      // Seteamos la hora actual en el campo oculto antes de enviar
+      const timeInput = formRef.current.querySelector('input[name="time"]') as HTMLInputElement;
+      if (timeInput) {
+        timeInput.value = new Date().toLocaleString('es-VE', { 
+          timeZone: 'America/Caracas',
+          dateStyle: 'full',
+          timeStyle: 'medium'
+        });
+      }
+
       await emailjs.sendForm(
         'service_3t33mbv', // EmailJS Service ID
         'template_0hj810h', // EmailJS Template ID
@@ -108,11 +119,14 @@ export default function ContactoPage() {
           </CardHeader>
           <CardContent className="p-10 pt-0">
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-8">
+              {/* Campo oculto para la variable {{time}} de la plantilla */}
+              <input type="hidden" name="time" />
+              
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-[10px] font-black uppercase tracking-[0.2em] text-secondary">Nombre</label>
                   <Input 
-                    name="from_name" 
+                    name="name" 
                     placeholder="ENTIDAD / PERSONA" 
                     required 
                     className="rounded-none border-gray-200 h-12 focus:border-black focus:ring-0" 
