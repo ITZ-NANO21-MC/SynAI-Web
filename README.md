@@ -7,6 +7,7 @@ Este proyecto es una aplicación web moderna construida con Next.js 15, TypeScri
 - **Diseño de Vanguardia**: Interfaz profesional con colores profundos y acentos neón (#0F0F1B, #8E44AD, #00F2FF).
 - **Servicios Duales**: Soporte técnico local en Falcón y Consultoría avanzada en IA.
 - **Totalmente Responsive**: Optimizado para móviles, tablets y escritorio.
+- **Modo Oscuro/Claro**: Soporte nativo para preferencias visuales del usuario.
 
 ## Configuración de EmailJS
 
@@ -47,24 +48,26 @@ Para que el formulario de contacto funcione correctamente, asegúrate de usar es
 </div>
 ```
 
-## Uso de Imágenes Personalizadas
+## Guía de Imágenes (Carpeta /public)
 
-Para reemplazar las imágenes del sitio por las tuyas, sube tus archivos a la carpeta `public` con estos nombres exactos:
+Para que el sitio se vea correctamente, sube tus archivos a la carpeta `public` con estos nombres exactos:
 
-1. **Logo e Icono**:
-   - Logo principal (navbar/footer): `logo.png`
-   - Icono de pestaña (favicon): `favicon.ico`
+### Logo y Favicon
+- `logo.png` - Logo principal de la marca.
+- `favicon.ico` - Icono de la pestaña del navegador.
 
-2. **Servicios y Proyectos**:
-   - `servicio-tecnico.jpg`
-   - `consultoria-ia.jpg`
-   - `techanalitica-web.jpg`
-   - `tb-detector.jpg`
-   - `inventario-flask.jpg`
-   - `techfix-web.jpg`
-   - `nano-editor.jpg`
-   - `chatbot-ml.jpg`
-   - `sms-classifier.jpg`
+### Imágenes de Servicios
+- `servicio-tecnico.jpg` - Imagen para Soporte Técnico.
+- `consultoria-ia.jpg` - Imagen para Consultoría IA.
+
+### Imágenes de Proyectos (Portafolio)
+- `techanalitica-web.jpg` - Proyecto TechAnalítica.
+- `tb-detector.jpg` - Proyecto TB-Detector-AI.
+- `inventario-flask.jpg` - Sistema de Inventario Flask.
+- `techfix-web.jpg` - TechFix Solutions Landing Page.
+- `nano-editor.jpg` - NanoEditor v4.0.
+- `chatbot-ml.jpg` - Chatbot WhatsApp ML.
+- `sms-classifier.jpg` - Clasificador SMS Spam.
 
 ---
 © 2025 SYNAI. Desarrollado con tecnología de punta desde Falcón, Venezuela.
