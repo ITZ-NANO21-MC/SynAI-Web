@@ -1,3 +1,4 @@
+
 @import 'maplibre-gl/dist/maplibre-gl.css';
 
 @tailwind base;
@@ -41,6 +42,37 @@
     
     --radius: 0.5rem;
   }
+
+  .dark {
+    /* Fondo Negro Profundo: #0F0F1B */
+    --background: 240 33% 8%;
+    --foreground: 0 0% 100%;
+    
+    --card: 240 33% 12%;
+    --card-foreground: 0 0% 100%;
+    
+    --popover: 240 33% 8%;
+    --popover-foreground: 0 0% 100%;
+    
+    --primary: 0 0% 100%;
+    --primary-foreground: 240 33% 8%;
+    
+    --secondary: 240 2% 70%;
+    --secondary-foreground: 0 0% 0%;
+    
+    --muted: 240 10% 20%;
+    --muted-foreground: 240 5% 75%;
+    
+    --accent: 183 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 183 100% 50%;
+  }
 }
 
 @layer base {
@@ -48,7 +80,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-body;
+    @apply bg-background text-foreground font-body transition-colors duration-300;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-headline tracking-tight uppercase;
@@ -60,7 +92,7 @@
 }
 
 .shadow-soft {
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+  @apply shadow-[0_10px_30px_-10px_rgba(0,0,0,0.1)] dark:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)];
 }
 
 .border-gradient-cyan {

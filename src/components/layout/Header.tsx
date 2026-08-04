@@ -9,6 +9,7 @@ import { Menu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
+import { ThemeToggle } from '@/components/shared/ThemeToggle';
 
 const NAV_LINKS = [
   { label: 'Inicio', href: '/' },
@@ -32,7 +33,7 @@ export default function Header() {
   return (
     <header className={cn(
       "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-6",
-      isScrolled ? "bg-white/95 backdrop-blur-md shadow-sm py-4 border-b border-gray-100" : "bg-transparent"
+      isScrolled ? "bg-background/95 backdrop-blur-md shadow-sm py-4 border-b border-border" : "bg-transparent"
     )}>
       <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3 group">
@@ -41,11 +42,11 @@ export default function Header() {
               src="/logo.png?v=1.1" 
               alt="SYNAI Logo" 
               fill
-              className="object-contain"
+              className="object-contain dark:invert"
               priority
             />
           </div>
-          <span className="font-headline text-2xl font-black tracking-tighter text-black uppercase">
+          <span className="font-headline text-2xl font-black tracking-tighter text-foreground uppercase">
             SYNAI<span className="text-accent">.</span>
           </span>
         </Link>
@@ -57,31 +58,35 @@ export default function Header() {
               href={link.href}
               className={cn(
                 "text-[11px] font-bold uppercase tracking-[0.2em] transition-all hover:text-accent",
-                pathname === link.href ? "text-black border-b-2 border-accent pb-1" : "text-secondary"
+                pathname === link.href ? "text-foreground border-b-2 border-accent pb-1" : "text-muted-foreground"
               )}
             >
               {link.label}
             </Link>
           ))}
-          <Button asChild className="rounded-none bg-black hover:bg-accent hover:text-black text-white font-bold tracking-widest text-[10px] px-8 transition-all h-10">
-            <Link href="/contacto">CONSULTA GRATIS</Link>
-          </Button>
+          <div className="flex items-center gap-4 ml-4">
+            <ThemeToggle />
+            <Button asChild className="rounded-none bg-primary hover:bg-accent hover:text-accent-foreground text-primary-foreground font-bold tracking-widest text-[10px] px-8 transition-all h-10">
+              <Link href="/contacto">CONSULTA GRATIS</Link>
+            </Button>
+          </div>
         </nav>
 
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-4">
+          <ThemeToggle />
           <Sheet>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="text-black">
+              <Button variant="ghost" size="icon" className="text-foreground">
                 <Menu className="h-8 w-8" />
                 <span className="sr-only">Menú</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="bg-white border-none w-full sm:max-w-md p-10">
+            <SheetContent side="right" className="bg-background border-none w-full sm:max-w-md p-10">
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between mb-20">
                   <div className="flex items-center gap-2">
-                    <Image src="/logo.png?v=1.1" alt="SYNAI" width={32} height={32} />
-                    <span className="font-headline text-2xl font-black tracking-tighter uppercase">SYNAI</span>
+                    <Image src="/logo.png?v=1.1" alt="SYNAI" width={32} height={32} className="dark:invert" />
+                    <span className="font-headline text-2xl font-black tracking-tighter uppercase text-foreground">SYNAI</span>
                   </div>
                 </div>
                 
@@ -92,7 +97,7 @@ export default function Header() {
                         href={link.href}
                         className={cn(
                           "text-4xl font-headline font-black uppercase tracking-tighter transition-colors",
-                          pathname === link.href ? "text-accent" : "text-black hover:text-accent"
+                          pathname === link.href ? "text-accent" : "text-foreground hover:text-accent"
                         )}
                       >
                         {link.label}
@@ -101,10 +106,10 @@ export default function Header() {
                   ))}
                 </div>
 
-                <div className="mt-auto pt-10 border-t border-gray-100 space-y-4">
-                  <p className="text-xs font-bold text-secondary tracking-widest uppercase">SYNAI Falcón</p>
-                  <p className="text-xl font-bold text-black">+58 424 668 4134</p>
-                  <Button asChild className="w-full h-14 bg-black text-white font-bold rounded-none">
+                <div className="mt-auto pt-10 border-t border-border space-y-4">
+                  <p className="text-xs font-bold text-muted-foreground tracking-widest uppercase">SYNAI Falcón</p>
+                  <p className="text-xl font-bold text-foreground">+58 424 668 4134</p>
+                  <Button asChild className="w-full h-14 bg-primary text-primary-foreground font-bold rounded-none">
                     <Link href="/contacto">CONTACTAR AHORA</Link>
                   </Button>
                 </div>
