@@ -27,7 +27,7 @@ export default function PortafolioPage() {
   const [filtro, setFiltro] = React.useState<string>('Todos');
   const [proyectoSeleccionado, setProyectoSeleccionado] = React.useState<Proyecto | null>(null);
   
-  const categorias = ['Todos', 'Web', 'App'];
+  const categorias = ['Todos', 'Web', 'App', 'ML'];
   
   const proyectosFiltrados = filtro === 'Todos' 
     ? PORTAFOLIO 
