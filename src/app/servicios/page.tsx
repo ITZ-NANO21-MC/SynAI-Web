@@ -1,4 +1,3 @@
-
 import Image from 'next/image';
 import { SERVICIOS } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -8,12 +7,12 @@ import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/componen
 
 export default function ServiciosPage() {
   return (
-    <div className="pt-24 pb-20 bg-white">
+    <div className="pt-24 pb-20 bg-background">
       {/* Header Minimalista */}
-      <section className="bg-white py-32 border-b border-gray-50">
+      <section className="bg-background py-32 border-b border-border">
         <div className="container mx-auto px-4 md:px-6 text-center space-y-8">
           <div className="w-12 h-1 bg-accent mx-auto mb-4"></div>
-          <h1 className="text-5xl md:text-8xl font-headline font-black tracking-tighter leading-none text-black">
+          <h1 className="text-5xl md:text-8xl font-headline font-black tracking-tighter leading-none text-foreground">
             NUESTRAS <br /> <span className="text-accent">SOLUCIONES</span>
           </h1>
           <p className="text-xl text-secondary font-medium max-w-2xl mx-auto leading-relaxed">
@@ -28,7 +27,7 @@ export default function ServiciosPage() {
           {SERVICIOS.map((servicio) => {
             const imgData = PlaceHolderImages.find(p => p.id === servicio.imagen);
             return (
-              <Card key={servicio.id} id={servicio.id} className="flex flex-col h-full border-none shadow-soft hover:shadow-2xl transition-all duration-500 rounded-none bg-white overflow-hidden group">
+              <Card key={servicio.id} id={servicio.id} className="flex flex-col h-full border-none shadow-soft hover:shadow-2xl transition-all duration-500 rounded-none bg-card overflow-hidden group">
                 <div className="relative aspect-square w-full overflow-hidden">
                   <Image 
                     src={imgData?.imageUrl || ''} 
@@ -39,20 +38,20 @@ export default function ServiciosPage() {
                     data-ai-hint={imgData?.imageHint}
                   />
                   <div className="absolute top-0 left-0 w-full h-full bg-black/5 group-hover:bg-transparent transition-colors"></div>
-                  <div className="absolute top-8 left-8 bg-black text-accent px-4 py-1.5 font-bold text-[10px] uppercase tracking-[0.2em]">
+                  <div className="absolute top-8 left-8 bg-primary text-accent px-4 py-1.5 font-bold text-[10px] uppercase tracking-[0.2em]">
                     {servicio.categoria}
                   </div>
                 </div>
                 
                 <CardHeader className="p-10 pb-0">
-                  <CardTitle className="text-4xl font-headline font-black text-black leading-none">{servicio.titulo}</CardTitle>
+                  <CardTitle className="text-4xl font-headline font-black text-foreground leading-none">{servicio.titulo}</CardTitle>
                 </CardHeader>
 
                 <CardContent className="p-10 space-y-10 flex-1">
                   <div className="space-y-6">
                     <div className="flex items-center gap-3">
                       <Zap className="h-5 w-5 text-accent" />
-                      <p className="font-bold text-black uppercase tracking-widest text-xs">
+                      <p className="font-bold text-foreground uppercase tracking-widest text-xs">
                         {servicio.id === 'technical-support' ? 'REQUISITOS OPERATIVOS' : 'OBJETIVOS ESTRATÉGICOS'}
                       </p>
                     </div>
@@ -60,16 +59,16 @@ export default function ServiciosPage() {
                       {servicio.detalles.map((detalle, i) => (
                         <li key={i} className="flex items-start gap-4 group/li">
                           <div className="mt-1.5 w-2 h-2 bg-accent group-hover/li:w-4 transition-all shrink-0"></div>
-                          <span className="text-secondary font-semibold text-lg leading-tight group-hover/li:text-black transition-colors">{detalle}</span>
+                          <span className="text-secondary font-semibold text-lg leading-tight group-hover/li:text-foreground transition-colors">{detalle}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                   
-                  <div className="pt-10 border-t border-gray-100 space-y-4">
+                  <div className="pt-10 border-t border-border space-y-4">
                     <p className="text-[10px] font-black text-secondary uppercase tracking-[0.3em]">CANAL DIRECTO</p>
                     <div className="flex flex-col">
-                      <span className="text-3xl font-black text-black leading-none tracking-tighter">
+                      <span className="text-3xl font-black text-foreground leading-none tracking-tighter">
                         {servicio.precio}
                       </span>
                     </div>
@@ -77,7 +76,7 @@ export default function ServiciosPage() {
                 </CardContent>
 
                 <CardFooter className="p-10 pt-0">
-                  <Button asChild className="w-full h-16 bg-black hover:bg-accent hover:text-black text-white font-bold text-lg rounded-none transition-all duration-300">
+                  <Button asChild className="w-full h-16 bg-primary hover:bg-accent hover:text-accent-foreground text-primary-foreground font-bold text-lg rounded-none transition-all duration-300">
                     <a href="https://wa.me/584246684134" target="_blank">AGENDAR AHORA</a>
                   </Button>
                 </CardFooter>
@@ -88,18 +87,18 @@ export default function ServiciosPage() {
       </section>
 
       {/* Especialización */}
-      <section className="py-32 bg-black text-white overflow-hidden relative">
+      <section className="py-32 bg-primary text-primary-foreground overflow-hidden relative">
         <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 blur-[150px] rounded-full"></div>
         <div className="container mx-auto px-4 md:px-6 relative z-10">
           <h2 className="text-4xl md:text-6xl font-headline font-black text-center mb-24 tracking-tighter">ESPECIALIZACIÓN <br /> <span className="text-accent">TECNOLÓGICA</span></h2>
-          <div className="grid md:grid-cols-2 gap-0 border border-white/10 max-w-5xl mx-auto">
-            <div className="p-12 border-b md:border-b-0 md:border-r border-white/10 hover:bg-white/5 transition-colors">
+          <div className="grid md:grid-cols-2 gap-0 border border-border/20 max-w-5xl mx-auto">
+            <div className="p-12 border-b md:border-b-0 md:border-r border-border/20 hover:bg-foreground/5 transition-colors">
               <h3 className="text-2xl font-headline font-bold mb-6 text-accent">SALUD DIGITAL</h3>
               <p className="text-secondary font-medium leading-relaxed">
                 Implementación de arquitecturas para telemedicina y análisis de datos clínicos asistidos por modelos de IA para diagnósticos preventivos.
               </p>
             </div>
-            <div className="p-12 hover:bg-white/5 transition-colors">
+            <div className="p-12 hover:bg-foreground/5 transition-colors">
               <h3 className="text-2xl font-headline font-bold mb-6 text-accent">AUTOMATIZACIÓN</h3>
               <p className="text-secondary font-medium leading-relaxed">
                 Despliegue de chatbots transaccionales inteligentes y flujos de trabajo automatizados que integran CRM, inventarios y facturación en un ecosistema unificado.

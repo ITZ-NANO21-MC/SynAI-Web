@@ -47,9 +47,9 @@ export default function PortafolioPage() {
   };
 
   return (
-    <div className="pt-24 pb-20 bg-white">
+    <div className="pt-24 pb-20 bg-background">
       <section className="container mx-auto px-4 md:px-6 py-20 text-center space-y-8">
-        <h1 className="text-5xl md:text-8xl font-headline font-black tracking-tighter leading-none text-black uppercase">
+        <h1 className="text-5xl md:text-8xl font-headline font-black tracking-tighter leading-none text-foreground uppercase">
           NUESTROS <br /> <span className="text-accent italic">PROYECTOS</span>
         </h1>
         <p className="text-xl text-secondary font-medium max-w-2xl mx-auto leading-relaxed">
@@ -67,8 +67,8 @@ export default function PortafolioPage() {
               onClick={() => setFiltro(cat)}
               className={`rounded-none px-8 font-bold tracking-widest text-xs uppercase h-12 transition-all ${
                 filtro === cat 
-                ? "bg-black text-white hover:bg-black/90" 
-                : "border-black text-black hover:bg-black hover:text-white"
+                ? "bg-primary text-primary-foreground hover:bg-primary/90" 
+                : "border-primary text-foreground hover:bg-primary hover:text-primary-foreground"
               }`}
             >
               {getCategoriaLabel(cat)}
@@ -83,7 +83,7 @@ export default function PortafolioPage() {
           {proyectosFiltrados.map((proyecto) => (
             <Card 
               key={proyecto.id} 
-              className="group cursor-pointer border-none shadow-soft hover:shadow-2xl transition-all duration-500 rounded-none bg-white overflow-hidden"
+              className="group cursor-pointer border-none shadow-soft hover:shadow-2xl transition-all duration-500 rounded-none bg-card overflow-hidden"
               onClick={() => setProyectoSeleccionado(proyecto)}
             >
               <CardContent className="p-0 relative h-80 w-full overflow-hidden">
@@ -93,18 +93,18 @@ export default function PortafolioPage() {
                   fill 
                   className="object-cover group-hover:scale-110 transition-transform duration-1000"
                 />
-                <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center p-8 text-center">
-                  <h3 className="text-2xl font-headline font-black text-white mb-4 uppercase tracking-tighter">{proyecto.titulo}</h3>
-                  <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-black font-black rounded-none uppercase text-xs tracking-widest">
+                <div className="absolute inset-0 bg-primary/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-center items-center p-8 text-center">
+                  <h3 className="text-2xl font-headline font-black text-primary-foreground mb-4 uppercase tracking-tighter">{proyecto.titulo}</h3>
+                  <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-accent-foreground font-black rounded-none uppercase text-xs tracking-widest">
                     Ver Detalles <ExternalLink className="ml-2 h-4 w-4" />
                   </Button>
                 </div>
-                <div className="absolute bottom-6 left-6 bg-black text-accent px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em]">
+                <div className="absolute bottom-6 left-6 bg-primary text-accent px-4 py-1.5 text-[10px] font-black uppercase tracking-[0.2em]">
                   {getCategoriaLabel(proyecto.categoria)}
                 </div>
               </CardContent>
-              <div className="p-8 border-t border-gray-100 group-hover:bg-gray-50 transition-colors">
-                <h4 className="font-headline text-xl font-black text-black uppercase tracking-tighter mb-1">{proyecto.titulo}</h4>
+              <div className="p-8 border-t border-border group-hover:bg-muted/50 transition-colors">
+                <h4 className="font-headline text-xl font-black text-foreground uppercase tracking-tighter mb-1">{proyecto.titulo}</h4>
                 <p className="text-[10px] font-black text-secondary uppercase tracking-[0.3em]">{proyecto.cliente}</p>
               </div>
             </Card>
@@ -114,7 +114,7 @@ export default function PortafolioPage() {
 
       {/* Modal de Detalles del Proyecto */}
       <Dialog open={!!proyectoSeleccionado} onOpenChange={(open) => !open && setProyectoSeleccionado(null)}>
-        <DialogContent className="max-w-4xl p-0 border-none rounded-none overflow-hidden bg-white h-[90vh] flex flex-col">
+        <DialogContent className="max-w-4xl p-0 border-none rounded-none overflow-hidden bg-background h-[90vh] flex flex-col">
           {proyectoSeleccionado && (
             <>
               {/* Cabecera Fija del Modal */}
@@ -125,36 +125,36 @@ export default function PortafolioPage() {
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
                 <div className="absolute bottom-6 left-8 right-8">
-                  <Badge className="bg-accent text-black font-black text-[10px] uppercase tracking-widest mb-3 rounded-none">
+                  <Badge className="bg-accent text-accent-foreground font-black text-[10px] uppercase tracking-widest mb-3 rounded-none">
                     {getCategoriaLabel(proyectoSeleccionado.categoria)}
                   </Badge>
-                  <DialogTitle className="text-3xl md:text-5xl font-headline font-black text-white uppercase tracking-tighter leading-none">
+                  <DialogTitle className="text-3xl md:text-5xl font-headline font-black text-foreground uppercase tracking-tighter leading-none">
                     {proyectoSeleccionado.titulo}
                   </DialogTitle>
                 </div>
               </div>
 
               {/* Área con Scroll */}
-              <ScrollArea className="flex-1 w-full bg-white">
+              <ScrollArea className="flex-1 w-full bg-background">
                 <div className="p-8 md:p-12">
                   <div className="grid md:grid-cols-3 gap-12">
                     <div className="md:col-span-2 space-y-12">
                       <section className="space-y-4">
-                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-gray-100 pb-2">Propósito del Proyecto</h4>
-                        <p className="text-lg font-medium text-black leading-relaxed">
+                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-border pb-2">Propósito del Proyecto</h4>
+                        <p className="text-lg font-medium text-foreground leading-relaxed">
                           {proyectoSeleccionado.resumen}
                         </p>
                       </section>
 
                       <section className="space-y-6">
-                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-gray-100 pb-2">Características Clave</h4>
+                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-border pb-2">Características Clave</h4>
                         <div className="grid sm:grid-cols-2 gap-4">
                           {proyectoSeleccionado.caracteristicas.map((item, i) => (
                             <div key={i} className="flex items-start gap-3 group">
                               <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                              <span className="text-sm font-bold text-black leading-snug group-hover:text-accent transition-colors">{item}</span>
+                              <span className="text-sm font-bold text-foreground leading-snug group-hover:text-accent transition-colors">{item}</span>
                             </div>
                           ))}
                         </div>
@@ -162,13 +162,13 @@ export default function PortafolioPage() {
 
                       {proyectoSeleccionado.tareas && proyectoSeleccionado.tareas.length > 0 && (
                         <section className="space-y-6">
-                          <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-gray-100 pb-2">Automatización y Tareas</h4>
+                          <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-border pb-2">Automatización y Tareas</h4>
                           <div className="space-y-4">
                             {proyectoSeleccionado.tareas.map((tarea, i) => {
                               const Icon = IconMap[tarea.icono];
                               return (
-                                <div key={i} className="flex items-center gap-4 p-4 bg-gray-50 border-l-4 border-accent">
-                                  <Icon className="h-5 w-5 text-black" />
+                                <div key={i} className="flex items-center gap-4 p-4 bg-muted/50 border-l-4 border-accent">
+                                  <Icon className="h-5 w-5 text-foreground" />
                                   <div>
                                     <p className="text-xs font-black uppercase tracking-widest">{tarea.titulo}</p>
                                     <p className="text-sm text-secondary">{tarea.descripcion}</p>
@@ -181,13 +181,13 @@ export default function PortafolioPage() {
                       )}
 
                       <section className="space-y-4">
-                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-gray-100 pb-2">Arquitectura & Estructura</h4>
-                        <div className="bg-black p-8 space-y-4">
+                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-border pb-2">Arquitectura & Estructura</h4>
+                        <div className="bg-primary p-8 space-y-4">
                           <div className="flex items-center gap-3">
                             <Layers className="h-5 w-5 text-accent" />
-                            <span className="font-headline font-bold text-white uppercase tracking-widest text-xs">{proyectoSeleccionado.arquitecturaTitulo}</span>
+                            <span className="font-headline font-bold text-primary-foreground uppercase tracking-widest text-xs">{proyectoSeleccionado.arquitecturaTitulo}</span>
                           </div>
-                          <p className="text-xs font-mono text-gray-400 leading-relaxed bg-white/5 p-4 border border-white/10">
+                          <p className="text-xs font-mono text-secondary leading-relaxed bg-foreground/5 p-4 border border-foreground/10">
                             {proyectoSeleccionado.arquitectura}
                           </p>
                         </div>
@@ -197,21 +197,21 @@ export default function PortafolioPage() {
                     <div className="space-y-10">
                       <section className="space-y-4">
                         <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em]">Cliente</h4>
-                        <p className="font-headline font-black text-xl text-black uppercase tracking-tighter">{proyectoSeleccionado.cliente}</p>
+                        <p className="font-headline font-black text-xl text-foreground uppercase tracking-tighter">{proyectoSeleccionado.cliente}</p>
                       </section>
 
                       <section className="space-y-6">
                         <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em]">Stack Tecnológico</h4>
                         <div className="flex flex-wrap gap-2">
                           {proyectoSeleccionado.tecnologias.map((tech, i) => (
-                            <Badge key={i} variant="outline" className="border-black text-black font-bold text-[10px] uppercase rounded-none px-3 py-1">
+                            <Badge key={i} variant="outline" className="border-border text-foreground font-bold text-[10px] uppercase rounded-none px-3 py-1">
                               {tech}
                             </Badge>
                           ))}
                         </div>
                       </section>
 
-                      <div className="pt-10 border-t border-gray-100 space-y-4">
+                      <div className="pt-10 border-t border-border space-y-4">
                         <div className="flex items-center gap-2">
                           <Code2 className="h-4 w-4 text-accent" />
                           <span className="text-[9px] font-black text-secondary uppercase tracking-widest">Pruebas Unitarias Integradas</span>
