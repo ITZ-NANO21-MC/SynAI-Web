@@ -50,7 +50,7 @@ Para que el formulario de contacto funcione correctamente, asegúrate de usar es
 
 ## Guía de Imágenes (Carpeta /public)
 
-Para que el sitio se vea correctamente, sube tus archivos a la carpeta `public` con estos nombres exactos:
+Para que el sitio se vea correctamente, sube tus archivos a la carpeta `public` con estos nombres exactos. **Resolución recomendada: 980x600 píxeles.**
 
 ### Logo y Favicon
 - `logo.png` - Logo principal de la marca.

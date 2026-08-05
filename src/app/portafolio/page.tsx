@@ -86,7 +86,7 @@ export default function PortafolioPage() {
               className="group cursor-pointer border-none shadow-soft hover:shadow-2xl transition-all duration-500 rounded-none bg-card overflow-hidden"
               onClick={() => setProyectoSeleccionado(proyecto)}
             >
-              <CardContent className="p-0 relative h-80 w-full overflow-hidden">
+              <CardContent className="p-0 relative aspect-[98/60] w-full overflow-hidden">
                 <Image 
                   src={getImagenUrl(proyecto.imagen)} 
                   alt={proyecto.titulo} 
@@ -118,7 +118,7 @@ export default function PortafolioPage() {
           {proyectoSeleccionado && (
             <>
               {/* Cabecera Fija del Modal */}
-              <div className="relative h-48 md:h-64 w-full shrink-0">
+              <div className="relative aspect-[98/60] w-full shrink-0">
                 <Image 
                   src={getImagenUrl(proyectoSeleccionado.imagen)} 
                   alt={proyectoSeleccionado.titulo}
