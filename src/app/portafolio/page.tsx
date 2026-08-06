@@ -118,8 +118,8 @@ export default function PortafolioPage() {
         <DialogContent className="max-w-4xl p-0 border-none rounded-none overflow-hidden bg-background h-[90vh] flex flex-col gap-0">
           {proyectoSeleccionado && (
             <>
-              {/* Cabecera del Modal con altura reducida para mejor visibilidad del contenido */}
-              <div className="relative h-[180px] md:h-[280px] w-full shrink-0">
+              {/* Cabecera del Modal con altura ajustada a 380px en md */}
+              <div className="relative h-[180px] md:h-[380px] w-full shrink-0">
                 <Image 
                   src={getImagenUrl(proyectoSeleccionado.imagen)} 
                   alt={proyectoSeleccionado.titulo}
