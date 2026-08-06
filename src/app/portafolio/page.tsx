@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from 'react';
@@ -114,42 +115,43 @@ export default function PortafolioPage() {
 
       {/* Modal de Detalles del Proyecto */}
       <Dialog open={!!proyectoSeleccionado} onOpenChange={(open) => !open && setProyectoSeleccionado(null)}>
-        <DialogContent className="max-w-4xl p-0 border-none rounded-none overflow-hidden bg-background h-[90vh] flex flex-col">
+        <DialogContent className="max-w-4xl p-0 border-none rounded-none overflow-hidden bg-background h-[90vh] flex flex-col gap-0">
           {proyectoSeleccionado && (
             <>
-              {/* Cabecera Fija del Modal */}
-              <div className="relative aspect-[98/60] w-full shrink-0">
+              {/* Cabecera del Modal con altura controlada */}
+              <div className="relative h-[250px] md:h-[400px] w-full shrink-0">
                 <Image 
                   src={getImagenUrl(proyectoSeleccionado.imagen)} 
                   alt={proyectoSeleccionado.titulo}
                   fill
                   className="object-cover"
+                  priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
-                <div className="absolute bottom-6 left-8 right-8">
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+                <div className="absolute bottom-6 left-8 right-8 z-10">
                   <Badge className="bg-accent text-accent-foreground font-black text-[10px] uppercase tracking-widest mb-3 rounded-none">
                     {getCategoriaLabel(proyectoSeleccionado.categoria)}
                   </Badge>
-                  <DialogTitle className="text-3xl md:text-5xl font-headline font-black text-foreground uppercase tracking-tighter leading-none">
+                  <DialogTitle className="text-2xl md:text-5xl font-headline font-black text-foreground uppercase tracking-tighter leading-none text-glow-cyan">
                     {proyectoSeleccionado.titulo}
                   </DialogTitle>
                 </div>
               </div>
 
-              {/* Área con Scroll */}
-              <ScrollArea className="flex-1 w-full bg-background">
+              {/* Área con Scroll que ocupa el resto del espacio */}
+              <ScrollArea className="flex-1 w-full bg-background border-t border-border">
                 <div className="p-8 md:p-12">
                   <div className="grid md:grid-cols-3 gap-12">
                     <div className="md:col-span-2 space-y-12">
                       <section className="space-y-4">
-                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-border pb-2">Propósito del Proyecto</h4>
+                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-l-4 border-accent pl-4">Propósito del Proyecto</h4>
                         <p className="text-lg font-medium text-foreground leading-relaxed">
                           {proyectoSeleccionado.resumen}
                         </p>
                       </section>
 
                       <section className="space-y-6">
-                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-border pb-2">Características Clave</h4>
+                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-l-4 border-accent pl-4">Características Clave</h4>
                         <div className="grid sm:grid-cols-2 gap-4">
                           {proyectoSeleccionado.caracteristicas.map((item, i) => (
                             <div key={i} className="flex items-start gap-3 group">
@@ -162,15 +164,15 @@ export default function PortafolioPage() {
 
                       {proyectoSeleccionado.tareas && proyectoSeleccionado.tareas.length > 0 && (
                         <section className="space-y-6">
-                          <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-border pb-2">Automatización y Tareas</h4>
+                          <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-l-4 border-accent pl-4">Automatización y Tareas</h4>
                           <div className="space-y-4">
                             {proyectoSeleccionado.tareas.map((tarea, i) => {
                               const Icon = IconMap[tarea.icono];
                               return (
-                                <div key={i} className="flex items-center gap-4 p-4 bg-muted/50 border-l-4 border-accent">
-                                  <Icon className="h-5 w-5 text-foreground" />
+                                <div key={i} className="flex items-center gap-4 p-4 bg-muted/30 border border-border">
+                                  <Icon className="h-5 w-5 text-accent" />
                                   <div>
-                                    <p className="text-xs font-black uppercase tracking-widest">{tarea.titulo}</p>
+                                    <p className="text-xs font-black uppercase tracking-widest text-foreground">{tarea.titulo}</p>
                                     <p className="text-sm text-secondary">{tarea.descripcion}</p>
                                   </div>
                                 </div>
@@ -181,13 +183,13 @@ export default function PortafolioPage() {
                       )}
 
                       <section className="space-y-4">
-                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-b border-border pb-2">Arquitectura & Estructura</h4>
+                        <h4 className="text-[10px] font-black text-secondary uppercase tracking-[0.3em] border-l-4 border-accent pl-4">Arquitectura & Estructura</h4>
                         <div className="bg-primary p-8 space-y-4">
                           <div className="flex items-center gap-3">
                             <Layers className="h-5 w-5 text-accent" />
                             <span className="font-headline font-bold text-primary-foreground uppercase tracking-widest text-xs">{proyectoSeleccionado.arquitecturaTitulo}</span>
                           </div>
-                          <p className="text-xs font-mono text-secondary leading-relaxed bg-foreground/5 p-4 border border-foreground/10">
+                          <p className="text-xs font-mono text-secondary leading-relaxed bg-foreground/5 p-4 border border-white/10">
                             {proyectoSeleccionado.arquitectura}
                           </p>
                         </div>
