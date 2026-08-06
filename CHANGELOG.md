@@ -2,7 +2,13 @@
 
 Todos los cambios notables en este proyecto serán documentados en este archivo.
 
-## [1.1.0] - 2025-05-20
+## [1.1.1] - 2025-08-04
+### Ajustado
+- **UI de Modales**: Ajuste final de la altura de imagen a 300px en el modal de portafolio para optimizar el área de lectura.
+- **Visibilidad CTA**: Corrección de contraste en el botón de WhatsApp de la sección final ("Transforma tu Operación") para legibilidad total en modo claro y oscuro.
+- **Refactorización CSS**: Limpieza de variables no utilizadas en `globals.css`.
+
+## [1.1.0] - 2025-08-04
 ### Agregado
 - **Sistema de Temas**: Implementación de `next-themes` con soporte para Modo Oscuro, Claro y Sistema.
 - **Componente ThemeToggle**: Selector de tema minimalista en el Header.
@@ -12,13 +18,11 @@ Todos los cambios notables en este proyecto serán documentados en este archivo.
 
 ### Ajustado
 - **Coordenadas Geográficas**: Ubicación exacta en Coro, Falcón (11.404853, -69.692387).
-- **UI de Modales**: Reducción de la altura de imagen en modales de portafolio a 300px para mejorar la legibilidad del contenido.
-- **Visibilidad en Modo Oscuro**: Corrección de colores en botones de WhatsApp y tarjetas para asegurar contraste óptimo.
 - **Estándar de Imágenes**: Definición de resolución 980x600 para todos los activos visuales.
 
 ### Corregido
-- **CSS Import Error**: Reubicación de `@import` en `globals.css` para evitar errores de compilación en Next.js.
-- **Superposición de Modales**: Ajuste de estructura Flexbox para evitar que las imágenes oculten el texto descriptivo.
+- **CSS Import Error**: Reubicación de `@import` en `globals.css` para cumplir estándares de Next.js.
+- **Superposición de Modales**: Corrección de estructura Flexbox para evitar que las imágenes oculten el texto.
 
 ---
 © 2025 SYNAI - Innovación Tecnológica.
