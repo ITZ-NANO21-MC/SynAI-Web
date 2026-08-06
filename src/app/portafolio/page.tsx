@@ -118,8 +118,8 @@ export default function PortafolioPage() {
         <DialogContent className="max-w-4xl p-0 border-none rounded-none overflow-hidden bg-background h-[90vh] flex flex-col gap-0">
           {proyectoSeleccionado && (
             <>
-              {/* Cabecera del Modal con altura controlada */}
-              <div className="relative h-[250px] md:h-[400px] w-full shrink-0">
+              {/* Cabecera del Modal con altura reducida para mejor visibilidad del contenido */}
+              <div className="relative h-[180px] md:h-[280px] w-full shrink-0">
                 <Image 
                   src={getImagenUrl(proyectoSeleccionado.imagen)} 
                   alt={proyectoSeleccionado.titulo}
@@ -127,12 +127,12 @@ export default function PortafolioPage() {
                   className="object-cover"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent"></div>
                 <div className="absolute bottom-6 left-8 right-8 z-10">
                   <Badge className="bg-accent text-accent-foreground font-black text-[10px] uppercase tracking-widest mb-3 rounded-none">
                     {getCategoriaLabel(proyectoSeleccionado.categoria)}
                   </Badge>
-                  <DialogTitle className="text-2xl md:text-5xl font-headline font-black text-foreground uppercase tracking-tighter leading-none text-glow-cyan">
+                  <DialogTitle className="text-2xl md:text-4xl font-headline font-black text-foreground uppercase tracking-tighter leading-none text-glow-cyan">
                     {proyectoSeleccionado.titulo}
                   </DialogTitle>
                 </div>
