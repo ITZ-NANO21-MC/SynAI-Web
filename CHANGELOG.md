@@ -2,13 +2,13 @@
 
 Todos los cambios notables en este proyecto serán documentados en este archivo.
 
-## [1.1.1] - 2025-08-04
+## [1.1.1] - 2026-08-06
 ### Ajustado
 - **UI de Modales**: Ajuste final de la altura de imagen a 300px en el modal de portafolio para optimizar el área de lectura.
 - **Visibilidad CTA**: Corrección de contraste en el botón de WhatsApp de la sección final ("Transforma tu Operación") para legibilidad total en modo claro y oscuro.
 - **Refactorización CSS**: Limpieza de variables no utilizadas en `globals.css`.
 
-## [1.1.0] - 2025-08-04
+## [1.1.0] - 2026-08-04
 ### Agregado
 - **Sistema de Temas**: Implementación de `next-themes` con soporte para Modo Oscuro, Claro y Sistema.
 - **Componente ThemeToggle**: Selector de tema minimalista en el Header.

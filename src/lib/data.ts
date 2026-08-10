@@ -55,19 +55,25 @@ export const SERVICIOS: Servicio[] = [
     imagen: 'servicio-tecnico'
   },
   {
-    id: 'ai-software-consulting',
-    titulo: 'Consultoría IA & Desarrollo a Medida',
-    descripcion: 'Llámanos si buscas llevar tu empresa al siguiente nivel con tecnología inteligente.',
+    id: 'web-design-pro',
+    titulo: 'Diseño Web Profesional – SynAI',
+    descripcion: 'Presencia digital en 7 días. Tu sitio web listo para vender, sin complicaciones.',
     detalles: [
-      'Diagnóstico de Automatización Gratuito',
-      'Aplicaciones Web/Móviles con IA',
-      'Chatbots Inteligentes (NLU)',
-      'Optimización de Procesos con IA'
+      '🖥️ Diseño moderno y responsivo',
+      '📄 5 Páginas (Inicio, Servicios, Galería, Portafolio, Contacto)',
+      '📸 Galería con lightbox (Hasta 14 fotos)',
+      '📍 Mapa Geoapify y Botones RRSS integrados',
+      '📧 Formulario funcional con EmailJS',
+      '🔍 SEO Básico y Metadatos optimizados',
+      '📹 Video tutorial de autogestión incluido',
+      '🎁 31 DÍAS DE PRUEBA SIN COSTO',
+      '💰 Solo pagas si te gusta ($20 USD Promo)',
+      '⏰ Entrega récord: 7 a 14 días'
     ],
-    precio: '(+58) 0424-6684134',
-    categoria: 'Innovación',
-    icono: 'BrainCircuit',
-    imagen: 'consultoria-ia'
+    precio: '$20 USD / 31 Días Gratis',
+    categoria: 'Desarrollo',
+    icono: 'Laptop',
+    imagen: 'service-web'
   }
 ];
 

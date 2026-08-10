@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { SERVICIOS } from '@/lib/data';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Zap } from 'lucide-react';
+import { Zap, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 
@@ -52,7 +52,7 @@ export default function ServiciosPage() {
                     <div className="flex items-center gap-3">
                       <Zap className="h-5 w-5 text-accent" />
                       <p className="font-bold text-foreground uppercase tracking-widest text-xs">
-                        {servicio.id === 'technical-support' ? 'REQUISITOS OPERATIVOS' : 'OBJETIVOS ESTRATÉGICOS'}
+                        {servicio.id === 'technical-support' ? 'REQUISITOS OPERATIVOS' : 'CARACTERÍSTICAS DEL SERVICIO'}
                       </p>
                     </div>
                     <ul className="space-y-4">
@@ -64,9 +64,29 @@ export default function ServiciosPage() {
                       ))}
                     </ul>
                   </div>
+
+                  {servicio.id === 'web-design-pro' && (
+                    <div className="bg-muted/50 p-6 border-l-4 border-accent space-y-4">
+                      <p className="font-headline font-black text-foreground text-xs uppercase tracking-widest">¿Cómo funciona?</p>
+                      <div className="space-y-2">
+                        <div className="flex items-center gap-2 text-sm text-secondary">
+                          <CheckCircle2 className="h-4 w-4 text-accent" />
+                          <span>Solicitas tu sitio sin pagar nada por adelantado.</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-secondary">
+                          <CheckCircle2 className="h-4 w-4 text-accent" />
+                          <span>Lo usas gratis por 31 días (periodo de prueba).</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-secondary">
+                          <CheckCircle2 className="h-4 w-4 text-accent" />
+                          <span>Si te gusta, pagas $20 USD y te quedas con el sitio.</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                   
                   <div className="pt-10 border-t border-border space-y-4">
-                    <p className="text-[10px] font-black text-secondary uppercase tracking-[0.3em]">CANAL DIRECTO</p>
+                    <p className="text-[10px] font-black text-secondary uppercase tracking-[0.3em]">VALOR DEL PROYECTO</p>
                     <div className="flex flex-col">
                       <span className="text-3xl font-black text-foreground leading-none tracking-tighter">
                         {servicio.precio}
@@ -77,7 +97,7 @@ export default function ServiciosPage() {
 
                 <CardFooter className="p-10 pt-0">
                   <Button asChild className="w-full h-16 bg-primary hover:bg-accent hover:text-accent-foreground text-primary-foreground font-bold text-lg rounded-none transition-all duration-300">
-                    <a href="https://wa.me/584246684134" target="_blank">AGENDAR AHORA</a>
+                    <a href="https://wa.me/584246684134" target="_blank">SOLICITAR AHORA</a>
                   </Button>
                 </CardFooter>
               </Card>
@@ -93,15 +113,15 @@ export default function ServiciosPage() {
           <h2 className="text-4xl md:text-6xl font-headline font-black text-center mb-24 tracking-tighter">ESPECIALIZACIÓN <br /> <span className="text-accent">TECNOLÓGICA</span></h2>
           <div className="grid md:grid-cols-2 gap-0 border border-border/20 max-w-5xl mx-auto">
             <div className="p-12 border-b md:border-b-0 md:border-r border-border/20 hover:bg-foreground/5 transition-colors">
-              <h3 className="text-2xl font-headline font-bold mb-6 text-accent">SALUD DIGITAL</h3>
+              <h3 className="text-2xl font-headline font-bold mb-6 text-accent">PRESENCIA DIGITAL</h3>
               <p className="text-secondary font-medium leading-relaxed">
-                Implementación de arquitecturas para telemedicina y análisis de datos clínicos asistidos por modelos de IA para diagnósticos preventivos.
+                Despliegue ultra rápido de sitios web corporativos con optimización para buscadores y alta tasa de conversión.
               </p>
             </div>
             <div className="p-12 hover:bg-foreground/5 transition-colors">
               <h3 className="text-2xl font-headline font-bold mb-6 text-accent">AUTOMATIZACIÓN</h3>
               <p className="text-secondary font-medium leading-relaxed">
-                Despliegue de chatbots transaccionales inteligentes y flujos de trabajo automatizados que integran CRM, inventarios y facturación en un ecosistema unificado.
+                Despliegue de chatbots transaccionales inteligentes y flujos de trabajo automatizados que integran CRM, inventarios y facturación.
               </p>
             </div>
           </div>
