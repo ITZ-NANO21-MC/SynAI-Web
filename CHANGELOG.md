@@ -2,6 +2,10 @@
 
 Todos los cambios notables en este proyecto serán documentados en este archivo.
 
+## [1.1.3] - 2026-08-08
+### Ajustado
+- **Resolución de Servicios**: Ajuste final de dimensiones a 560x560 píxeles con relación de aspecto cuadrada para tarjetas de servicios.
+
 ## [1.1.2] - 2026-08-07
 ### Ajustado
 - **Resolución de Imágenes**: Ajuste de las dimensiones en tarjetas de servicios a 980x580 píxeles para mejorar la proporción visual.
