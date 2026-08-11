@@ -13,6 +13,7 @@ export interface TareaAutomatizada {
 export interface Servicio {
   id: string;
   titulo: string;
+  telefono:string;
   descripcion: string;
   detalles: string[];
   precio: string;
@@ -41,6 +42,7 @@ export const SERVICIOS: Servicio[] = [
   {
     id: 'technical-support',
     titulo: 'Servicio Técnico en Computadores',
+    telefono: '(+58) 0424-6684134',
     descripcion: 'Llámanos si necesitas un equipo en óptimas condiciones para tu productividad diaria.',
     detalles: [
       'Mantenimiento',
@@ -49,14 +51,15 @@ export const SERVICIOS: Servicio[] = [
       'Instalación de programas',
       'Respaldos'
     ],
-    precio: '(+58) 0424-6684134',
+    precio: '15$',
     categoria: 'Soporte',
     icono: 'Laptop',
     imagen: 'servicio-tecnico'
   },
   {
     id: 'web-design-pro',
-    titulo: 'Diseño Web Profesional – SynAI',
+    titulo: 'Diseño Web Profesional',
+    telefono: '(+58) 0424-6684134',
     descripcion: 'Presencia digital en 7 días. Tu sitio web listo para vender, sin complicaciones.',
     detalles: [
       'Diseño moderno y responsivo',

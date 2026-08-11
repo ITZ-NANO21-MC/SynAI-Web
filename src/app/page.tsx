@@ -7,7 +7,7 @@ import { ESTADISTICAS, SERVICIOS } from '@/lib/data';
 export default function HomePage() {
   return (
     <div className="flex flex-col w-full bg-background">
-      <section className="relative min-h-[85vh] flex items-center pt-20 overflow-hidden bg-background">
+      <section className="relative min-h-[90vh] flex items-center pt-32 pb-32 overflow-hidden bg-background">
         {/* Decoración minimalista */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-accent/5 -skew-x-12 transform origin-top-right"></div>
         
@@ -102,7 +102,7 @@ export default function HomePage() {
                 <div className="pt-8 flex items-center justify-between border-t border-border">
                   <div className="flex flex-col">
                     <span className="text-[10px] text-secondary font-bold uppercase tracking-widest mb-1">Contacto Directo</span>
-                    <span className="text-foreground font-bold text-lg">{servicio.precio}</span>
+                    <span className="text-foreground font-bold text-lg">{servicio.telefono}</span>
                   </div>
                   <Link href={`/servicios#${servicio.id}`} className="bg-accent p-3 hover:bg-primary hover:text-accent transition-colors">
                     <ArrowRight className="h-6 w-6" />

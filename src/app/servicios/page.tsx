@@ -83,16 +83,7 @@ export default function ServiciosPage() {
                         </div>
                       </div>
                     </div>
-                  )}
-                  
-                  <div className="pt-10 border-t border-border space-y-4">
-                    <p className="text-[10px] font-black text-secondary uppercase tracking-[0.3em]">VALOR DEL PROYECTO</p>
-                    <div className="flex flex-col">
-                      <span className="text-3xl font-black text-foreground leading-none tracking-tighter">
-                        {servicio.precio}
-                      </span>
-                    </div>
-                  </div>
+                  )}                  
                 </CardContent>
 
                 <CardFooter className="p-10 pt-0">
