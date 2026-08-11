@@ -2,6 +2,11 @@
 
 Todos los cambios notables en este proyecto serán documentados en este archivo.
 
+## [1.1.5] - 2026-08-10
+### Ajustado
+- **Layout de Modal de Portafolio**: Rediseño a dos columnas (Imagen 430x430px a la izquierda, Información a la derecha) para mejorar la legibilidad y evitar la superposición de contenido.
+- **Imagen del Proyecto**: Ajuste final de dimensiones a 430x430px dentro del modal.
+
 ## [1.1.4] - 2026-08-09
 ### Ajustado
 - **Modal de Portafolio**: Rediseño de la cabecera del modal con imagen de 480x480px centrada.
