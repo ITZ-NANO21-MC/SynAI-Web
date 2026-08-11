@@ -2,6 +2,11 @@
 
 Todos los cambios notables en este proyecto serán documentados en este archivo.
 
+## [1.1.6] - 2026-08-11
+### Ajustado
+- **Modal de Portafolio**: Incremento de dimensiones de la imagen a 500x500px para una mejor visualización del detalle del proyecto.
+- **Layout de Modal**: Refuerzo de la estructura de dos columnas con scroll independiente para la información.
+
 ## [1.1.5] - 2026-08-10
 ### Ajustado
 - **Layout de Modal de Portafolio**: Rediseño a dos columnas (Imagen 430x430px a la izquierda, Información a la derecha) para mejorar la legibilidad y evitar la superposición de contenido.
