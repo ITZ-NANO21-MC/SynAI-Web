@@ -2,6 +2,11 @@
 
 Todos los cambios notables en este proyecto serán documentados en este archivo.
 
+## [1.1.2] - 2026-08-07
+### Ajustado
+- **Resolución de Imágenes**: Ajuste de las dimensiones en tarjetas de servicios a 980x580 píxeles para mejorar la proporción visual.
+- **Servicios**: Actualización integral de la oferta de Diseño Web Profesional con modelo de prueba de 31 días.
+
 ## [1.1.1] - 2026-08-06
 ### Ajustado
 - **UI de Modales**: Ajuste final de la altura de imagen a 300px en el modal de portafolio para optimizar el área de lectura.

@@ -28,12 +28,12 @@ export default function ServiciosPage() {
             const imgData = PlaceHolderImages.find(p => p.id === servicio.imagen);
             return (
               <Card key={servicio.id} id={servicio.id} className="flex flex-col h-full border-none shadow-soft hover:shadow-2xl transition-all duration-500 rounded-none bg-card overflow-hidden group">
-                <div className="relative aspect-[98/60] w-full overflow-hidden">
+                <div className="relative aspect-[980/580] w-full overflow-hidden">
                   <Image 
                     src={imgData?.imageUrl || ''} 
                     alt={servicio.titulo} 
                     width={980}
-                    height={600}
+                    height={580}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 opacity-90 hover:opacity-100"
                     data-ai-hint={imgData?.imageHint}
                   />
