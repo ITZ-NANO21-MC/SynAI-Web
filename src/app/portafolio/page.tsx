@@ -117,29 +117,31 @@ export default function PortafolioPage() {
         <DialogContent className="max-w-4xl p-0 border-none rounded-none overflow-hidden bg-background h-[90vh] flex flex-col gap-0">
           {proyectoSeleccionado && (
             <>
-              {/* Cabecera del Modal con altura ajustada a 300px en md */}
-              <div className="relative h-[180px] md:h-[300px] w-full shrink-0">
-                <Image 
-                  src={getImagenUrl(proyectoSeleccionado.imagen)} 
-                  alt={proyectoSeleccionado.titulo}
-                  fill
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent"></div>
-                <div className="absolute bottom-6 left-8 right-8 z-10">
-                  <Badge className="bg-accent text-accent-foreground font-black text-[10px] uppercase tracking-widest mb-3 rounded-none">
-                    {getCategoriaLabel(proyectoSeleccionado.categoria)}
-                  </Badge>
-                  <DialogTitle className="text-2xl md:text-4xl font-headline font-black text-foreground uppercase tracking-tighter leading-none text-glow-cyan">
-                    {proyectoSeleccionado.titulo}
-                  </DialogTitle>
+              {/* Contenedor de Imagen 480x480 */}
+              <div className="w-full flex justify-center py-8 bg-muted/20 shrink-0">
+                <div className="relative h-[480px] w-[480px] overflow-hidden border-4 border-primary shadow-2xl">
+                  <Image 
+                    src={getImagenUrl(proyectoSeleccionado.imagen)} 
+                    alt={proyectoSeleccionado.titulo}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
               </div>
 
-              {/* Área con Scroll que ocupa el resto del espacio */}
+              {/* Área con Scroll */}
               <ScrollArea className="flex-1 w-full bg-background border-t border-border">
                 <div className="p-8 md:p-12">
+                  <div className="mb-12">
+                    <Badge className="bg-accent text-accent-foreground font-black text-[10px] uppercase tracking-widest mb-3 rounded-none">
+                      {getCategoriaLabel(proyectoSeleccionado.categoria)}
+                    </Badge>
+                    <DialogTitle className="text-3xl md:text-5xl font-headline font-black text-foreground uppercase tracking-tighter leading-none">
+                      {proyectoSeleccionado.titulo}
+                    </DialogTitle>
+                  </div>
+
                   <div className="grid md:grid-cols-3 gap-12">
                     <div className="md:col-span-2 space-y-12">
                       <section className="space-y-4">

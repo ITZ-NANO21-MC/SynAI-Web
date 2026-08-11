@@ -2,6 +2,11 @@
 
 Todos los cambios notables en este proyecto serán documentados en este archivo.
 
+## [1.1.4] - 2026-08-09
+### Ajustado
+- **Modal de Portafolio**: Rediseño de la cabecera del modal con imagen de 480x480px centrada.
+- **Jerarquía Visual**: Reubicación de título y metadatos dentro del área de scroll para evitar superposiciones y mejorar la experiencia de usuario.
+
 ## [1.1.3] - 2026-08-08
 ### Ajustado
 - **Resolución de Servicios**: Ajuste final de dimensiones a 560x560 píxeles con relación de aspecto cuadrada para tarjetas de servicios.
