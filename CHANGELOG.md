@@ -3,6 +3,11 @@
 
 Todos los cambios notables en este proyecto serán documentados en este archivo.
 
+## [1.1.9] - 2026-08-14
+### Ajustado
+- **Layout de Contacto**: Reubicación estratégica del mapa interactivo de Geoapify a la columna lateral de canales de contacto.
+- **Identidad de Marca**: Traslado del bloque "Innovación Falcón" a la sección de cierre inferior para mejorar el flujo visual de la página.
+
 ## [1.1.8] - 2026-08-13
 ### Ajustado
 - **Tarjetas de Portafolio**: Actualización de la relación de aspecto de las imágenes a cuadrada (1:1) para reflejar una resolución de 420x420px.

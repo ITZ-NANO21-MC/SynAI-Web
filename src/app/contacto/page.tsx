@@ -58,7 +58,6 @@ export default function ContactoPage() {
     setIsSubmitting(true);
 
     try {
-      // Seteamos la hora actual en el campo oculto antes de enviar
       const timeInput = formRef.current.querySelector('input[name="time"]') as HTMLInputElement;
       if (timeInput) {
         timeInput.value = new Date().toLocaleString('es-VE', { 
@@ -69,10 +68,10 @@ export default function ContactoPage() {
       }
 
       await emailjs.sendForm(
-        'service_3t33mbv', // EmailJS Service ID
-        'template_0hj810h', // EmailJS Template ID
+        'service_3t33mbv', 
+        'template_0hj810h', 
         formRef.current,
-        'BGoE2TRMNSeEjfLR-' // EmailJS Public Key
+        'BGoE2TRMNSeEjfLR-' 
       );
 
       toast({
@@ -139,11 +138,18 @@ export default function ContactoPage() {
             </div>
           </div>
 
-          <div className="p-12 border-2 border-primary relative group overflow-hidden">
-            <div className="absolute top-0 right-0 w-20 h-20 bg-accent group-hover:w-full group-hover:h-full transition-all duration-700 -z-10 opacity-10"></div>
-            <BrainCircuit className="h-12 w-12 text-accent mb-6" />
-            <p className="font-headline text-2xl font-black text-foreground mb-2">INNOVACIÓN FALCÓN</p>
-            <p className="text-secondary font-medium uppercase tracking-widest text-xs">Centro de Operaciones Digitales</p>
+          {/* Mapa movido a esta ubicación */}
+          <div className="space-y-8">
+            <h2 className="text-2xl font-headline font-black tracking-[0.3em] text-foreground uppercase border-l-4 border-accent pl-6">UBICACIÓN</h2>
+            <div className="relative h-[400px] w-full border-2 border-primary overflow-hidden bg-muted group">
+              <div ref={mapContainer} className="absolute inset-0 grayscale hover:grayscale-0 transition-all duration-700" />
+              <div className="absolute top-6 left-6 z-10 bg-primary text-primary-foreground p-6 rounded-none shadow-2xl max-w-xs space-y-2 pointer-events-none">
+                <p className="font-headline font-black text-accent text-xl">FALCÓN, VZLA</p>
+                <p className="text-[10px] uppercase tracking-widest font-bold text-secondary-foreground leading-relaxed">
+                  Operamos desde el occidente venezolano para el mundo.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -155,7 +161,6 @@ export default function ContactoPage() {
           </CardHeader>
           <CardContent className="p-10 pt-0">
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-8">
-              {/* Campo oculto para la variable {{time}} de la plantilla */}
               <input type="hidden" name="time" />
               
               <div className="grid md:grid-cols-2 gap-6">
@@ -212,16 +217,21 @@ export default function ContactoPage() {
         </Card>
       </section>
 
-      {/* Sección del Mapa */}
+      {/* Bloque de Identidad movido a la parte inferior */}
       <section className="container mx-auto px-4 md:px-6 max-w-6xl">
-        <div className="space-y-8">
-          <h2 className="text-2xl font-headline font-black tracking-[0.3em] text-foreground uppercase border-l-4 border-accent pl-6">UBICACIÓN ESTRATÉGICA</h2>
-          <div className="relative h-[450px] w-full border-2 border-primary overflow-hidden bg-muted group">
-            <div ref={mapContainer} className="absolute inset-0 grayscale hover:grayscale-0 transition-all duration-700" />
-            <div className="absolute top-6 left-6 z-10 bg-primary text-primary-foreground p-6 rounded-none shadow-2xl max-w-xs space-y-2 pointer-events-none">
-              <p className="font-headline font-black text-accent text-xl">FALCÓN, VZLA</p>
-              <p className="text-[10px] uppercase tracking-widest font-bold text-secondary-foreground leading-relaxed">
-                Operamos desde el núcleo industrial y tecnológico del occidente venezolano para el mundo.
+        <div className="p-12 border-2 border-primary relative group overflow-hidden bg-muted/10">
+          <div className="absolute top-0 right-0 w-20 h-20 bg-accent group-hover:w-full group-hover:h-full transition-all duration-700 -z-10 opacity-10"></div>
+          <div className="flex flex-col md:flex-row items-center gap-8 md:justify-between">
+            <div className="flex items-center gap-6">
+              <BrainCircuit className="h-16 w-16 text-accent" />
+              <div>
+                <p className="font-headline text-3xl font-black text-foreground mb-1 uppercase tracking-tighter">INNOVACIÓN FALCÓN</p>
+                <p className="text-secondary font-bold uppercase tracking-[0.3em] text-xs">Centro de Operaciones Digitales</p>
+              </div>
+            </div>
+            <div className="text-center md:text-right max-w-md">
+              <p className="text-sm font-medium text-secondary leading-relaxed uppercase tracking-widest">
+                Redefiniendo el estándar tecnológico desde el occidente venezolano para el mercado global.
               </p>
             </div>
           </div>
