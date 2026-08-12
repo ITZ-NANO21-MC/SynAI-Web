@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from 'react';
@@ -36,7 +37,8 @@ export default function PortafolioPage() {
   const getImagenUrl = (id: string) => {
     const img = PlaceHolderImages.find(p => p.id === id);
     if (img?.imageUrl.startsWith('/')) {
-      return `${img.imageUrl}${img.imageUrl.includes('?') ? '&' : '?'}v=1.1`;
+      // Usar v=1.2 para forzar la actualización de caché
+      return `${img.imageUrl}${img.imageUrl.includes('?') ? '&' : '?'}v=1.2`;
     }
     return img?.imageUrl || '';
   };

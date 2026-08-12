@@ -3,61 +3,61 @@
     {
       "id": "techanalitica-web",
       "description": "TechAnalítica - Plataforma de Análisis Tecnológico",
-      "imageUrl": "/techanalitica-web.jpg?v=1.1",
+      "imageUrl": "/techanalitica-web.jpg?v=1.2",
       "imageHint": "technology analysis website"
     },
     {
       "id": "servicio-tecnico",
       "description": "Servicio técnico especializado en computadores",
-      "imageUrl": "/servicio-tecnico.jpg?v=1.1",
+      "imageUrl": "/servicio-tecnico.jpg?v=1.2",
       "imageHint": "computer repair service"
     },
     {
       "id": "consultoria-ia",
       "description": "Consultoría avanzada en Inteligencia Artificial",
-      "imageUrl": "/consultoria-ia.jpg?v=1.1",
+      "imageUrl": "/consultoria-ia.jpg?v=1.2",
       "imageHint": "artificial intelligence consulting"
     },
     {
       "id": "inventario-flask",
       "description": "Sistema de Inventario Flask para repuestos móviles",
-      "imageUrl": "/inventario-flask.jpg?v=1.1",
+      "imageUrl": "/inventario-flask.jpg?v=1.2",
       "imageHint": "inventory management software"
     },
     {
       "id": "techfix-web",
       "description": "TechFix Solutions Landing Page",
-      "imageUrl": "/techfix-web.jpg?v=1.1",
+      "imageUrl": "/techfix-web.jpg?v=1.2",
       "imageHint": "repair service landing page"
     },
     {
       "id": "nano-editor",
       "description": "NanoEditor v4.0 Modular Edition",
-      "imageUrl": "/nano-editor.jpg?v=1.1",
+      "imageUrl": "/nano-editor.jpg?v=1.2",
       "imageHint": "code editor software"
     },
     {
       "id": "chatbot-ml",
       "description": "Chatbot inteligente con Machine Learning para WhatsApp",
-      "imageUrl": "/chatbot-ml.jpg?v=1.1",
+      "imageUrl": "/chatbot-ml.jpg?v=1.2",
       "imageHint": "whatsapp chatbot machine learning"
     },
     {
       "id": "sms-classifier",
       "description": "Clasificador de SMS Spam con redes LSTM",
-      "imageUrl": "/sms-classifier.jpg?v=1.1",
+      "imageUrl": "/sms-classifier.jpg?v=1.2",
       "imageHint": "machine learning text classification"
     },
     {
       "id": "tb-detector",
       "description": "Detector de Tuberculosis mediante Radiografías de Tórax con IA",
-      "imageUrl": "/tb-detector.jpg?v=1.1",
+      "imageUrl": "/tb-detector.jpg?v=1.2",
       "imageHint": "chest x-ray tuberculosis ai"
     },
     {
       "id": "service-web",
       "description": "Diseño Web Profesional y Moderno",
-      "imageUrl": "/service-web.jpg?v=1.1",
+      "imageUrl": "/service-web.jpg?v=1.2",
       "imageHint": "web design professional"
     },
     {

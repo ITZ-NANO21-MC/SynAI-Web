@@ -39,7 +39,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative w-8 h-8 transition-transform group-hover:rotate-90">
             <Image 
-              src="/logo.png?v=1.1" 
+              src="/logo.png?v=1.2" 
               alt="SYNAI Logo" 
               fill
               className="object-contain dark:invert"
@@ -85,7 +85,7 @@ export default function Header() {
               <div className="flex flex-col h-full">
                 <div className="flex items-center justify-between mb-20">
                   <div className="flex items-center gap-2">
-                    <Image src="/logo.png?v=1.1" alt="SYNAI" width={32} height={32} className="dark:invert" />
+                    <Image src="/logo.png?v=1.2" alt="SYNAI" width={32} height={32} className="dark:invert" />
                     <span className="font-headline text-2xl font-black tracking-tighter uppercase text-foreground">SYNAI</span>
                   </div>
                 </div>
