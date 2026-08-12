@@ -1,6 +1,12 @@
+
 # Changelog - SYNAI Agencia Digital
 
 Todos los cambios notables en este proyecto serán documentados en este archivo.
+
+## [1.1.8] - 2026-08-13
+### Ajustado
+- **Tarjetas de Portafolio**: Actualización de la relación de aspecto de las imágenes a cuadrada (1:1) para reflejar una resolución de 420x420px.
+- **Coherencia Visual**: Unificación del tamaño de imagen entre la vista de cuadrícula y la vista de detalle en el modal.
 
 ## [1.1.7] - 2026-08-12
 ### Ajustado

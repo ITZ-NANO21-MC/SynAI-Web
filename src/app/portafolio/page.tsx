@@ -88,7 +88,7 @@ export default function PortafolioPage() {
               className="group cursor-pointer border-none shadow-soft hover:shadow-2xl transition-all duration-500 rounded-none bg-card overflow-hidden"
               onClick={() => setProyectoSeleccionado(proyecto)}
             >
-              <CardContent className="p-0 relative aspect-[98/60] w-full overflow-hidden">
+              <CardContent className="p-0 relative aspect-square w-full overflow-hidden">
                 <Image 
                   src={getImagenUrl(proyecto.imagen)} 
                   alt={proyecto.titulo} 
