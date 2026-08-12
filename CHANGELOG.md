@@ -2,6 +2,11 @@
 
 Todos los cambios notables en este proyecto serán documentados en este archivo.
 
+## [1.1.7] - 2026-08-12
+### Ajustado
+- **Modal de Portafolio**: Reducción de las dimensiones de la imagen a 420x420px.
+- **Espaciado de Modal**: Optimización del contenedor izquierdo para mejorar la visibilidad de la información en el panel derecho.
+
 ## [1.1.6] - 2026-08-11
 ### Ajustado
 - **Modal de Portafolio**: Incremento de dimensiones de la imagen a 500x500px para una mejor visualización del detalle del proyecto.
@@ -39,14 +44,6 @@ Todos los cambios notables en este proyecto serán documentados en este archivo.
 - **Mapas Interactivos**: Integración de Geoapify + MapLibre GL en la página de contacto.
 - **Controles de Mapa**: Añadidos botones de Zoom (+/-) y rotación.
 - **Genkit SEO**: Flujo de IA para generación automática de metadatos SEO.
-
-### Ajustado
-- **Coordenadas Geográficas**: Ubicación exacta en Coro, Falcón (11.404853, -69.692387).
-- **Estándar de Imágenes**: Definición de resolución 980x600 para todos los activos visuales.
-
-### Corregido
-- **CSS Import Error**: Reubicación de `@import` en `globals.css` para cumplir estándares de Next.js.
-- **Superposición de Modales**: Corrección de estructura Flexbox para evitar que las imágenes oculten el texto.
 
 ---
 © 2025 SYNAI - Innovación Tecnológica.

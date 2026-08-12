@@ -119,9 +119,9 @@ export default function PortafolioPage() {
         <DialogContent className="max-w-6xl p-0 border-none rounded-none overflow-hidden bg-background h-[90vh] md:h-[80vh] flex flex-col md:flex-row gap-0">
           {proyectoSeleccionado && (
             <>
-              {/* LADO IZQUIERDO: Imagen (500x500) */}
-              <div className="w-full md:w-[560px] flex items-center justify-center bg-muted/20 border-b md:border-b-0 md:border-r border-border p-6 shrink-0">
-                <div className="relative h-[300px] w-[300px] md:h-[500px] md:w-[500px] overflow-hidden border-4 border-primary shadow-2xl">
+              {/* LADO IZQUIERDO: Imagen (420x420) */}
+              <div className="w-full md:w-[480px] flex items-center justify-center bg-muted/20 border-b md:border-b-0 md:border-r border-border p-6 shrink-0">
+                <div className="relative h-[300px] w-[300px] md:h-[420px] md:w-[420px] overflow-hidden border-4 border-primary shadow-2xl">
                   <Image 
                     src={getImagenUrl(proyectoSeleccionado.imagen)} 
                     alt={proyectoSeleccionado.titulo}
