@@ -4,6 +4,25 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Zap, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
+import { generatePageMetadata } from '@/lib/seo';
+
+// Metadata dinámica para la página de servicios
+export async function generateMetadata() {
+  // Construir contenido relevante a partir de los servicios
+  const serviciosText = SERVICIOS.map(s => `${s.titulo}: ${s.descripcion}`).join('. ');
+  const keywords = SERVICIOS.map(s => s.titulo).concat(['consultoría IA', 'desarrollo web', 'automatización', 'soporte técnico', 'Falcón', 'Venezuela']);
+
+  const content = `SYNAI - Servicios de consultoría en IA, desarrollo web, automatización y soporte técnico en Falcón, Venezuela. ${serviciosText}`;
+
+  return generatePageMetadata({
+    content,
+    keywords,
+    pageType: 'service page',
+    titleSuffix: ' | SYNAI',
+    fallbackTitle: 'Servicios SYNAI - Consultoría en IA & Desarrollo de Software',
+    fallbackDescription: 'Ofrecemos servicios de consultoría en Inteligencia Artificial, desarrollo web, automatización de procesos y soporte técnico especializado en Falcón, Venezuela.',
+  });
+}
 
 export default function ServiciosPage() {
   return (
