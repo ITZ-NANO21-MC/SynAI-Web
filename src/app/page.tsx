@@ -3,6 +3,27 @@ import { ArrowRight, CheckCircle2, Star, Trophy, Zap, BrainCircuit, MapPin, Lapt
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { ESTADISTICAS, SERVICIOS } from '@/lib/data';
+import { generatePageMetadata } from '@/lib/seo';
+
+// Metadata dinámica para la página de inicio
+export async function generateMetadata() {
+  // Construir contenido relevante para SEO a partir de los datos
+  const content = [
+    'SYNAI - Consultoría en IA y Arquitectura de Software en Falcón, Venezuela',
+    'Servicios: ' + SERVICIOS.map(s => s.titulo).join(', '),
+    'Estadísticas: ' + ESTADISTICAS.map(e => `${e.valor}${e.sufijo} ${e.etiqueta}`).join(', '),
+    'Descripción: Arquitectura de software e Inteligencia Artificial con enfoque minimalista y eficiente.',
+  ].join(' ');
+
+  return generatePageMetadata({
+    content,
+    keywords: ['consultoría IA', 'arquitectura de software', 'desarrollo personalizado', 'Falcón', 'Venezuela', 'minimalista'],
+    pageType: 'homepage',
+    titleSuffix: ' | SYNAI',
+    fallbackTitle: 'SYNAI - Consultoría en IA & Desarrollo de Software',
+    fallbackDescription: 'Consultoría líder en Inteligencia Artificial y desarrollo de software personalizado para empresas innovadoras.',
+  });
+}
 
 export default function HomePage() {
   return (
