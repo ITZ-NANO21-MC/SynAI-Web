@@ -1,14 +1,14 @@
 "use client"
 
-import * as React from 'react';
-import { Mail, Phone, MapPin, Send, BrainCircuit } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from '@/components/ui/card';
-import { useToast } from '@/hooks/use-toast';
-import emailjs from '@emailjs/browser';
-import maplibregl from 'maplibre-gl';
+import * as React from "react";
+import { Mail, Phone, MapPin, Send, BrainCircuit } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
+import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
+import maplibregl from "maplibre-gl";
 
 export default function ContactoPage() {
   const { toast } = useToast();
@@ -17,13 +17,11 @@ export default function ContactoPage() {
   const mapContainer = React.useRef<HTMLDivElement>(null);
   const map = React.useRef<maplibregl.Map | null>(null);
 
-  // Configuración de Geoapify
-  const GEOAPIFY_API_KEY = "1e565ab74abb41d69d9e03ce4d723161";
+  const GEOAPIFY_API_KEY = process.env.NEXT_PUBLIC_GEOAPIFY_API_KEY || "";
 
   React.useEffect(() => {
     if (map.current || !mapContainer.current) return;
 
-    // Coordenadas actualizadas: [Longitud, Latitud]
     const coords: [number, number] = [-69.69238708900974, 11.404853870141157];
 
     map.current = new maplibregl.Map({
@@ -34,13 +32,11 @@ export default function ContactoPage() {
       attributionControl: false
     });
 
-    // Añadir controles de navegación (Zoom y Rotación)
     map.current.addControl(new maplibregl.NavigationControl({
       showCompass: true,
       showZoom: true
-    }), 'top-right');
+    }), "top-right");
 
-    // Marcador personalizado con color cian de SYNAI
     new maplibregl.Marker({ color: "#00F2FF" })
       .setLngLat(coords)
       .addTo(map.current);
@@ -58,20 +54,20 @@ export default function ContactoPage() {
     setIsSubmitting(true);
 
     try {
-      const timeInput = formRef.current.querySelector('input[name="time"]') as HTMLInputElement;
+      const timeInput = formRef.current.querySelector("input[name=\"time\"]") as HTMLInputElement;
       if (timeInput) {
-        timeInput.value = new Date().toLocaleString('es-VE', { 
-          timeZone: 'America/Caracas',
-          dateStyle: 'full',
-          timeStyle: 'medium'
+        timeInput.value = new Date().toLocaleString("es-VE", { 
+          timeZone: "America/Caracas",
+          dateStyle: "full",
+          timeStyle: "medium"
         });
       }
 
       await emailjs.sendForm(
-        'service_3t33mbv', 
-        'template_0hj810h', 
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "", 
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "", 
         formRef.current,
-        'BGoE2TRMNSeEjfLR-' 
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "" 
       );
 
       toast({
@@ -81,7 +77,7 @@ export default function ContactoPage() {
       
       formRef.current.reset();
     } catch (error) {
-      console.error('EmailJS Error:', error);
+      console.error("EmailJS Error:", error);
       toast({
         variant: "destructive",
         title: "ERROR DE ENVÍO",
@@ -138,7 +134,6 @@ export default function ContactoPage() {
             </div>
           </div>
 
-          {/* Mapa movido a esta ubicación */}
           <div className="space-y-8">
             <h2 className="text-2xl font-headline font-black tracking-[0.3em] text-foreground uppercase border-l-4 border-accent pl-6">UBICACIÓN</h2>
             <div className="relative h-[400px] w-full border-2 border-primary overflow-hidden bg-muted group">
@@ -217,7 +212,6 @@ export default function ContactoPage() {
         </Card>
       </section>
 
-      {/* Bloque de Identidad movido a la parte inferior */}
       <section className="container mx-auto px-4 md:px-6 max-w-6xl">
         <div className="p-12 border-2 border-primary relative group overflow-hidden bg-muted/10">
           <div className="absolute top-0 right-0 w-20 h-20 bg-accent group-hover:w-full group-hover:h-full transition-all duration-700 -z-10 opacity-10"></div>
