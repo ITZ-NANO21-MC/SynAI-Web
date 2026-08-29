@@ -1,15 +1,24 @@
-import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Card, CardContent } from '@/components/ui/card';
-import { ZoomIn } from 'lucide-react';
+import Image from "next/image";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { Card, CardContent } from "@/components/ui/card";
+import { ZoomIn } from "lucide-react";
+import { generateStaticMetadata } from "@/lib/seo";
 
-/**
- * Galería visual del estudio y proyectos
- */
+export async function generateMetadata() {
+  const keywords = ["galería", "estudio", "proyectos", "visual", "SYNAI", "Falcón", "desarrollo software", "IA"];
+  const content = "Galería visual de SYNAI - Imágenes del estudio, proyectos y entorno de trabajo en Falcón, Venezuela.";
+
+  return generateStaticMetadata(
+    "Galería SYNAI - Visual Studio y Proyectos",
+    "Explora nuestra galería de imágenes: estudio de trabajo, proyectos de IA, desarrollo de software y el entorno tecnológico en Falcón.",
+    "portfolio item"
+  );
+}
+
 export default function GaleriaPage() {
   const galleryImages = [
-    ...PlaceHolderImages.filter(img => img.id.startsWith('service') || img.id.startsWith('project')),
-    ...PlaceHolderImages.filter(img => img.id.startsWith('studio'))
+    ...PlaceHolderImages.filter(img => img.id.startsWith("service") || img.id.startsWith("project")),
+    ...PlaceHolderImages.filter(img => img.id.startsWith("studio"))
   ];
 
   return (
