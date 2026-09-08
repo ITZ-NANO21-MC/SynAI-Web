@@ -66,7 +66,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-8 text-left pt-12">
             <div className="p-8 border-l-4 border-accent bg-foreground/5">
               <p className="text-secondary italic text-lg">
-                "Desde Falcón, redefinimos el desarrollo de software eliminando el ruido y enfocándonos en el núcleo de la eficiencia operativa."
+                &ldquo;Desde Falcón, redefinimos el desarrollo de software eliminando el ruido y enfocándonos en el núcleo de la eficiencia operativa.&rdquo;
               </p>
             </div>
             <div className="flex items-center justify-center">

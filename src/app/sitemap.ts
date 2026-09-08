@@ -1,5 +1,4 @@
 import { MetadataRoute } from 'next';
-import { SERVICIOS, PROYECTOS } from '@/lib/data';
 
 // Rutas estáticas de la aplicación
 const staticRoutes = [

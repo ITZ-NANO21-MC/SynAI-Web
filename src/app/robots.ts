@@ -24,7 +24,7 @@ export default function robots(): MetadataRoute.Robots {
           '/_next/',
           '/.next/',
         ],
-        'crawl-delay': 1, // Respetuoso con el servidor
+        crawlDelay: 1, // Respetuoso con el servidor
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,

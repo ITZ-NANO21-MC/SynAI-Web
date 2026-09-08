@@ -3,14 +3,13 @@ import { NextRequest } from 'next/server';
 
 // Configuración para la imagen OG
 export const runtime = 'edge';
-export const alt = 'SYNAI - Consultoría en IA y Arquitectura de Software';
-export const size = {
+
+const size = {
   width: 1200,
   height: 630,
 };
-export const contentType = 'image/png';
 
-export default async function GET(req: NextRequest) {
+export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const title = searchParams.get('title') || 'SYNAI';
   const description = searchParams.get('description') || 'Consultoría en IA y Arquitectura de Software';
@@ -116,16 +115,6 @@ export default async function GET(req: NextRequest) {
       ),
       {
         ...size,
-        fonts: [
-          {
-            name: 'Space Grotesk',
-            data: await fetch(new URL('../../../public/fonts/SpaceGrotesk-Bold.ttf', import.meta.url)).then((res) =>
-              res.arrayBuffer()
-            ),
-            weight: 700,
-            style: 'normal',
-          },
-        ],
       }
     );
   } catch (error) {

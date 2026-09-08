@@ -1,5 +1,3 @@
-'use server';
-
 import { generateSeoMetadata as generateSeoMetadataFlow } from '@/ai/flows/generate-seo-metadata';
 import type { Metadata } from 'next';
 
@@ -139,7 +137,7 @@ export function clearSeoCache(): void {
 export function generateStaticMetadata(
   title: string,
   description: string,
-  pageType: PageType = 'website',
+  pageType: PageType = 'homepage',
   imageUrl?: string
 ): SeoMetadata {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://synai.dev';

@@ -45,7 +45,7 @@ export default function ContactoPage() {
       map.current?.remove();
       map.current = null;
     };
-  }, []);
+  }, [GEOAPIFY_API_KEY]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
