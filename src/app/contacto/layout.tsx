@@ -4,8 +4,8 @@ import { generateStaticMetadata } from '@/lib/seo';
 // Se separa del page.tsx porque los archivos con 'use client' no pueden exportar generateMetadata
 export async function generateMetadata() {
   return generateStaticMetadata(
-    "Contacto SYNAI - Consultoría en IA y Arquitectura de Software en Falcón",
-    "Contacta con SYNAI para consultoría en Inteligencia Artificial, desarrollo de software, automatización y soporte técnico en Falcón, Venezuela.",
+    "Contacto SynAI - Diseño web, Chatbots e Inventario en Coro, Falcón",
+    "Solicita tu demo gratis: diseño web con 31 días de prueba, chatbots para WhatsApp, sistema de inventario y soporte técnico en Falcón, Venezuela.",
     "contact page"
   );
 }

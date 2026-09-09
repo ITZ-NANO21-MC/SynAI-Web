@@ -97,27 +97,27 @@ export async function generatePageMetadata(config: SeoConfig): Promise<SeoMetada
 
     // Fallback estático
     const fallback: SeoMetadata = {
-      title: fallbackTitle || 'SYNAI - Consultoría en IA y Arquitectura de Software' + titleSuffix,
-      description: fallbackDescription || 'Agencia de consultoría en Inteligencia Artificial y arquitectura de software basada en Falcón, Venezuela.',
+      title: fallbackTitle || 'SynAI | Diseño web, Chatbots e Inventario en Coro, Falcón' + titleSuffix,
+      description: fallbackDescription || 'Soluciones tecnológicas para negocios en Falcón. Diseño web con 31 días gratis, chatbots e inventario. ¡Contáctanos!',
       openGraph: {
-        title: fallbackTitle || 'SYNAI - Consultoría en IA y Arquitectura de Software',
-        description: fallbackDescription || 'Agencia de consultoría en Inteligencia Artificial y arquitectura de software basada en Falcón, Venezuela.',
+        title: fallbackTitle || 'SynAI | Diseño web, Chatbots e Inventario en Coro, Falcón',
+        description: fallbackDescription || 'Soluciones tecnológicas para negocios en Falcón. Diseño web con 31 días gratis, chatbots e inventario. ¡Contáctanos!',
         type: pageType === 'homepage' ? 'website' : 'article',
         locale: 'es_VE',
         images: [
           {
-            url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://synai.dev'}/og?title=${encodeURIComponent(fallbackTitle || 'SYNAI')}`,
+            url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://synai.dev'}/og?title=${encodeURIComponent(fallbackTitle || 'SynAI')}`,
             width: 1200,
             height: 630,
-            alt: 'SYNAI - Consultoría en IA',
+            alt: 'SynAI - Diseño web, Chatbots e Inventario en Falcón',
           },
         ],
       },
       twitter: {
         card: 'summary_large_image',
-        title: fallbackTitle || 'SYNAI - Consultoría en IA y Arquitectura de Software',
-        description: fallbackDescription || 'Agencia de consultoría en Inteligencia Artificial y arquitectura de software basada en Falcón, Venezuela.',
-        images: [`${process.env.NEXT_PUBLIC_BASE_URL || 'https://synai.dev'}/og?title=${encodeURIComponent(fallbackTitle || 'SYNAI')}`],
+        title: fallbackTitle || 'SynAI | Diseño web, Chatbots e Inventario en Coro, Falcón',
+        description: fallbackDescription || 'Soluciones tecnológicas para negocios en Falcón. Diseño web con 31 días gratis, chatbots e inventario. ¡Contáctanos!',
+        images: [`${process.env.NEXT_PUBLIC_BASE_URL || 'https://synai.dev'}/og?title=${encodeURIComponent(fallbackTitle || 'SynAI')}`],
       },
     };
 

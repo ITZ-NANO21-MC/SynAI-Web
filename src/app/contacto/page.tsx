@@ -169,10 +169,11 @@ export default function ContactoPage() {
                   name="specialty" 
                   className="flex h-12 w-full border border-border bg-background px-3 py-2 text-sm font-bold uppercase focus:border-accent focus:outline-none"
                 >
-                  <option value="IA">CONSULTORÍA IA</option>
+                  <option value="WEB">DISEÑO WEB</option>
+                  <option value="CHATBOT">CHATBOT WHATSAPP</option>
+                  <option value="INVENTARIO">SISTEMA DE INVENTARIO</option>
                   <option value="SOPORTE">SOPORTE TÉCNICO</option>
-                  <option value="AUTOMATIZACION">AUTOMATIZACIÓN</option>
-                  <option value="SOFTWARE">SOFTWARE A MEDIDA</option>
+                  <option value="OTRO">OTRO</option>
                 </select>
               </div>
               <div className="space-y-2">

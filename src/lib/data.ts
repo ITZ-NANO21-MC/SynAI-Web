@@ -40,44 +40,88 @@ export interface Proyecto {
 
 export const SERVICIOS: Servicio[] = [
   {
-    id: 'technical-support',
-    titulo: 'Servicio Técnico en Computadores',
-    telefono: '(+58) 0424-6684134',
-    descripcion: 'Llámanos si necesitas un equipo en óptimas condiciones para tu productividad diaria.',
-    detalles: [
-      'Mantenimiento',
-      'Limpieza',
-      'Formateo',
-      'Instalación de programas',
-      'Respaldos'
-    ],
-    precio: '15$',
-    categoria: 'Soporte',
-    icono: 'Laptop',
-    imagen: 'servicio-tecnico'
-  },
-  {
     id: 'web-design-pro',
     titulo: 'Diseño Web Profesional',
     telefono: '(+58) 0424-6684134',
-    descripcion: 'Presencia digital en 7 días. Tu sitio web listo para vender, sin complicaciones.',
+    descripcion: 'Tu web en 7 días. 31 días gratis, luego solo $20.',
     detalles: [
       'Diseño moderno y responsivo',
+      'Botones de WhatsApp integrados',
+      'Formulario de contacto funcional',
+      'SEO básico y metadatos optimizados',
       '5 Páginas (Inicio, Servicios, Galería, Portafolio, Contacto)',
-      'Galería con lightbox (Hasta 14 fotos)',
-      'Mapa Geoapify y Botones RRSS integrados',
-      'Formulario funcional con EmailJS',
-      'SEO Básico y Metadatos optimizados',
       'Video tutorial de autogestión incluido',
       '31 DÍAS DE PRUEBA SIN COSTO',
       'Solo pagas si te gusta ($20 USD Promo)',
-      'Entrega récord: 7 a 14 días'
+      'Entrega récord: 7 días'
     ],
     precio: '$20 USD / 31 Días Gratis',
     categoria: 'Desarrollo',
     icono: 'Laptop',
     imagen: 'service-web'
+  },
+  {
+    id: 'chatbot-whatsapp',
+    titulo: 'Chatbot para WhatsApp',
+    telefono: '(+58) 0424-6684134',
+    descripcion: 'Atención 24/7, responde preguntas y consulta stock.',
+    detalles: [
+      'Respuestas automáticas a preguntas frecuentes',
+      'Consulta de stock y disponibilidad',
+      'Atención al cliente 24/7',
+      'Base de conocimiento configurable',
+      'Detección de intenciones con IA',
+      'Soporte en español',
+      'Setup guiado en 48 horas'
+    ],
+    precio: '$25/mes (setup $12)',
+    categoria: 'Automatización',
+    icono: 'BrainCircuit',
+    imagen: 'chatbot-ml'
+  },
+  {
+    id: 'inventario-pro',
+    titulo: 'Sistema de Inventario',
+    telefono: '(+58) 0424-6684134',
+    descripcion: 'Controla stock, ventas y alertas desde un solo lugar.',
+    detalles: [
+      'Control de stock en tiempo real',
+      'Registro de ventas y entradas',
+      'Alertas automáticas de bajo stock',
+      'Exportación a Excel y auditoría',
+      'Respaldos automáticos diarios',
+      'Actualización de precios por tasa',
+      '15 DÍAS DE PRUEBA GRATIS'
+    ],
+    precio: '$25/mes (setup $14) + 15 días gratis',
+    categoria: 'Software',
+    icono: 'Database',
+    imagen: 'inventario-flask'
+  },
+  {
+    id: 'technical-support',
+    titulo: 'Help Desk (Soporte Técnico)',
+    telefono: '(+58) 0424-6684134',
+    descripcion: 'Mantenimiento preventivo y reparación de PC. Diagnóstico gratis si reparas.',
+    detalles: [
+      'Mantenimiento preventivo',
+      'Reparación de PC',
+      'Diagnóstico gratuito al reparar',
+      'Limpieza y formateo',
+      'Instalación de programas',
+      'Respaldos de información'
+    ],
+    precio: 'Desde $8/mes',
+    categoria: 'Soporte',
+    icono: 'Wrench',
+    imagen: 'servicio-tecnico'
   }
+];
+
+export const ESTADISTICAS = [
+  { valor: '31', etiqueta: 'Días de Prueba Gratis', sufijo: '' },
+  { valor: '$20', etiqueta: 'Desde tu Web', sufijo: '' },
+  { valor: '24/7', etiqueta: 'Atención Automatizada', sufijo: '' }
 ];
 
 export const PORTAFOLIO: Proyecto[] = [
@@ -312,10 +356,4 @@ export const PORTAFOLIO: Proyecto[] = [
     imagen: 'sms-classifier',
     destacado: true
   }
-];
-
-export const ESTADISTICAS = [
-  { valor: '06', etiqueta: 'Modelos IA Desplegados', sufijo: '+' },
-  { valor: '12', etiqueta: 'SOFTWARES DESARROLLADOS', sufijo: '+' },
-  { valor: '05', etiqueta: 'SOLUCIONES', sufijo: '+' }
 ];

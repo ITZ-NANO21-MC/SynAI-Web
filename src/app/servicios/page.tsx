@@ -9,18 +9,18 @@ import { generatePageMetadata } from '@/lib/seo';
 // Metadata dinámica para la página de servicios
 export async function generateMetadata() {
   // Construir contenido relevante a partir de los servicios
-  const serviciosText = SERVICIOS.map(s => `${s.titulo}: ${s.descripcion}`).join('. ');
-  const keywords = SERVICIOS.map(s => s.titulo).concat(['consultoría IA', 'desarrollo web', 'automatización', 'soporte técnico', 'Falcón', 'Venezuela']);
+  const serviciosText = SERVICIOS.map(s => `${s.titulo}: ${s.descripcion} (${s.precio})`).join('. ');
+  const keywords = SERVICIOS.map(s => s.titulo).concat(['diseño web', 'chatbots WhatsApp', 'sistema de inventario', 'soporte técnico', 'Coro', 'Falcón', 'Venezuela']);
 
-  const content = `SYNAI - Servicios de consultoría en IA, desarrollo web, automatización y soporte técnico en Falcón, Venezuela. ${serviciosText}`;
+  const content = `SynAI - Servicios de diseño web con 31 días gratis, chatbots para WhatsApp, sistema de inventario y soporte técnico en Coro, Falcón, Venezuela. ${serviciosText}`;
 
   return generatePageMetadata({
     content,
     keywords,
     pageType: 'service page',
     titleSuffix: ' | SYNAI',
-    fallbackTitle: 'Servicios SYNAI - Consultoría en IA & Desarrollo de Software',
-    fallbackDescription: 'Ofrecemos servicios de consultoría en Inteligencia Artificial, desarrollo web, automatización de procesos y soporte técnico especializado en Falcón, Venezuela.',
+    fallbackTitle: 'Servicios SynAI - Diseño web, Chatbots e Inventario en Coro, Falcón',
+    fallbackDescription: 'Diseño web con 31 días gratis, chatbots para WhatsApp, sistema de inventario y soporte técnico en Falcón, Venezuela. Solicita tu demo gratis.',
   });
 }
 
@@ -35,7 +35,7 @@ export default function ServiciosPage() {
             NUESTRAS <br /> <span className="text-accent">SOLUCIONES</span>
           </h1>
           <p className="text-xl text-secondary font-medium max-w-2xl mx-auto leading-relaxed">
-            Estructuras tecnológicas diseñadas para maximizar la productividad y la innovación empresarial desde Falcón.
+            Diseño web, chatbots, inventario y soporte técnico. Soluciones accesibles para digitalizar tu negocio en Falcón.
           </p>
         </div>
       </section>
@@ -66,6 +66,7 @@ export default function ServiciosPage() {
                 
                 <CardHeader className="p-10 pb-0">
                   <CardTitle className="text-4xl font-headline font-black text-foreground leading-none">{servicio.titulo}</CardTitle>
+                  <p className="pt-4 text-xl font-headline font-black text-accent">{servicio.precio}</p>
                 </CardHeader>
 
                 <CardContent className="p-10 space-y-10 flex-1">
@@ -86,22 +87,58 @@ export default function ServiciosPage() {
                     </ul>
                   </div>
 
-                  {servicio.id === 'web-design-pro' && (
+                  {(servicio.id === 'web-design-pro' || servicio.id === 'chatbot-whatsapp' || servicio.id === 'inventario-pro') && (
                     <div className="bg-muted/50 p-6 border-l-4 border-accent space-y-4">
-                      <p className="font-headline font-black text-foreground text-xs uppercase tracking-widest">¿Cómo funciona?</p>
+                      <p className="font-headline font-black text-foreground text-xs uppercase tracking-widest">PROMO ACTIVA</p>
                       <div className="space-y-2">
-                        <div className="flex items-center gap-2 text-sm text-secondary">
-                          <CheckCircle2 className="h-4 w-4 text-accent" />
-                          <span>Solicitas tu sitio sin pagar nada por adelantado.</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm text-secondary">
-                          <CheckCircle2 className="h-4 w-4 text-accent" />
-                          <span>Lo usas gratis por 31 días (periodo de prueba).</span>
-                        </div>
-                        <div className="flex items-center gap-2 text-sm text-secondary">
-                          <CheckCircle2 className="h-4 w-4 text-accent" />
-                          <span>Si te gusta, pagas $20 USD y te quedas con el sitio.</span>
-                        </div>
+                        {servicio.id === 'web-design-pro' && (
+                          <>
+                            <div className="flex items-center gap-2 text-sm text-secondary">
+                              <CheckCircle2 className="h-4 w-4 text-accent" />
+                              <span>Solicitas tu sitio sin pagar nada por adelantado.</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm text-secondary">
+                              <CheckCircle2 className="h-4 w-4 text-accent" />
+                              <span>Lo usas gratis por 31 días (periodo de prueba).</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm text-secondary">
+                              <CheckCircle2 className="h-4 w-4 text-accent" />
+                              <span>Si te gusta, pagas $20 USD y te quedas con el sitio.</span>
+                            </div>
+                          </>
+                        )}
+                        {servicio.id === 'chatbot-whatsapp' && (
+                          <>
+                            <div className="flex items-center gap-2 text-sm text-secondary">
+                              <CheckCircle2 className="h-4 w-4 text-accent" />
+                              <span>Atención automática 24/7 para tus clientes.</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm text-secondary">
+                              <CheckCircle2 className="h-4 w-4 text-accent" />
+                              <span>Responde preguntas y consulta stock en WhatsApp.</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm text-secondary">
+                              <CheckCircle2 className="h-4 w-4 text-accent" />
+                              <span>$25/mes con $12 de setup único.</span>
+                            </div>
+                          </>
+                        )}
+                        {servicio.id === 'inventario-pro' && (
+                          <>
+                            <div className="flex items-center gap-2 text-sm text-secondary">
+                              <CheckCircle2 className="h-4 w-4 text-accent" />
+                              <span>Controla stock, ventas y alertas en un solo lugar.</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm text-secondary">
+                              <CheckCircle2 className="h-4 w-4 text-accent" />
+                              <span>Respaldos automáticos y exportación a Excel.</span>
+                            </div>
+                            <div className="flex items-center gap-2 text-sm text-secondary">
+                              <CheckCircle2 className="h-4 w-4 text-accent" />
+                              <span>15 días gratis. $25/mes con $14 de setup único.</span>
+                            </div>
+                          </>
+                        )}
                       </div>
                     </div>
                   )}                  

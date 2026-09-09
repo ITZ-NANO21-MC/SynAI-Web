@@ -11,9 +11,8 @@ import { generateStaticMetadata } from "@/lib/seo";
 // Las páginas individuales pueden sobrescribir con su propio generateMetadata
 export async function generateMetadata(): Promise<Metadata> {
   return generateStaticMetadata(
-    "SYNAI | Consultoría en IA & Desarrollo de Software",
-    "Consultoría líder en Inteligencia Artificial y desarrollo de software personalizado para empresas innovadoras.",
-    "homepage"
+    "SynAI | Diseño web, Chatbots e Inventario en Coro, Falcón",
+    "Soluciones tecnológicas para negocios en Falcón. Diseño web con 31 días gratis, chatbots e inventario. ¡Contáctanos!"
   );
 }
 

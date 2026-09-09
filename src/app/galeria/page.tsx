@@ -5,12 +5,12 @@ import { ZoomIn } from "lucide-react";
 import { generateStaticMetadata } from "@/lib/seo";
 
 export async function generateMetadata() {
-  const keywords = ["galería", "estudio", "proyectos", "visual", "SYNAI", "Falcón", "desarrollo software", "IA"];
-  const content = "Galería visual de SYNAI - Imágenes del estudio, proyectos y entorno de trabajo en Falcón, Venezuela.";
+  const keywords = ["galería", "estudio", "proyectos", "visual", "SYNAI", "Falcón", "diseño web", "chatbots", "inventario"];
+  const content = "Galería visual de SYNAI - Imágenes del estudio, proyectos web, chatbots e inventario en Falcón, Venezuela.";
 
   return generateStaticMetadata(
-    "Galería SYNAI - Visual Studio y Proyectos",
-    "Explora nuestra galería de imágenes: estudio de trabajo, proyectos de IA, desarrollo de software y el entorno tecnológico en Falcón.",
+    "Galería SynAI - Proyectos de Diseño Web e Inventario en Coro, Falcón",
+    "Explora nuestra galería de imágenes: sitios web, chatbots, sistemas de inventario y el entorno tecnológico de SynAI en Falcón.",
     "portfolio item"
   );
 }

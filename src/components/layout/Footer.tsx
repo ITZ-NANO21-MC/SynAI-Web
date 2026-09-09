@@ -22,7 +22,7 @@ export default function Footer() {
             </span>
           </Link>
           <p className="text-secondary font-medium text-sm leading-relaxed max-w-xs">
-            Arquitectura de software y consultoría estratégica en Inteligencia Artificial. Eficiencia tecnológica desde el occidente venezolano.
+            Soluciones tecnológicas para negocios en Falcón: diseño web con 31 días gratis, chatbots y sistemas de inventario.
           </p>
           <div className="flex items-center gap-6">
             <Link href="https://www.facebook.com/profile.php?id=61574043867042" target="_blank" className="text-secondary hover:text-foreground transition-colors"><Facebook className="h-5 w-5" /></Link>
@@ -45,10 +45,10 @@ export default function Footer() {
         <div>
           <h4 className="font-headline text-xs font-black mb-8 text-foreground tracking-[0.3em] uppercase">Especialidad</h4>
           <ul className="space-y-4 text-sm font-bold text-secondary uppercase tracking-widest">
-            <li>Salud Digital</li>
-            <li>Telemedicina</li>
-            <li>Automatización</li>
-            <li>Chatbots Inteligentes</li>
+            <li>Diseño Web</li>
+            <li>Chatbots</li>
+            <li>Inventario</li>
+            <li>Soporte Técnico</li>
           </ul>
         </div>
 

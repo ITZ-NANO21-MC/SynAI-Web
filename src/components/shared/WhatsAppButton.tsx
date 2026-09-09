@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
  */
 export default function WhatsAppButton() {
   const phoneNumber = "584246684134";
-  const message = "Hola SYNAI! Me gustaría solicitar información sobre sus servicios de IA y desarrollo.";
+  const message = "Hola SynAI! Me gustaría solicitar mi demo gratis de diseño web, chatbot o sistema de inventario.";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   return (

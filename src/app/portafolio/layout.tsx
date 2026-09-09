@@ -4,8 +4,8 @@ import { generateStaticMetadata } from '@/lib/seo';
 // Se separa del page.tsx porque los archivos con 'use client' no pueden exportar generateMetadata
 export async function generateMetadata() {
   return generateStaticMetadata(
-    'Portafolio SYNAI - Proyectos de IA y Desarrollo de Software',
-    'Descubre nuestros casos de estudio en desarrollo web, aplicaciones móviles e inteligencia artificial. Proyectos reales con arquitecturas escalables.',
+    'Portafolio SynAI - Proyectos de Diseño Web, Chatbots e Inventario',
+    'Casos de estudio de SynAI: sitios web profesionales, chatbots para WhatsApp, sistemas de inventario y soluciones IA desarrollados en Falcón, Venezuela.',
     'portfolio item'
   );
 }

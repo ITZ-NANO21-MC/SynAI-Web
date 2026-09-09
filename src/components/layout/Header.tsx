@@ -67,7 +67,7 @@ export default function Header() {
           <div className="flex items-center gap-4 ml-4">
             <ThemeToggle />
             <Button asChild className="rounded-none bg-primary hover:bg-accent hover:text-accent-foreground text-primary-foreground font-bold tracking-widest text-[10px] px-8 transition-all h-10">
-              <Link href="/contacto">CONSULTA GRATIS</Link>
+              <Link href="/contacto">DEMO GRATIS</Link>
             </Button>
           </div>
         </nav>

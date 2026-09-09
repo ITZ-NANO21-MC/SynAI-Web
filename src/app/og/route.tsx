@@ -12,7 +12,7 @@ const size = {
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const title = searchParams.get('title') || 'SYNAI';
-  const description = searchParams.get('description') || 'Consultoría en IA y Arquitectura de Software';
+  const description = searchParams.get('description') || 'Diseño web, Chatbots e Inventario en Coro, Falcón';
 
   // Obtener el dominio base para las URLs
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://synai.dev';
@@ -136,7 +136,7 @@ export async function GET(req: NextRequest) {
           }}
         >
           <h1 style={{ fontSize: '64px', fontWeight: 700 }}>SYNAI</h1>
-          <p style={{ fontSize: '32px', color: '#00e5ff' }}>Consultoría en IA y Arquitectura</p>
+          <p style={{ fontSize: '32px', color: '#00e5ff' }}>Diseño web · Chatbots · Inventario</p>
         </div>
       ),
       {
