@@ -7,45 +7,26 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
-import emailjs from "@emailjs/browser";
-import maplibregl from "maplibre-gl";
+import dynamic from "next/dynamic";
+import type { MapRef } from "@/components/shared/map-component";
+
+// EmailJS se carga dinámicamente solo al momento del envío para no inflar el bundle inicial
+const MapComponent = dynamic(() => import("@/components/shared/map-component"), {
+  ssr: false,
+  loading: () => (
+    <div className="absolute inset-0 bg-muted animate-pulse flex items-center justify-center">
+      <span className="text-xs font-bold text-secondary uppercase tracking-widest">Cargando mapa...</span>
+    </div>
+  ),
+});
 
 export default function ContactoPage() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const formRef = React.useRef<HTMLFormElement>(null);
-  const mapContainer = React.useRef<HTMLDivElement>(null);
-  const map = React.useRef<maplibregl.Map | null>(null);
+  const map = React.useRef<MapRef | null>(null);
 
   const GEOAPIFY_API_KEY = process.env.NEXT_PUBLIC_GEOAPIFY_API_KEY || "";
-
-  React.useEffect(() => {
-    if (map.current || !mapContainer.current) return;
-
-    const coords: [number, number] = [-69.69238708900974, 11.404853870141157];
-
-    map.current = new maplibregl.Map({
-      container: mapContainer.current,
-      style: `https://maps.geoapify.com/v1/styles/osm-carto/style.json?apiKey=${GEOAPIFY_API_KEY}`,
-      center: coords,
-      zoom: 15,
-      attributionControl: false
-    });
-
-    map.current.addControl(new maplibregl.NavigationControl({
-      showCompass: true,
-      showZoom: true
-    }), "top-right");
-
-    new maplibregl.Marker({ color: "#00F2FF" })
-      .setLngLat(coords)
-      .addTo(map.current);
-
-    return () => {
-      map.current?.remove();
-      map.current = null;
-    };
-  }, [GEOAPIFY_API_KEY]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,6 +43,9 @@ export default function ContactoPage() {
           timeStyle: "medium"
         });
       }
+
+      // Carga diferida de EmailJS solo en el momento del envío
+      const emailjs = (await import("@emailjs/browser")).default;
 
       await emailjs.sendForm(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "", 
@@ -137,7 +121,7 @@ export default function ContactoPage() {
           <div className="space-y-8">
             <h2 className="text-2xl font-headline font-black tracking-[0.3em] text-foreground uppercase border-l-4 border-accent pl-6">UBICACIÓN</h2>
             <div className="relative h-[400px] w-full border-2 border-primary overflow-hidden bg-muted group">
-              <div ref={mapContainer} className="absolute inset-0 grayscale hover:grayscale-0 transition-all duration-700" />
+              <MapComponent apiKey={GEOAPIFY_API_KEY} mapRef={map} />
               <div className="absolute top-6 left-6 z-10 bg-primary text-primary-foreground p-6 rounded-none shadow-2xl max-w-xs space-y-2 pointer-events-none">
                 <p className="font-headline font-black text-accent text-xl">FALCÓN, VZLA</p>
                 <p className="text-[10px] uppercase tracking-widest font-bold text-secondary-foreground leading-relaxed">

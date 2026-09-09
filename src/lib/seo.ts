@@ -1,4 +1,3 @@
-import { generateSeoMetadata as generateSeoMetadataFlow } from '@/ai/flows/generate-seo-metadata';
 import type { Metadata } from 'next';
 
 // Tipos de página soportados por el flujo Genkit
@@ -54,6 +53,9 @@ export async function generatePageMetadata(config: SeoConfig): Promise<SeoMetada
   }
 
   try {
+    // Cargar el flow Genkit de forma dinámica solo cuando se necesita (code splitting)
+    const { generateSeoMetadata: generateSeoMetadataFlow } = await import('@/ai/flows/generate-seo-metadata');
+
     // Llamar al flow Genkit (Server Action)
     const result = await generateSeoMetadataFlow({
       content,

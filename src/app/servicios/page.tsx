@@ -43,7 +43,7 @@ export default function ServiciosPage() {
       {/* Grid de Servicios */}
       <section className="py-32 container mx-auto px-4 md:px-6">
         <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
-          {SERVICIOS.map((servicio) => {
+          {SERVICIOS.map((servicio, idx) => {
             const imgData = PlaceHolderImages.find(p => p.id === servicio.imagen);
             return (
               <Card key={servicio.id} id={servicio.id} className="flex flex-col h-full border-none shadow-soft hover:shadow-2xl transition-all duration-500 rounded-none bg-card overflow-hidden group">
@@ -53,8 +53,10 @@ export default function ServiciosPage() {
                     alt={servicio.titulo} 
                     width={560}
                     height={560}
+                    sizes="(min-width: 1024px) 50vw, 100vw"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 opacity-90 hover:opacity-100"
                     data-ai-hint={imgData?.imageHint}
+                    {...(idx === 0 ? { priority: true } : {})}
                   />
                   <div className="absolute top-0 left-0 w-full h-full bg-black/5 group-hover:bg-transparent transition-colors"></div>
                   <div className="absolute top-8 left-8 bg-primary text-accent px-4 py-1.5 font-bold text-[10px] uppercase tracking-[0.2em]">
