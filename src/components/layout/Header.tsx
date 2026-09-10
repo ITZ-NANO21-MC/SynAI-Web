@@ -109,9 +109,11 @@ export default function Header() {
                 <div className="mt-auto pt-10 border-t border-border space-y-4">
                   <p className="text-xs font-bold text-muted-foreground tracking-widest uppercase">SYNAI Falcón</p>
                   <p className="text-xl font-bold text-foreground">+58 424 668 4134</p>
-                  <Button asChild className="w-full h-14 bg-primary text-primary-foreground font-bold rounded-none">
-                    <Link href="/contacto">CONTACTAR AHORA</Link>
-                  </Button>
+                  <SheetClose asChild>
+                    <Button className="w-full h-14 bg-primary text-primary-foreground font-bold rounded-none">
+                      <Link href="/contacto">CONTACTAR AHORA</Link>
+                    </Button>
+                  </SheetClose>
                 </div>
               </div>
             </SheetContent>
