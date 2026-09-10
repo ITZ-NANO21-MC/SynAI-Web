@@ -50,18 +50,20 @@
 
 ---
 
-### Fase 4: Optimización y Escalabilidad (EN PROGRESO - PLANIFICADA)
+### Fase 4: Optimización y Escalabilidad (EN PROGRESO)
 **Objetivo**: Mejorar rendimiento, SEO, accesibilidad y prepara para crecimiento
 
 | Módulo | Archivos | Estado | Prioridad |
 |--------|----------|--------|-----------|
-| **SEO On-Page** | Metadata dinámica en cada página usando `generateSeoMetadata` | 🔄 Planificado (Ver plan) | Alta |
-| **Sitemap/Robots** | `app/sitemap.ts` + `app/robots.ts` | 🔄 Planificado (Ver plan) | Alta |
-| **Open Graph** | Metadata OG/Twitter cards por página | 🔄 Planificado (Ver plan) | Media |
-| **Performance** | Análisis Core Web Vitals, optimización imágenes | 🔄 Planificado (Ver plan) | Media |
-| **Accesibilidad** | Auditoría WCAG 2.1 AA, focus states, ARIA | 🔄 Planificado (Ver plan) | Media |
-| **Testing** | Unit tests (Vitest), E2E (Playwright), A11y (axe-core) | 🔄 Planificado (Ver plan) | Baja |
-| **Analytics** | Vercel Analytics / GA4 integration | 🔄 Planificado (Ver plan) | Baja |
+| **SEO On-Page** | `lib/seo.ts` + `generateMetadata` en todas las páginas | ✅ Completado | Alta |
+| **Sitemap/Robots** | `app/sitemap.ts` + `app/robots.ts` | ✅ Completado¹ | Alta |
+| **Open Graph** | `app/og/route.tsx` + tags OG/Twitter por página | ✅ Completado | Media |
+| **Performance** | Code-split MapLibre/Genkit (`/contacto` 324→117 kB), AVIF/WebP, `poweredByHeader:false` | ✅ Completado | Media |
+| **Accesibilidad** | Auditoría WCAG 2.1 AA, focus-visible, jerarquía heading, ARIA | ✅ Completado | Media |
+| **Testing** | Unit tests (Vitest), E2E (Playwright), A11y (axe-core) | 🔄 Pendiente (Ver plan) | Baja |
+| **Analytics** | Vercel Analytics / GA4 integration | 🔄 Pendiente (Ver plan) | Baja |
+
+¹ *Pendiente operativo: definir `NEXT_PUBLIC_BASE_URL` en Netlify para que el sitemap apunte al dominio correcto (hoy usa el fallback `https://synai.dev`).*
 
 **Dependencias**: Fases 1-3 completadas  
 **Plan Detallado**: `.context/plans/phase-4-plan.md` (47 tareas, 6 módulos, 4 semanas)
@@ -91,15 +93,18 @@
 | 1 | Fundación y Core | 100% | Ninguno |
 | 2 | Páginas de Contenido | 100% | Ninguno |
 | 3 | IA y SEO | 100% | Ninguno |
-| 4 | Optimización | 0% | Requiere planificación |
-| 5 | Funcionalidades Avanzadas | 0% | Requiere Fase 4 |
+| 4 | Optimización | ~70% | NEXT_PUBLIC_BASE_URL en Netlify |
+| 5 | Funcionalidades Avanzadas | 0% | Requiere Fase 4 (Testing/Analytics) |
 
 ---
 
 ## Próximos Pasos Inmediatos
 
 1. ✅ **Ejecutar `/plan-phase --phase 4`** - Plan creado en `.context/plans/phase-4-plan.md`
-2. **Iniciar Módulo 4.1**: Crear `src/lib/seo.ts` helper + `generateMetadata` en `layout.tsx`
-3. **Iniciar Módulo 4.2**: Crear `src/app/sitemap.ts` + `src/app/robots.ts`
-4. **Artesanos**: @backend-artisan (lead 4.1), @devops-artisan (lead 4.2), @frontend-artisan (OG images), @qa-artisan (verification)
-5. **ADRs Pendientes**: @architecture-artisan → ADR-012 (Testing Stack), ADR-013 (Analytics Provider)
+2. ✅ **Módulos 4.1-4.4 completados**: SEO On-Page, Sitemap/Robots, Open Graph, Performance y Accesibilidad
+3. **Configurar `NEXT_PUBLIC_BASE_URL` en Netlify** para el sitemap y assets OG
+4. **Iniciar Módulo 4.5**: Configurar Vitest + tests unitarios (seo.ts, data.ts, form contacto)
+5. **Iniciar Módulo 4.5 (cont.)**: Playwright E2E (navegación, formulario, a11y) + axe-core
+6. **Iniciar Módulo 4.6**: Analytics (Vercel Analytics / GA4)
+7. **Artesanos**: @backend-artisan (lead 4.1), @devops-artisan (lead 4.2), @frontend-artisan (OG images), @qa-artisan (verification)
+8. **ADRs Pendientes**: @architecture-artisan → ADR-012 (Testing Stack), ADR-013 (Analytics Provider)

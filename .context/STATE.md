@@ -5,9 +5,9 @@
 | Campo | Valor |
 |-------|-------|
 | **Fase Actual** | 4 - Optimización y Escalabilidad |
-| **Módulo Actual** | 4.1 - SEO On-Page Dinámico (Planificado) |
-| **Última Acción** | Plan de Fase 4 creado: `.context/plans/phase-4-plan.md` con 6 módulos, 47 tareas, asignación a artesanos, criterios de aceptación y timeline de 4 semanas |
-| **Próxima Acción** | Iniciar Módulo 4.1: Crear helper SEO `lib/seo.ts` + implementar `generateMetadata` en layout.tsx y páginas |
+| **Módulo Actual** | 4.5 - Testing (Planificado) |
+| **Última Acción** | Completados módulos 4.1-4.4: SEO On-Page dinámico, sitemap/robots, Open Graph, Performance (code-split `/contacto` 324→117 kB) y Accesibilidad. Deploy a Netlify + realineación de contenido comercial |
+| **Próxima Acción** | Iniciar Módulo 4.5: Configurar Vitest + escribir tests unitarios (seo.ts, data.ts, form contacto) |
 | **Bloqueos** | Ninguno |
 
 ## Progreso por Fase
@@ -34,14 +34,14 @@
 - [x] Prompt optimizado para metaTitle (<60 chars) y metaDescription (<160 chars)
 - [x] Entry point para desarrollo (`genkit:dev`, `genkit:watch`)
 
-### Fase 4: Optimización y Escalabilidad 🔄 EN PROGRESO (0%)
-- [ ] **SEO On-Page**: Metadata dinámica en layout.tsx y páginas
-- [ ] **Sitemap**: Generación automática (next-sitemap / app/sitemap.ts)
-- [ ] **Open Graph**: OG tags + Twitter cards por página
-- [ ] **Performance**: Core Web Vitals, optimización imágenes
-- [ ] **Accesibilidad**: Auditoría WCAG 2.1 AA
-- [ ] **Testing**: Unit tests + E2E tests
-- [ ] **Analytics**: Vercel Analytics / GA4
+### Fase 4: Optimización y Escalabilidad 🔄 EN PROGRESO (~70%)
+- [x] **SEO On-Page**: Metadata dinámica en layout.tsx y páginas (`lib/seo.ts` + `generateMetadata`)
+- [x] **Sitemap**: `app/sitemap.ts` (5 rutas estáticas, último modificado) + `app/robots.ts`
+- [x] **Open Graph**: `app/og/route.tsx` (1200x630) + tags OG/Twitter por página
+- [x] **Performance**: MapLibre/Genkit code-split (`/contacto` 324→117 kB), imágenes AVIF/WebP, `poweredByHeader:false`
+- [x] **Accesibilidad**: Auditoría WCAG 2.1 AA (focus-visible, jerarquía heading, ARIA, skip link, alt descriptivos)
+- [ ] **Testing**: Unit tests + E2E tests (pendiente - módulo 4.5)
+- [ ] **Analytics**: Vercel Analytics / GA4 (pendiente - módulo 4.6)
 
 ### Fase 5: Funcionalidades Avanzadas ⏳ PENDIENTE
 - [ ] Blog/Recursos con CMS headless
@@ -56,23 +56,23 @@
 | Métrica | Estado | Observaciones |
 |---------|--------|---------------|
 | **TypeScript** | ✅ Strict | `tsc --noEmit` pasa |
-| **ESLint** | ✅ Configurado | `next lint` pasa (ignoreDuringBuilds) |
-| **Build** | ✅ Exitoso | `npm run build` funciona |
+| **ESLint** | ✅ Configurado | `npm run lint` pasa (0 errores) |
+| **Build** | ✅ Exitoso | `npm run build` genera 10 páginas estáticas |
 | **Dev Server** | ✅ Funcional | Turbopack en puerto 9002 |
 | **Genkit Dev** | ✅ Funcional | `npm run genkit:dev` levanta UI |
-| **Tests** | ❌ Ausentes | No hay suite de tests |
-| **CI/CD** | ⚠️ Parcial | Solo build/lint en apphosting.yaml |
+| **Tests** | ❌ Ausentes | No hay suite de tests (pendiente módulo 4.5) |
+| **CI/CD** | ⚠️ Parcial | Deploy en Netlify conectado a `origin/main`
 
 ## Deuda Técnica Identificada
 
 | Área | Descripción | Impacto | Esfuerzo |
 |------|-------------|---------|----------|
 | **Imágenes** | Placeholders usan placehold.co/unsplash; faltan imágenes reales optimizadas | Medio | Medio |
-| **SEO** | Metadata estática en layout.tsx; no usa flujo Genkit | Alto | Bajo |
-| **Testing** | 0% cobertura; sin configuración Jest/Playwright | Alto | Alto |
-| **Accesibilidad** | Sin auditoría formal; focus states básicos | Medio | Medio |
-| **Bundle** | No hay análisis de bundle size | Bajo | Bajo |
-| **Error Handling** | Try/catch básico en formulario; sin boundary global | Medio | Bajo |
+| **SEO Base URL** | `NEXT_PUBLIC_BASE_URL` aún no definido en Netlify (sitemap usa fallback `synai.dev`) | Medio | Bajo |
+| **Testing** | 0% cobertura; sin configuración Vitest/Playwright | Alto | Alto |
+| **Accesibilidad** | Auditoría manual completada; falta automatizar con axe-core | Bajo | Bajo |
+| **Bundle** | `/contacto` optimizado; sin análisis global de bundle size | Bajo | Bajo |
+| **Error Handling** | Try/catch básico en formulario; sin error boundary global | Medio | Bajo |
 
 ## Comandos de Verificación
 
@@ -87,7 +87,9 @@ npm run typecheck        # TypeScript strict check
 npm run build            # Build producción
 
 # Despliegue
-# Configurado en apphosting.yaml para Firebase App Hosting
+# Deploy automático en Netlify (synaitech.netlify.app) conectado a origin/main
+# Build: npm run build | Publish: .next (Netlify detecta Next.js)
+# Pendiente: NEXT_PUBLIC_BASE_URL + NEXT_PUBLIC_* (EmailJS/Geoapify) en Netlify
 ```
 
 ## Decisiones Pendientes (para DECISIONS.md)
