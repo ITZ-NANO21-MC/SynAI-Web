@@ -1,16 +1,18 @@
 import Link from 'next/link';
-import { ArrowRight, BrainCircuit, MapPin, Laptop, Database, Wrench, MessageCircle } from 'lucide-react';
+import { ArrowRight, BrainCircuit, MapPin, Laptop, Database, Wrench, ShieldCheck, Zap, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { ESTADISTICAS, SERVICIOS } from '@/lib/data';
+import { ESTADISTICAS, SERVICIOS, PROMOCIONES } from '@/lib/data';
 import { generatePageMetadata } from '@/lib/seo';
 
 // Mapa de iconos por servicio (escalable a nuevos servicios)
-const SERVICIO_ICONS: Record<string, typeof Laptop> = {
+const ICON_MAP: Record<string, typeof Laptop> = {
   Laptop: Laptop,
   BrainCircuit: BrainCircuit,
   Database: Database,
   Wrench: Wrench,
+  ShieldCheck: ShieldCheck,
+  Zap: Zap,
 };
 
 // Metadata dinámica para la página de inicio
@@ -108,6 +110,36 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* PROMOCIONES */}
+      <section className="py-32 bg-primary text-primary-foreground overflow-hidden relative">
+        <div className="absolute top-0 left-0 w-64 h-64 bg-accent/10 blur-[120px] rounded-full"></div>
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="text-center mb-20 space-y-4">
+            <h2 className="text-4xl md:text-5xl font-headline font-bold text-accent tracking-tighter uppercase">Promociones Especiales</h2>
+            <p className="text-xl text-secondary font-medium max-w-2xl mx-auto">Ofertas limitadas para las primeras empresas en digitalizarse.</p>
+            <div className="w-24 h-2 bg-accent mx-auto"></div>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {PROMOCIONES.map((promo) => {
+              const Icon = ICON_MAP[promo.icono] || Zap;
+              return (
+                <div key={promo.id} className="p-8 border border-foreground/20 bg-foreground/5 hover:bg-foreground/10 transition-colors duration-500 group">
+                  <div className="w-14 h-14 bg-accent flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+                    <Icon className="h-7 w-7 text-accent-foreground" />
+                  </div>
+                  <p className="font-headline font-black text-xl mb-3">{promo.titulo}</p>
+                  <p className="text-secondary font-medium leading-relaxed mb-6">{promo.detalle}</p>
+                  <a href={`https://wa.me/584246684134?text=${encodeURIComponent(promo.whatsappTexto)}`} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-accent hover:text-background transition-colors">
+                    Reclamar promoción <ArrowRight className="h-4 w-4" />
+                  </a>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* ¿QUÉ OFRECEMOS? */}
       <section className="py-32 bg-muted/30">
         <div className="container mx-auto px-4 md:px-6 text-center mb-20 space-y-4">
@@ -116,9 +148,9 @@ export default function HomePage() {
           <div className="w-24 h-2 bg-accent mx-auto"></div>
         </div>
         
-        <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 gap-12 max-w-6xl">
-          {SERVICIOS.map((servicio) => {
-            const Icon = SERVICIO_ICONS[servicio.icono] || BrainCircuit;
+        <div className="container mx-auto px-4 md:px-6 grid md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-6xl">
+          {SERVICIOS.filter(s => s.id === 'web-design-pro' || s.id === 'chatbot-whatsapp' || s.id === 'inventario-pro').map((servicio) => {
+            const Icon = ICON_MAP[servicio.icono] || BrainCircuit;
             return (
             <Card key={servicio.id} className="group border-none shadow-soft hover:shadow-2xl transition-all duration-500 rounded-none bg-card overflow-hidden">
               <CardContent className="p-12 space-y-8 relative">
@@ -131,7 +163,12 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-3xl font-headline font-bold text-foreground">{servicio.titulo}</h3>
                 <p className="text-secondary font-medium leading-relaxed">{servicio.descripcion}</p>
-                <div className="text-lg font-headline font-black text-accent">{servicio.precio}</div>
+                <div className="text-lg font-headline font-black text-accent">
+                  {servicio.precioAnterior && (
+                    <span className="line-through text-secondary mr-3">{servicio.precioAnterior}</span>
+                  )}
+                  {servicio.precio}
+                </div>
                 <div className="pt-8 flex items-center justify-between border-t border-border">
                   <div className="flex flex-col">
                     <span className="text-[10px] text-secondary font-bold uppercase tracking-widest mb-1">Contacto Directo</span>

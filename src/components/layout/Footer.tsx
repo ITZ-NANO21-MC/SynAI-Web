@@ -22,8 +22,14 @@ export default function Footer() {
             </span>
           </Link>
           <p className="text-secondary font-medium text-sm leading-relaxed max-w-xs">
-            Soluciones tecnológicas para negocios en Falcón: diseño web con 31 días gratis, chatbots y sistemas de inventario.
+            Soluciones tecnológicas para negocios en Falcón: diseño web con 31 días gratis, chatbots, inventario, mantenimiento web y soporte técnico.
           </p>
+          <div className="space-y-2">
+            <a href="https://synaitech.netlify.app" target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-secondary uppercase tracking-widest hover:text-foreground transition-colors block">
+              synaitech.netlify.app
+            </a>
+            <p className="text-xs font-bold text-accent uppercase tracking-widest">✨ Próximamente dominio propio</p>
+          </div>
           <div className="flex items-center gap-6">
             <Link href="https://www.facebook.com/profile.php?id=61574043867042" target="_blank" className="text-secondary hover:text-foreground transition-colors"><Facebook className="h-5 w-5" /></Link>
             <Link href="https://www.youtube.com/@SYNAI-k2p" target="_blank" className="text-secondary hover:text-foreground transition-colors"><Youtube className="h-5 w-5" /></Link>
@@ -48,6 +54,7 @@ export default function Footer() {
             <li>Diseño Web</li>
             <li>Chatbots</li>
             <li>Inventario</li>
+            <li>Mantenimiento Web</li>
             <li>Soporte Técnico</li>
           </ul>
         </div>

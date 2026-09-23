@@ -172,7 +172,8 @@ export default function ContactoPage() {
                   <option value="WEB">DISEÑO WEB</option>
                   <option value="CHATBOT">CHATBOT WHATSAPP</option>
                   <option value="INVENTARIO">SISTEMA DE INVENTARIO</option>
-                  <option value="SOPORTE">SOPORTE TÉCNICO</option>
+                  <option value="MANTENIMIENTO">MANTENIMIENTO WEB</option>
+                  <option value="SOPORTE">SERVICIO TÉCNICO</option>
                   <option value="OTRO">OTRO</option>
                 </select>
               </div>

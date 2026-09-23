@@ -7,16 +7,34 @@
       "imageHint": "technology analysis website"
     },
     {
-      "id": "servicio-tecnico",
-      "description": "Servicio técnico especializado en computadores",
-      "imageUrl": "/servicio-tecnico.jpg?v=1.2",
-      "imageHint": "computer repair service"
+      "id": "diseno-web-synai",
+      "description": "Flyer del servicio de diseño web profesional",
+      "imageUrl": "/Diseno_Web_SynAI.png",
+      "imageHint": "web design flyer should look like the Diseno_Web_SynAI.png image the user provides"
     },
     {
-      "id": "consultoria-ia",
-      "description": "Consultoría avanzada en Inteligencia Artificial",
-      "imageUrl": "/consultoria-ia.jpg?v=1.2",
-      "imageHint": "artificial intelligence consulting"
+      "id": "chatbot-synai",
+      "description": "Flyer del chatbot para WhatsApp con planes Local y Cloud",
+      "imageUrl": "/Chatbot_SynAI.png",
+      "imageHint": "chatbot flyer should look like the Chatbot_SynAI.png image the user provides"
+    },
+    {
+      "id": "inventario-synai",
+      "description": "Flyer del sistema de inventario con planes Local y Cloud",
+      "imageUrl": "/Inventario_SynAI.png",
+      "imageHint": "inventory system flyer should look like the Inventario_SynAI.png image the user provides"
+    },
+    {
+      "id": "mantenimiento-synai",
+      "description": "Flyer del servicio de mantenimiento web",
+      "imageUrl": "/Mantenimiento_SynAI.png",
+      "imageHint": "web maintenance flyer should look like the Mantenimiento_SynAI.png image the user provides"
+    },
+    {
+      "id": "servicio-tecnico-synai",
+      "description": "Flyer del servicio técnico y help desk",
+      "imageUrl": "/Servicio_Tecnico_SynAI.png",
+      "imageHint": "technical service flyer should look like the Servicio_Tecnico_SynAI.png image the user provides"
     },
     {
       "id": "inventario-flask",
@@ -53,12 +71,6 @@
       "description": "Detector de Tuberculosis mediante Radiografías de Tórax con IA",
       "imageUrl": "/tb-detector.jpg?v=1.2",
       "imageHint": "chest x-ray tuberculosis ai"
-    },
-    {
-      "id": "service-web",
-      "description": "Diseño Web Profesional y Moderno",
-      "imageUrl": "/service-web.jpg?v=1.2",
-      "imageHint": "web design professional"
     },
     {
       "id": "studio-1",

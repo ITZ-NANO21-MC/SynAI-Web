@@ -6,13 +6,15 @@ import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from '@/components/ui/card';
 import { generatePageMetadata } from '@/lib/seo';
 
+const WHATSAPP = '584246684134';
+
 // Metadata dinámica para la página de servicios
 export async function generateMetadata() {
   // Construir contenido relevante a partir de los servicios
   const serviciosText = SERVICIOS.map(s => `${s.titulo}: ${s.descripcion} (${s.precio})`).join('. ');
-  const keywords = SERVICIOS.map(s => s.titulo).concat(['diseño web', 'chatbots WhatsApp', 'sistema de inventario', 'soporte técnico', 'Coro', 'Falcón', 'Venezuela']);
+  const keywords = SERVICIOS.map(s => s.titulo).concat(['diseño web', 'chatbots WhatsApp', 'sistema de inventario', 'mantenimiento web', 'servicio técnico', 'Coro', 'Falcón', 'Venezuela']);
 
-  const content = `SynAI - Servicios de diseño web con 31 días gratis, chatbots para WhatsApp, sistema de inventario y soporte técnico en Coro, Falcón, Venezuela. ${serviciosText}`;
+  const content = `SynAI - Servicios de diseño web con 31 días gratis, chatbots para WhatsApp, sistema de inventario, mantenimiento web y servicio técnico en Coro, Falcón, Venezuela. ${serviciosText}`;
 
   return generatePageMetadata({
     content,
@@ -20,7 +22,7 @@ export async function generateMetadata() {
     pageType: 'service page',
     titleSuffix: ' | SYNAI',
     fallbackTitle: 'Servicios SynAI - Diseño web, Chatbots e Inventario en Coro, Falcón',
-    fallbackDescription: 'Diseño web con 31 días gratis, chatbots para WhatsApp, sistema de inventario y soporte técnico en Falcón, Venezuela. Solicita tu demo gratis.',
+    fallbackDescription: 'Diseño web con 31 días gratis, chatbots para WhatsApp, sistema de inventario, mantenimiento web y servicio técnico en Falcón, Venezuela. Solicita tu demo gratis.',
   });
 }
 
@@ -35,7 +37,7 @@ export default function ServiciosPage() {
             NUESTRAS <br /> <span className="text-accent">SOLUCIONES</span>
           </h1>
           <p className="text-xl text-secondary font-medium max-w-2xl mx-auto leading-relaxed">
-            Diseño web, chatbots, inventario y soporte técnico. Soluciones accesibles para digitalizar tu negocio en Falcón.
+            Diseño web, chatbots, inventario, mantenimiento web y soporte técnico. Soluciones accesibles para digitalizar tu negocio en Falcón.
           </p>
         </div>
       </section>
@@ -66,7 +68,12 @@ export default function ServiciosPage() {
                 
                 <CardHeader className="p-10 pb-0">
                   <CardTitle className="text-4xl font-headline font-black text-foreground leading-none">{servicio.titulo}</CardTitle>
-                  <p className="pt-4 text-xl font-headline font-black text-accent">{servicio.precio}</p>
+                  <p className="pt-4 text-xl font-headline font-black text-accent">
+                    {servicio.precioAnterior && (
+                      <span className="line-through text-secondary mr-3">{servicio.precioAnterior}</span>
+                    )}
+                    {servicio.precio}
+                  </p>
                 </CardHeader>
 
                 <CardContent className="p-10 space-y-10 flex-1">
@@ -87,66 +94,49 @@ export default function ServiciosPage() {
                     </ul>
                   </div>
 
-                  {(servicio.id === 'web-design-pro' || servicio.id === 'chatbot-whatsapp' || servicio.id === 'inventario-pro') && (
-                    <div className="bg-muted/50 p-6 border-l-4 border-accent space-y-4">
-                      <p className="font-headline font-black text-foreground text-xs uppercase tracking-widest">PROMO ACTIVA</p>
-                      <div className="space-y-2">
-                        {servicio.id === 'web-design-pro' && (
-                          <>
-                            <div className="flex items-center gap-2 text-sm text-secondary">
-                              <CheckCircle2 className="h-4 w-4 text-accent" />
-                              <span>Solicitas tu sitio sin pagar nada por adelantado.</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-sm text-secondary">
-                              <CheckCircle2 className="h-4 w-4 text-accent" />
-                              <span>Lo usas gratis por 31 días (periodo de prueba).</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-sm text-secondary">
-                              <CheckCircle2 className="h-4 w-4 text-accent" />
-                              <span>Si te gusta, pagas $20 USD y te quedas con el sitio.</span>
-                            </div>
-                          </>
-                        )}
-                        {servicio.id === 'chatbot-whatsapp' && (
-                          <>
-                            <div className="flex items-center gap-2 text-sm text-secondary">
-                              <CheckCircle2 className="h-4 w-4 text-accent" />
-                              <span>Atención automática 24/7 para tus clientes.</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-sm text-secondary">
-                              <CheckCircle2 className="h-4 w-4 text-accent" />
-                              <span>Responde preguntas y consulta stock en WhatsApp.</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-sm text-secondary">
-                              <CheckCircle2 className="h-4 w-4 text-accent" />
-                              <span>$25/mes con $12 de setup único.</span>
-                            </div>
-                          </>
-                        )}
-                        {servicio.id === 'inventario-pro' && (
-                          <>
-                            <div className="flex items-center gap-2 text-sm text-secondary">
-                              <CheckCircle2 className="h-4 w-4 text-accent" />
-                              <span>Controla stock, ventas y alertas en un solo lugar.</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-sm text-secondary">
-                              <CheckCircle2 className="h-4 w-4 text-accent" />
-                              <span>Respaldos automáticos y exportación a Excel.</span>
-                            </div>
-                            <div className="flex items-center gap-2 text-sm text-secondary">
-                              <CheckCircle2 className="h-4 w-4 text-accent" />
-                              <span>15 días gratis. $25/mes con $14 de setup único.</span>
-                            </div>
-                          </>
-                        )}
+                  {servicio.planes && (
+                    <div className="space-y-6">
+                      <div className="flex items-center gap-3">
+                        <CheckCircle2 className="h-5 w-5 text-accent" />
+                        <p className="font-bold text-foreground uppercase tracking-widest text-xs">ELIGE TU PLAN</p>
+                      </div>
+                      <div className="grid md:grid-cols-2 gap-6">
+                        {servicio.planes.map((plan) => (
+                          <div key={plan.nombre} className="bg-muted/50 p-6 border border-border hover:border-accent transition-colors duration-300">
+                            <p className="font-headline font-black text-foreground text-xs uppercase tracking-widest mb-2">{plan.nombre}</p>
+                            <p className="text-2xl font-headline font-black text-accent leading-none">{plan.precio}</p>
+                            {plan.setup && <p className="text-xs font-bold text-secondary uppercase tracking-widest mt-1">{plan.setup}</p>}
+                            <ul className="space-y-2 mt-4">
+                              {plan.detalles.map((d, i) => (
+                                <li key={i} className="flex items-start gap-2 text-sm text-secondary font-medium leading-snug">
+                                  <span className="mt-1.5 w-1.5 h-1.5 bg-accent shrink-0"></span>
+                                  {d}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
                       </div>
                     </div>
-                  )}                  
+                  )}
+
+                  {servicio.promo && (
+                    <div className="bg-primary text-primary-foreground p-6 border-l-4 border-accent space-y-4">
+                      <p className="font-headline font-black text-accent text-xs uppercase tracking-widest">PROMO ACTIVA</p>
+                      <p className="text-secondary font-semibold text-sm leading-relaxed">{servicio.promo}</p>
+                    </div>
+                  )}
                 </CardContent>
 
                 <CardFooter className="p-10 pt-0">
                   <Button asChild className="w-full h-16 bg-primary hover:bg-accent hover:text-accent-foreground text-primary-foreground font-bold text-lg rounded-none transition-all duration-300">
-                    <a href="https://wa.me/584246684134" target="_blank">SOLICITAR AHORA</a>
+                    <a
+                      href={`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(servicio.whatsappTexto || 'Hola SynAI! Me gustaría más información.')}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      SOLICITAR AHORA
+                    </a>
                   </Button>
                 </CardFooter>
               </Card>
@@ -164,13 +154,13 @@ export default function ServiciosPage() {
             <div className="p-12 border-b md:border-b-0 md:border-r border-border/20 hover:bg-foreground/5 transition-colors">
               <h3 className="text-2xl font-headline font-bold mb-6 text-accent">PRESENCIA DIGITAL</h3>
               <p className="text-secondary font-medium leading-relaxed">
-                Despliegue ultra rápido de sitios web corporativos con optimización para buscadores y alta tasa de conversión.
+                Despliegue ultra rápido de sitios web corporativos con optimización para buscadores y mantenimiento continuo.
               </p>
             </div>
             <div className="p-12 hover:bg-foreground/5 transition-colors">
               <h3 className="text-2xl font-headline font-bold mb-6 text-accent">AUTOMATIZACIÓN</h3>
               <p className="text-secondary font-medium leading-relaxed">
-                Despliegue de chatbots transaccionales inteligentes y flujos de trabajo automatizados que integran CRM, inventarios y facturación.
+                Despliegue de chatbots transaccionales inteligentes y sistemas de inventario que integran ventas, alertas y facturación.
               </p>
             </div>
           </div>

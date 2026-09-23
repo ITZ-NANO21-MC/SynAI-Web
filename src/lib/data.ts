@@ -10,16 +10,28 @@ export interface TareaAutomatizada {
   icono: 'Clock' | 'Database' | 'Zap' | 'BrainCircuit';
 }
 
+export interface PlanServicio {
+  nombre: string;
+  precio: string;
+  setup: string;
+  detalles: string[];
+  nota?: string;
+}
+
 export interface Servicio {
   id: string;
   titulo: string;
-  telefono:string;
+  telefono: string;
   descripcion: string;
   detalles: string[];
   precio: string;
+  precioAnterior?: string;
+  planes?: PlanServicio[];
+  promo?: string;
   categoria: string;
   icono: string;
   imagen: string;
+  whatsappTexto?: string;
 }
 
 export interface Proyecto {
@@ -43,7 +55,7 @@ export const SERVICIOS: Servicio[] = [
     id: 'web-design-pro',
     titulo: 'Diseño Web Profesional',
     telefono: '(+58) 0424-6684134',
-    descripcion: 'Tu web en 7 días. 31 días gratis, luego solo $20.',
+    descripcion: 'Tu web en 7-14 días. 31 días gratis, luego solo $20.',
     detalles: [
       'Diseño moderno y responsivo',
       'Botones de WhatsApp integrados',
@@ -53,12 +65,15 @@ export const SERVICIOS: Servicio[] = [
       'Video tutorial de autogestión incluido',
       '31 DÍAS DE PRUEBA SIN COSTO',
       'Solo pagas si te gusta ($20 USD Promo)',
-      'Entrega récord: 7 días'
+      'Entrega en 7-14 días'
     ],
-    precio: '$20 USD / 31 Días Gratis',
+    precio: '$20 USD',
+    precioAnterior: '$35 USD',
+    promo: '31 DÍAS GRATIS · LUEGO SOLO $20',
     categoria: 'Desarrollo',
     icono: 'Laptop',
-    imagen: 'service-web'
+    imagen: 'diseno-web-synai',
+    whatsappTexto: 'Hola, quiero mi web con 31 días gratis'
   },
   {
     id: 'chatbot-whatsapp',
@@ -66,18 +81,42 @@ export const SERVICIOS: Servicio[] = [
     telefono: '(+58) 0424-6684134',
     descripcion: 'Atención 24/7, responde preguntas y consulta stock.',
     detalles: [
-      'Respuestas automáticas a preguntas frecuentes',
-      'Consulta de stock y disponibilidad',
       'Atención al cliente 24/7',
+      'Consulta de stock y disponibilidad',
+      'Generación de facturas y PDF',
+      'Alertas automáticas por WhatsApp',
+      'Menú interactivo para tus clientes',
       'Base de conocimiento configurable',
-      'Detección de intenciones con IA',
-      'Soporte en español',
-      'Setup guiado en 48 horas'
+      'Soporte en español'
     ],
-    precio: '$25/mes (setup $12)',
+    planes: [
+      {
+        nombre: 'LOCAL',
+        precio: '$11/mes',
+        setup: '+ $9 instalación única',
+        detalles: [
+          'Requiere que tu PC esté encendida',
+          'Funciona en tu propio equipo',
+          'Sin backups en la nube'
+        ]
+      },
+      {
+        nombre: 'CLOUD',
+        precio: '$19/mes',
+        setup: '+ $12 instalación única',
+        detalles: [
+          'Funciona sin depender de tu PC',
+          'Backups automáticos en la nube',
+          'Soporte prioritario (< 4h)'
+        ]
+      }
+    ],
+    promo: 'PILOTO GRATIS 21 DÍAS · PRIMEROS 10 CLIENTES',
+    precio: 'Desde $11/mes',
     categoria: 'Automatización',
     icono: 'BrainCircuit',
-    imagen: 'chatbot-ml'
+    imagen: 'chatbot-synai',
+    whatsappTexto: 'Hola, quiero probar el chatbot de WhatsApp 21 días gratis'
   },
   {
     id: 'inventario-pro',
@@ -85,36 +124,100 @@ export const SERVICIOS: Servicio[] = [
     telefono: '(+58) 0424-6684134',
     descripcion: 'Controla stock, ventas y alertas desde un solo lugar.',
     detalles: [
-      'Control de stock en tiempo real',
-      'Registro de ventas y entradas',
-      'Alertas automáticas de bajo stock',
-      'Exportación a Excel y auditoría',
-      'Respaldos automáticos diarios',
-      'Actualización de precios por tasa',
-      '15 DÍAS DE PRUEBA GRATIS'
+      'CRUD completo de productos y modelos',
+      'Dashboard con gráficos de ventas',
+      'Escáner de código de barras',
+      'Alertas automáticas por email y WhatsApp',
+      'Registro de ventas y tickets',
+      'Importación desde Excel',
+      'Actualización de precios por tasa'
     ],
-    precio: '$25/mes (setup $14) + 15 días gratis',
+    planes: [
+      {
+        nombre: 'LOCAL',
+        precio: '$18/mes',
+        setup: '+ $11 instalación única',
+        detalles: [
+          'Hasta 5 usuarios',
+          'Requiere que tu PC esté encendida',
+          'Datos en tu propio equipo'
+        ]
+      },
+      {
+        nombre: 'CLOUD',
+        precio: '$29/mes',
+        setup: '+ $15 instalación única',
+        detalles: [
+          'Usuarios ilimitados',
+          'Backups automáticos en la nube',
+          'Soporte prioritario (< 4h)'
+        ]
+      }
+    ],
+    promo: 'PILOTO GRATIS 30 DÍAS · PRIMEROS 10 CLIENTES',
+    precio: 'Desde $18/mes',
     categoria: 'Software',
     icono: 'Database',
-    imagen: 'inventario-flask'
+    imagen: 'inventario-synai',
+    whatsappTexto: 'Hola, quiero probar el sistema de inventario 30 días gratis'
   },
   {
-    id: 'technical-support',
-    titulo: 'Help Desk (Soporte Técnico)',
+    id: 'mantenimiento-web',
+    titulo: 'Mantenimiento Web',
     telefono: '(+58) 0424-6684134',
-    descripcion: 'Mantenimiento preventivo y reparación de PC. Diagnóstico gratis si reparas.',
+    descripcion: 'Tu web siempre segura, actualizada y rápida. Incluye video tutorial gratis de autogestión.',
     detalles: [
-      'Mantenimiento preventivo',
-      'Reparación de PC',
-      'Diagnóstico gratuito al reparar',
-      'Limpieza y formateo',
-      'Instalación de programas',
-      'Respaldos de información'
+      'Video tutorial de autogestión GRATIS',
+      'Monitoreo de seguridad y dependencias',
+      'Actualizaciones técnicas periódicas',
+      'Soporte directo por WhatsApp'
+    ],
+    planes: [
+      {
+        nombre: 'BÁSICO',
+        precio: '$8/mes',
+        setup: '',
+        detalles: [
+          'Seguridad y actualización de dependencias',
+          'Monitoreo básico del sitio',
+          'Soporte por WhatsApp'
+        ]
+      },
+      {
+        nombre: 'PREMIUM',
+        precio: '$12/mes',
+        setup: '',
+        detalles: [
+          '5 cambios al mes realizados por SynAI',
+          'Backups y restauración',
+          'Revisión de rendimiento mensual'
+        ]
+      }
     ],
     precio: 'Desde $8/mes',
     categoria: 'Soporte',
+    icono: 'ShieldCheck',
+    imagen: 'mantenimiento-synai',
+    whatsappTexto: 'Hola, quiero información sobre el mantenimiento web'
+  },
+  {
+    id: 'technical-support',
+    titulo: 'Servicio Técnico (Help Desk)',
+    telefono: '(+58) 0424-6684134',
+    descripcion: 'Mantenimiento preventivo y correctivo de PC. Diagnóstico GRATIS si decides reparar.',
+    detalles: [
+      'Diagnóstico GRATIS si decides reparar',
+      'Mantenimiento preventivo y correctivo',
+      'Limpieza interna + cambio de pasta térmica',
+      'Formateo e instalación de Windows',
+      'Instalación de programas',
+      'Respaldos de información'
+    ],
+    precio: 'Diagnóstico GRATIS',
+    categoria: 'Soporte',
     icono: 'Wrench',
-    imagen: 'servicio-tecnico'
+    imagen: 'servicio-tecnico-synai',
+    whatsappTexto: 'Hola, necesito servicio técnico para mi PC'
   }
 ];
 
@@ -122,6 +225,37 @@ export const ESTADISTICAS = [
   { valor: '31', etiqueta: 'Días de Prueba Gratis', sufijo: '' },
   { valor: '$20', etiqueta: 'Desde tu Web', sufijo: '' },
   { valor: '24/7', etiqueta: 'Atención Automatizada', sufijo: '' }
+];
+
+export const PROMOCIONES = [
+  {
+    id: 'web-design-pro',
+    titulo: 'DISEÑO WEB',
+    detalle: '31 DÍAS GRATIS · LUEGO SOLO $20',
+    icono: 'Laptop',
+    whatsappTexto: 'Hola, quiero mi web con 31 días gratis'
+  },
+  {
+    id: 'chatbot-whatsapp',
+    titulo: 'CHATBOT WHATSAPP',
+    detalle: 'PILOTO GRATIS 21 DÍAS · PRIMEROS 10',
+    icono: 'BrainCircuit',
+    whatsappTexto: 'Hola, quiero probar el chatbot de WhatsApp 21 días gratis'
+  },
+  {
+    id: 'inventario-pro',
+    titulo: 'SISTEMA DE INVENTARIO',
+    detalle: 'PILOTO GRATIS 30 DÍAS · PRIMEROS 10',
+    icono: 'Database',
+    whatsappTexto: 'Hola, quiero probar el sistema de inventario 30 días gratis'
+  },
+  {
+    id: 'technical-support',
+    titulo: 'SERVICIO TÉCNICO',
+    detalle: 'DIAGNÓSTICO GRATIS SI REPARAS',
+    icono: 'Wrench',
+    whatsappTexto: 'Hola, necesito servicio técnico para mi PC'
+  }
 ];
 
 export const PORTAFOLIO: Proyecto[] = [
