@@ -6,7 +6,7 @@
 |-------|-------|
 | **Fase Actual** | 4 - Optimización y Escalabilidad |
 | **Módulo Actual** | 4.5 - Testing (Planificado) |
-| **Última Acción** | Configurado `NEXT_PUBLIC_BASE_URL` en Netlify: sitemap, robots y OG ya apuntan a `https://synaitech.netlify.app` |
+| **Última Acción** | Alineación comercial completada: oferta realineada con flyers (Web $20 tarifa vieja $35, Chatbot $11/$19, Inventario $18/$29, nuevo Mantenimiento Web $8/$12, Servicio Técnico renovado). Promos en home + footer con URL propia. Commit `1e90eca`, desplegado en Netlify |
 | **Próxima Acción** | Iniciar Módulo 4.5: Configurar Vitest + escribir tests unitarios (seo.ts, data.ts, form contacto) |
 | **Bloqueos** | Ninguno |
 
@@ -67,8 +67,8 @@
 
 | Área | Descripción | Impacto | Esfuerzo |
 |------|-------------|---------|----------|
-| **Imágenes** | Placeholders usan placehold.co/unsplash; faltan imágenes reales optimizadas | Medio | Medio |
-| **SEO Base URL** | `NEXT_PUBLIC_BASE_URL` aún no definido en Netlify (sitemap usa fallback `synai.dev`) | Medio | Bajo |
+| **Imágenes** | Flyers nuevos referenciados (`Diseno_Web_SynAI.png`, `Chatbot_SynAI.png`, `Inventario_SynAI.png`, `Mantenimiento_SynAI.png`, `Servicio_Tecnico_SynAI.png`) — **pendiente: colocar los PNG en `public/`** | Medio | Bajo |
+| **SEO Base URL** | `NEXT_PUBLIC_BASE_URL` definido en Netlify (sitemap usa `https://synaitech.netlify.app`) | Resuelto | - |
 | **Testing** | 0% cobertura; sin configuración Vitest/Playwright | Alto | Alto |
 | **Accesibilidad** | Auditoría manual completada; falta automatizar con axe-core | Bajo | Bajo |
 | **Bundle** | `/contacto` optimizado; sin análisis global de bundle size | Bajo | Bajo |
@@ -89,7 +89,7 @@ npm run build            # Build producción
 # Despliegue
 # Deploy automático en Netlify (synaitech.netlify.app) conectado a origin/main
 # Build: npm run build | Publish: .next (Netlify detecta Next.js)
-# Pendiente: NEXT_PUBLIC_BASE_URL + NEXT_PUBLIC_* (EmailJS/Geoapify) en Netlify
+# Variables Netlify: NEXT_PUBLIC_BASE_URL, NEXT_PUBLIC_EMAILJS_* , NEXT_PUBLIC_GEOAPIFY_API_KEY, GOOGLE_GENAI_API_KEY
 ```
 
 ## Decisiones Pendientes (para DECISIONS.md)

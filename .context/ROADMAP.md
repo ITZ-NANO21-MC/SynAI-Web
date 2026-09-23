@@ -65,6 +65,8 @@
 
 ¹ *Pendiente operativo: definir `NEXT_PUBLIC_BASE_URL` en Netlify para que el sitemap apunte al dominio correcto (hoy usa el fallback `https://synai.dev`).*
 
+² *Alineación comercial completada (commit `1e90eca`): oferta realineada con los flyers del cliente — Diseño Web $20 (antes $35), Chatbot Local $11/Cloud $19, Inventario Local $18/Cloud $29, nuevo servicio Mantenimiento Web ($8/$12) y Servicio Técnico renovado. Sección Promociones Especiales en home. Flyers nuevos (`Diseno_Web_SynAI.png`, `Chatbot_SynAI.png`, `Inventario_SynAI.png`, `Mantenimiento_SynAI.png`, `Servicio_Tecnico_SynAI.png`) referenciados en `placeholder-images.json` — el usuario debe colocar los PNG en `public/`.*
+
 **Dependencias**: Fases 1-3 completadas  
 **Plan Detallado**: `.context/plans/phase-4-plan.md` (47 tareas, 6 módulos, 4 semanas)
 
