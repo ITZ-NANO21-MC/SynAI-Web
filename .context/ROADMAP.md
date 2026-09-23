@@ -93,7 +93,7 @@
 | 1 | Fundación y Core | 100% | Ninguno |
 | 2 | Páginas de Contenido | 100% | Ninguno |
 | 3 | IA y SEO | 100% | Ninguno |
-| 4 | Optimización | ~70% | NEXT_PUBLIC_BASE_URL en Netlify |
+| 4 | Optimización | ~70% | Ninguno |
 | 5 | Funcionalidades Avanzadas | 0% | Requiere Fase 4 (Testing/Analytics) |
 
 ---
@@ -102,7 +102,7 @@
 
 1. ✅ **Ejecutar `/plan-phase --phase 4`** - Plan creado en `.context/plans/phase-4-plan.md`
 2. ✅ **Módulos 4.1-4.4 completados**: SEO On-Page, Sitemap/Robots, Open Graph, Performance y Accesibilidad
-3. **Configurar `NEXT_PUBLIC_BASE_URL` en Netlify** para el sitemap y assets OG
+3. ✅ **Configurar `NEXT_PUBLIC_BASE_URL` en Netlify** - sitemap y assets OG apuntan a `https://synaitech.netlify.app`
 4. **Iniciar Módulo 4.5**: Configurar Vitest + tests unitarios (seo.ts, data.ts, form contacto)
 5. **Iniciar Módulo 4.5 (cont.)**: Playwright E2E (navegación, formulario, a11y) + axe-core
 6. **Iniciar Módulo 4.6**: Analytics (Vercel Analytics / GA4)

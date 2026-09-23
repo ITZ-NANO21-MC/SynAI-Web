@@ -6,7 +6,7 @@
 |-------|-------|
 | **Fase Actual** | 4 - Optimización y Escalabilidad |
 | **Módulo Actual** | 4.5 - Testing (Planificado) |
-| **Última Acción** | Completados módulos 4.1-4.4: SEO On-Page dinámico, sitemap/robots, Open Graph, Performance (code-split `/contacto` 324→117 kB) y Accesibilidad. Deploy a Netlify + realineación de contenido comercial |
+| **Última Acción** | Configurado `NEXT_PUBLIC_BASE_URL` en Netlify: sitemap, robots y OG ya apuntan a `https://synaitech.netlify.app` |
 | **Próxima Acción** | Iniciar Módulo 4.5: Configurar Vitest + escribir tests unitarios (seo.ts, data.ts, form contacto) |
 | **Bloqueos** | Ninguno |
 
